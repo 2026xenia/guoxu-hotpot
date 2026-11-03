@@ -108,7 +108,7 @@
 | 營業時間 | JSON-LD 逐日分開寫，不可用一句 `17:00-21:30` 打天下 |
 | 字型 | Noto Sans TC，僅 400／700／900 三種字重 |
 | 外部依賴 | 只有 Google Fonts 與 Google Maps iframe（皆有 `loading="lazy"`，地圖除外） |
-| 圖片 | 一律給 `width`／`height`，首屏吉祥物 `fetchpriority="high"`，其餘 `loading="lazy"` |
+| 圖片 | 一律給 `width`／`height`，首屏吉祥物 `fetchpriority="high"`，其餘 `loading="lazy"`；所有圖檔集中在 `assets/`，HTML 一律以 `assets/…` 相對路徑引用 |
 | 網址 | 正式站 `https://2026xenia.github.io/guoxu-hotpot/`；若換自訂網域，需同步 `canonical`／`og:url`／`og:image`／`sitemap.xml`／JSON-LD 的 `url` 與 `hasMenu` |
 
 ---
@@ -162,4 +162,5 @@
 
 | 日期 | 內容 |
 |---|---|
+| 2026-11-03（二） | 資料夾整理：6 個圖檔（`logo.png`、兩張 mascot、兩張 favicon、`og-image.jpg`）以 `git mv` 移入 `assets/`，四頁 HTML 的 `src`／`favicon`／`og:image`／JSON-LD `image` 同步改為 `assets/…`；頁面、`styles.css`、`robots.txt`、`sitemap.xml`、`404.html` 留在根（SEO 規定）。改後死連結檢查與 1440px 截圖驗證通過。 |
 | 2026-11-03 | 以 GitHub 版（單頁品牌站）為骨幹，長出 SEO 層：新增 `menu.html`／`visit.html`，首頁補價目摘要與逐日營業時間、改掉空話文案、修頁尾破圖；補齊 `canonical`／`og`／JSON-LD／`sitemap`／`robots`／`404`／favicon；字型由 9 字重收為 3 字重；頁面加 skip link 與 44px 觸控區。 |
