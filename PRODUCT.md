@@ -137,7 +137,7 @@
 ### 等決定
 
 - [ ] Google Search Console 驗證＋提交 sitemap
-- [ ] GA4（`menu_build` 事件：`pot_name`／`meat`／`extra`／`total`）
+- [ ] GA4（`menu_view` 瀏覽菜單頁；`visit_click` 從菜單頁點向「怎麼來」）
 - [ ] 是否換自訂網域
 
 ---
