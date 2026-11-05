@@ -58,7 +58,7 @@
 <a href="visit.html">怎麼來</a>
 </nav>
 <a class="header-cta" href="visit.html">怎麼來 <span aria-hidden="true">↗</span></a>
-<button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav">☰</button>
+<button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
 </div></header>
 
 <main id="main">
@@ -81,6 +81,7 @@
       </div>
       <table class="price-table">
         <caption class="sr-only">經典鍋物價目</caption>
+        <thead><tr><th scope="col">品項</th><th scope="col">價格</th></tr></thead>
         <tbody>
           <tr>
             <th scope="row">原味鍋</th>
@@ -113,6 +114,7 @@
       </div>
       <table class="price-table">
         <caption class="sr-only">特色鍋物價目</caption>
+        <thead><tr><th scope="col">品項</th><th scope="col">價格</th></tr></thead>
         <tbody>
           <tr>
             <th scope="row">沙茶臭臭</th>
@@ -166,6 +168,7 @@
       <p class="veg-note">民雄一帶少有店家把素食鍋物獨立成區、還與葷食同價。這三款不選肉、不加肉，價格就是表上的數字。</p>
       <table class="price-table">
         <caption class="sr-only">素食鍋物價目</caption>
+        <thead><tr><th scope="col">品項</th><th scope="col">價格</th></tr></thead>
         <tbody>
           <tr>
             <th scope="row">素食蔬菜鍋</th>
@@ -190,6 +193,7 @@
       </div>
       <table class="price-table">
         <caption class="sr-only">單點價目</caption>
+        <thead><tr><th scope="col">品項</th><th scope="col">說明</th><th scope="col">價格</th></tr></thead>
         <tbody>
           <tr><th scope="row">火鍋料</th><td>每樣 30，任選兩樣 50</td><td class="price">30</td></tr>
           <tr><th scope="row">蔬菜</th><td>每樣 35，任選兩樣 60</td><td class="price">35</td></tr>
@@ -219,9 +223,6 @@
       <a class="main-btn" href="index.html">回鍋序首頁</a>
       <a class="outline-btn" href="visit.html">怎麼來・停車與地圖</a>
     </div>
-
-    </div>
-
   </div>
 </section>
 
@@ -237,15 +238,32 @@
 (function () {
   var toggle = document.getElementById('toggle');
   var nav = document.getElementById('nav');
+  function syncToggle(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? '收合選單' : '展開選單');
+  }
+  function closeMenu(refocus) {
+    nav.classList.remove('open');
+    syncToggle(false);
+    if (refocus) toggle.focus();
+  }
   toggle.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
+    syncToggle(open);
   });
   nav.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', function () { closeMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu(true);
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.classList.contains('open')) return;
+    if (e.target === toggle || toggle.contains(e.target) || nav.contains(e.target)) return;
+    closeMenu(false);
+  });
+  nav.addEventListener('focusout', function (e) {
+    if (!nav.contains(e.relatedTarget) && e.relatedTarget !== toggle) closeMenu(false);
   });
 })();
 </script>

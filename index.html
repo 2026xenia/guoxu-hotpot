@@ -81,7 +81,7 @@
 <a href="#contact">找到我們</a>
 </nav>
 <a class="header-cta" href="menu.html">看看吃什麼 <span aria-hidden="true">↗</span></a>
-<button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav">☰</button>
+<button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
 </div></header>
 
 <main id="main">
@@ -89,7 +89,7 @@
 <section class="hero">
   <div class="container hero-content">
     <div class="hero-left">
-      <h1><span class="hero-kicker">民雄・中正大學旁的個人小火鍋</span>肚子餓了，<br><em>來吃鍋吧！</em></h1>
+      <p class="hero-kicker">民雄・中正大學旁的個人小火鍋</p><h1>肚子餓了，<br><em>來吃鍋吧！</em></h1>
       <p>一個人 170 元起，18 種鍋物、3 款素食同價。<br>店旁就是停車場，下車走 1 分鐘。</p>
       <ul class="hero-facts">
         <li>170 元起・多數 190</li>
@@ -222,8 +222,8 @@
       </dl>
       <div class="contact-chips">
         <a href="https://www.google.com/maps?q=23.5572127,120.472024" target="_blank" rel="noopener">Google 地圖 <span aria-hidden="true">↗</span></a>
-        <span>Instagram 待提供</span>
-        <span>LINE 待提供</span>
+        <span class="pending-chip">Instagram 待提供</span>
+        <span class="pending-chip">LINE 待提供</span>
       </div>
       <small>門牌與電話待店家提供，先用座標導航。</small>
     </div>
@@ -242,16 +242,56 @@
 (function () {
   var toggle = document.getElementById('toggle');
   var nav = document.getElementById('nav');
+  function syncToggle(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? '收合選單' : '展開選單');
+  }
+  function closeMenu(refocus) {
+    nav.classList.remove('open');
+    syncToggle(false);
+    if (refocus) toggle.focus();
+  }
   toggle.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
+    syncToggle(open);
   });
   nav.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', function () { closeMenu(false); });
   });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu(true);
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.classList.contains('open')) return;
+    if (e.target === toggle || toggle.contains(e.target) || nav.contains(e.target)) return;
+    closeMenu(false);
+  });
+  nav.addEventListener('focusout', function (e) {
+    if (!nav.contains(e.relatedTarget) && e.relatedTarget !== toggle) closeMenu(false);
+  });
+})();
+
+
+/* Scroll-spy：依視窗內區塊切換 aria-current */
+(function () {
+  var links = document.querySelectorAll('.header nav a');
+  var map = {};
+  links.forEach(function (a) {
+    var href = a.getAttribute('href') || '';
+    var hash = href.split('#')[1];
+    if (hash) map[hash] = a;
+  });
+  if (!Object.keys(map).length) return;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var link = map[en.target.id];
+      if (!link) return;
+      links.forEach(function (a) { a.removeAttribute('aria-current'); });
+      link.setAttribute('aria-current', 'page');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('section[id]').forEach(function (s) { if (map[s.id]) obs.observe(s); });
 })();
 
 /* 營業狀態：以 Asia/Taipei 判斷，取不到時區就保留 HTML 的靜態說明 */
@@ -303,7 +343,15 @@
   out.textContent = text;
 
   var row = document.querySelector('.hours-table tr[data-day="' + day + '"]');
-  if (row) row.classList.add('is-today');
+  if (row) {
+    row.classList.add('is-today');
+    var td = row.querySelector('td');
+    if (td && box.classList.contains('is-open')) {
+      var dot = document.createElement('span');
+      dot.className = 'today-dot'; dot.setAttribute('aria-hidden', 'true');
+      td.appendChild(dot);
+    }
+  }
 })();
 </script>
 </body>
