@@ -117,3 +117,23 @@ a.board-row:hover,a.board-row:focus-visible{background:#fdf3d8}
   .map iframe{height:300px}
   .hours-table thead th,.hours-table tbody th,.hours-table tbody td{padding:11px 13px}
 }
+
+/* 按鈕：新粗野主義的浮起與按壓（硬陰影，不模糊） */
+.main-btn,.outline-btn,.header-cta{transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s cubic-bezier(.34,1.56,.64,1)}
+.main-btn:hover,.outline-btn:hover,.header-cta:hover,
+.main-btn:focus-visible,.outline-btn:focus-visible,.header-cta:focus-visible{transform:translate(-2px,-2px);box-shadow:3px 4px 0 var(--ink)}
+.main-btn:active,.outline-btn:active,.header-cta:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+@media(hover:hover){
+  .main-btn:active,.outline-btn:active,.header-cta:active{transform:translate(1px,1px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .main-btn,.outline-btn,.header-cta{transition:none}
+  .main-btn:hover,.outline-btn:hover,.header-cta:hover{transform:none}
+}
+
+.text-link{transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+.text-link:hover{transform:translateY(-1px)}
+@media(prefers-reduced-motion:reduce){
+  .text-link{transition:none}
+  .text-link:hover{transform:none}
+}
