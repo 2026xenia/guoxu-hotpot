@@ -69,37 +69,8 @@ a.board-row:hover,a.board-row:focus-visible{background:#fdf3d8}
 .price-table tbody tr:last-child th,.price-table tbody tr:last-child td{border-bottom:0}
 .price-table th{font-size:19px;font-weight:900;color:var(--deep)}
 .price-table td.price{text-align:right;font-size:21px;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
-.price-table .pick{width:56px;padding-right:0}
-.price-table input[type="radio"]{width:20px;height:20px;accent-color:var(--red);margin:0;cursor:pointer}
-.price-table tr.is-picked{background:#fdf3d8}
-.price-table tr.is-disabled{opacity:.4}
 .price-table .pot-tag{display:inline-block;margin-left:8px;padding:2px 7px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:800;vertical-align:2px}
 .veg-note{background:#f4cb5a;border:2px solid var(--ink);padding:18px 22px;margin:0 0 22px;font-weight:700;line-height:1.8}
-
-/* 試算器 */
-.calc{background:#fffdf7;border:2px solid var(--ink);padding:24px 26px;margin:34px 0 0}
-.calc h2{font-size:20px;margin:0 0 16px;color:var(--deep)}
-.calc fieldset{border:0;padding:0;margin:0 0 16px}
-.calc legend{font-size:14px;font-weight:900;color:var(--deep);margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.chips label{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:2px solid var(--ink);font-size:14px;font-weight:800;cursor:pointer;background:#fffdf7}
-.chips input:checked+label{background:var(--red);border-color:var(--red);color:#fff7e7}
-.chips input:focus-visible+label{outline:3px solid var(--yellow);outline-offset:2px}
-.calc .extra-row{display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px}
-.calc .extra-row input{width:20px;height:20px;accent-color:var(--red);margin:0}
-.calc .segmented{display:flex;margin-bottom:20px}
-.calc .segmented input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.calc .segmented label{min-height:44px;display:inline-flex;align-items:center;padding:10px 20px;border:2px solid var(--ink);font-weight:800;font-size:14px;cursor:pointer;background:#fffdf7}
-.calc .segmented label+input+label{border-left:0}
-.calc .segmented input:checked+label{background:var(--ink);color:#fff7e7}
-.calc .segmented input:focus-visible+label{outline:3px solid var(--yellow);outline-offset:2px}
-
-/* 總價列 */
-.total-bar{position:sticky;bottom:0;z-index:5;margin-top:44px;background:var(--deep);color:#fff7e7;border-top:3px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;flex-wrap:wrap}
-.total-detail{font-size:13px;line-height:1.6;opacity:.92}
-.total-amount{font-size:34px;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
-.total-amount small{font-size:14px;margin-left:4px}
 
 /* 交通頁 */
 .map{border:2px solid var(--ink);background:#fffdf7;margin-top:26px}
@@ -139,10 +110,6 @@ a.board-row:hover,a.board-row:focus-visible{background:#fdf3d8}
   .price-table th,.price-table td{padding:13px 14px}
   .price-table th{font-size:17px}
   .price-table td.price{font-size:19px}
-  .price-table .pick{width:46px}
-  .calc{padding:20px 18px}
-  .total-amount{font-size:28px}
-  .total-detail{font-size:12px}
   .map iframe{height:300px}
   .hours-table thead th,.hours-table tbody th,.hours-table tbody td{padding:11px 13px}
 }

@@ -1,6 +1,6 @@
 # PRODUCT.md — 鍋序網站內容規格
 
-> 最後更新：2026-11-03
+> 最後更新：2026-11-05
 > 本檔是「內容與資料」的唯一真實來源（Single Source of Truth）。改文案、改價、補資料，先改這裡或照這裡的規則改。
 > 舊版（三頁 V1／V3）在 `期末專題/網站/`，僅作為素材庫，**不再維護**。
 
@@ -28,22 +28,22 @@
 
 ## 3. 價格：唯一真實來源
 
-**價格只寫在 `menu.html` 的 `<td class="price">` 與同列的 `data-*` 屬性裡。首頁只放摘要，不逐項列價。**
+**價格只寫在 `menu.html` 的 `<td class="price">` 文字裡。首頁只放摘要，不逐項列價。**
 
-### 3.1 每一列價格其實有三個副本
+### 3.1 表格文字就是唯一來源
 
-| 位置 | 範例 |
-|---|---|
-| `<td class="price">` 文字 | `170` |
-| `data-price`（試算器讀這裡） | `data-price="170"` |
-| radio 的 `aria-label` | `aria-label="選擇原味鍋，170 元"` |
+菜單頁是一張純 HTML 價目表，沒有任何 `data-*` 價格屬性、也沒有前端試算腳本。
 
-**改價 SOP**：同一列這三處一起改 → 檢查首頁 hero 的「170 元起」與價目牌摘要 → 檢查 `meta description` → 檢查 JSON-LD 的 `priceRange` → 用「關 JS 讀表格、開 JS 跑試算器」兩者對照，數字一致才算完成。
+| 位置 | 範例 | 角色 |
+|---|---|---|
+| `<td class="price">` 文字 | `170` | **唯一真實來源** |
+
+**改價 SOP**：改 `<td class="price">` 的數字 → 檢查首頁 hero「170 元起」與價目牌摘要 → 檢查 `meta description`（menu 頁與首頁）→ 檢查 JSON-LD 的 `priceRange`。
 
 ### 3.2 換肉與加肉通則
 
 豬肉為底價；牛肉 +10、羊肉 +10、雞肉不加價；加肉 +30。
-素食三款不帶 `data-beef` / `data-lamb` / `data-extra`，試算器自動視為「無肉可選」。
+素食三款不分選肉，價格即表定價。
 
 ### 3.3 價位帶（誠實揭露，不要拿掉）
 
@@ -103,7 +103,7 @@
 
 | 項目 | 規則 |
 |---|---|
-| 價格與 JS | 表格是本體，試算器只讀 `data-*`；關閉 JS 時菜單仍須完整可讀 |
+| 價格與 JS | 菜單頁完全沒有價格 JS：價目表是純 HTML，關閉 JS 也能完整閱讀 |
 | JSON-LD | 只放 `priceRange`，**不逐項列 MenuItem**（避免出現第二份價格清單） |
 | 營業時間 | JSON-LD 逐日分開寫，不可用一句 `17:00-21:30` 打天下 |
 | 字型 | Noto Sans TC，僅 400／700／900 三種字重 |
@@ -151,7 +151,7 @@
 - [x] 免 `noindex`（本站即為正式站）
 - [x] `404.html`
 - [x] skip link、44px 觸控區、`aria-expanded`／`aria-controls`
-- [x] 關閉 JS 時菜單與營業時間仍可讀
+- [x] 關閉 JS 時菜單與營業時間仍可讀（菜單頁已無任何價格腳本）
 - [ ] 地址、電話補齊後更新 JSON-LD 與 `visit.html`
 - [ ] `og:image` 換成實拍版本
 - [ ] 三頁營業時間與 Google 商家檔案逐日比對
@@ -162,5 +162,6 @@
 
 | 日期 | 內容 |
 |---|---|
+| 2026-11-05 | 移除菜單頁的選鍋試算器與底部總價列；價格改為單一來源（只寫在表格），連帶移除 18 組 radio 與 `data-*`、約 25 行死 CSS；首頁與 meta 描述同步改寫。 |
 | 2026-11-03（二） | 資料夾整理：6 個圖檔（`logo.png`、兩張 mascot、兩張 favicon、`og-image.jpg`）以 `git mv` 移入 `assets/`，四頁 HTML 的 `src`／`favicon`／`og:image`／JSON-LD `image` 同步改為 `assets/…`；頁面、`styles.css`、`robots.txt`、`sitemap.xml`、`404.html` 留在根（SEO 規定）。改後死連結檢查與 1440px 截圖驗證通過。 |
 | 2026-11-03 | 以 GitHub 版（單頁品牌站）為骨幹，長出 SEO 層：新增 `menu.html`／`visit.html`，首頁補價目摘要與逐日營業時間、改掉空話文案、修頁尾破圖；補齊 `canonical`／`og`／JSON-LD／`sitemap`／`robots`／`404`／favicon；字型由 9 字重收為 3 字重；頁面加 skip link 與 44px 觸控區。 |
