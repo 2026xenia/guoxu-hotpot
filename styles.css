@@ -77,7 +77,7 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 .price-table th,.price-table td{padding:15px 20px;border-bottom:1px dashed #baaa94;text-align:left}
 .price-table tbody tr:last-child th,.price-table tbody tr:last-child td{border-bottom:0}
 .price-table th{font-size:19px;font-weight:900;color:var(--deep)}
-.price-table td.price{text-align:right;font-size:21px;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price-table td.price{text-align:right;font-size:23px;font-weight:900;color:var(--deep);font-variant-numeric:tabular-nums;white-space:nowrap}
 .price-table .pot-tag{white-space:nowrap;display:inline-block;margin-left:8px;padding:2px 7px;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:800;vertical-align:2px}
 .price-table td.price::after{content:" 元";font-size:14px}
 .price-table td:nth-child(2):not(.price){text-align:left}
@@ -173,7 +173,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .hero h1{font-size:clamp(38px,7vw,60px)}
   .hero-left{padding:40px 0 20px}
   .hero-right{height:auto;padding:0 0 36px}
-  .hero-right .mascot{width:240px}
+  .hero-right .mascot{width:300px}
+  .hero-right .hand-note{top:16px;right:48px}
   .hero-arc{inset:6% 10% 7% 10%}
   .pot-grid{gap:12px}
   .pot-picture{height:200px}
@@ -236,4 +237,36 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .price-table td.price{font-size:19px}
   .map iframe{height:300px}
   .hours-table thead th,.hours-table tbody th,.hours-table tbody td{padding:10px 10px;font-size:14px}
+}
+
+/* ============================================================
+   方案 A 保守微調：菜單可掃性、交通頁卡片化、hero 比例
+   僅用既有色票與紙感邊框；按鈕無靜態陰影的規則不變
+   ============================================================ */
+
+/* 菜單：分類徽章（只用頁面已有事實文字） */
+.menu-badge{display:inline-flex;align-items:center;background:var(--yellow);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);color:var(--deep);font-size:13px;font-weight:900;letter-spacing:.5px;line-height:1.4;padding:3px 10px;transform:rotate(-1deg);vertical-align:middle;white-space:nowrap}
+.menu-badge--sm{font-size:11px;padding:1px 7px;box-shadow:1px 1px 0 var(--ink);margin-left:6px;transform:none}
+/* 菜單：分類標題左側色條 + 徽章同行，classic/featured/veg/sides 一致 */
+.menu-block .section-top{border-left:6px solid var(--red);padding-left:16px}
+.menu-block .section-top h2{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+
+/* 交通頁：卡片化（PARKING / HOURS / LOCATION），地圖沿用同一系統 */
+.visit-card{background:#fffdf7;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:24px 26px}
+.visit-card p{margin:0 0 12px;line-height:1.8}
+.visit-card p:last-child{margin-bottom:0}
+.visit-card .info-rows{margin-top:0}
+.visit-card .hours-wrap{gap:28px}
+.map{box-shadow:6px 6px 0 var(--ink)}
+
+/* 焦點：價目列連結有明確外框 （全域 a:focus-visible 已有，本處補內縮避免被列底色蓋住） */
+a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
+
+@media(max-width:680px){
+  .menu-badge{font-size:12px;padding:2px 8px}
+  .menu-block .section-top{padding-left:12px}
+  .price-table td.price{font-size:20px}
+  #sides .price-table td.price{font-size:18px}
+  .visit-card{padding:18px 16px;box-shadow:4px 4px 0 var(--ink)}
+  .map{box-shadow:4px 4px 0 var(--ink)}
 }
