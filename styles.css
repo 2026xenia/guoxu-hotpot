@@ -104,7 +104,11 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 
 /* 頁尾 */
 .footer-nav{display:flex;gap:18px;font-size:13px;font-weight:700}
-.footer-nav a{padding:12px 6px}
+.footer-nav a{display:inline-flex;align-items:center;min-height:44px;padding:12px 6px}
+.ink-link{padding:4px 0}
+.photo-note{font-size:13px;color:#6b5346}
+/* visit 最后一節與底部 CTA 之間不要留一整節的空白 */
+.section-last{padding-bottom:40px}
 .footer-nav a:hover{color:var(--red)}
 .contact-chips a{display:inline-block;padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}
 .contact-chips a:hover{background:var(--red);color:#fff7e7}
@@ -139,6 +143,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
   .main-btn,.outline-btn,.header-cta{transition:none}
   .main-btn:hover,.outline-btn:hover,.header-cta:hover{transform:none}
+  a.board-row,.skip{transition:none}
 }
 
 .text-link{transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
@@ -167,8 +172,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .hero-content,.menu-layout,.about-layout,.contact-layout{grid-template-columns:1fr;gap:40px}
   .hero h1{font-size:clamp(38px,7vw,60px)}
   .hero-left{padding:40px 0 20px}
-  .hero-right{height:auto;padding:10px 0 74px}
-  .hero-right .mascot{width:310px}
+  .hero-right{height:auto;padding:0 0 36px}
+  .hero-right .mascot{width:240px}
   .hero-arc{inset:6% 10% 7% 10%}
   .pot-grid{gap:12px}
   .pot-picture{height:200px}
@@ -184,16 +189,19 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 @media(max-width:680px){
   .header{height:auto;min-height:75px}
   .js .header{height:75px}
+  .js .navwrap{flex-wrap:nowrap;gap:8px}
   .navwrap{gap:12px}
+  .logo{gap:6px}
   .logo small{display:none}
-  .logo img{width:56px;height:56px}
-  .logo{font-size:25px}
+  .logo img{width:48px;height:48px}
+  .logo{font-size:22px}
   .js .header nav{top:75px}
-  .header-cta{display:block;font-size:13px;padding:10px 12px;min-height:44px;line-height:1.2}
+  .header-cta{display:block;font-size:12px;padding:8px 10px;min-height:44px;line-height:1.2}
+  .header-cta span{margin-left:6px}
   .hamburger{flex:0 0 44px}
   .hero p{font-size:15px}
-  .hero-right{height:auto;padding:6px 0 62px}
-  .hero-right .mascot{width:290px}
+  .hero-right{height:auto;padding:6px 0 40px}
+  .hero-right .mascot{width:260px}
   .hero-bottom{bottom:0}
   .hero-arc{inset:9% 7% 8% 7%}
   .hand-note{right:0;top:10px}
@@ -220,8 +228,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .price-table th,.price-table td{padding:13px 14px}
   .price-table thead th{padding-left:14px;padding-right:14px}
   .price-table th{font-size:17px}
-  #sides .price-table th:first-child{width:44%}
-  #sides .price-table td:nth-child(2){font-size:14px}
+  #sides .price-table{table-layout:fixed}
+  #sides .price-table th,#sides .price-table td{padding:11px 10px}
+  #sides .price-table th:first-child{width:34%}
+  #sides .price-table td:nth-child(2){width:44%;font-size:13px;line-height:1.5}
+  #sides .price-table td.price{width:22%;font-size:17px}
   .price-table td.price{font-size:19px}
   .map iframe{height:300px}
   .hours-table thead th,.hours-table tbody th,.hours-table tbody td{padding:10px 10px;font-size:14px}
