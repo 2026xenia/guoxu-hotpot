@@ -75,13 +75,11 @@
 <header class="header"><div class="container navwrap">
 <a href="index.html" class="logo" aria-label="鍋序首頁"><img src="assets/mascot-hero.png" width="377" height="391" alt="鍋序笑臉鍋吉祥物"><span>鍋序<small>GUO XU HOT POT</small></span></a>
 <nav id="nav" aria-label="網站選單">
-<a href="#pots">鍋物介紹</a>
+<a href="index.html" aria-current="page">首頁</a>
 <a href="menu.html">菜單</a>
-<a href="index.html#hours">營業時間</a>
 <a href="visit.html">怎麼來</a>
-<a href="#contact">找到我們</a>
 </nav>
-<a class="header-cta" href="menu.html">看看吃什麼 <span aria-hidden="true">↗</span></a>
+<a class="header-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">導航 <span aria-hidden="true">↗</span></a>
 <button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
 </div></header>
 
@@ -123,13 +121,13 @@
     <div class="pot-grid">
       <article class="pot-item">
         <div class="pot-number">01</div>
-        <div class="pot-picture orange"><span class="circle-label">香甜順口</span><div class="pot-icon">南瓜<br>鍋</div></div>
-        <div class="pot-text"><h3>南瓜鍋</h3><p>南瓜的甜融進湯裡，濃郁滑順。店裡少數不辣、不臭的選擇。</p></div>
+        <div class="pot-picture orange"><span class="circle-label">香甜順口</span><div class="pot-icon">黃金<br>南瓜</div></div>
+        <div class="pot-text"><h3>黃金南瓜</h3><p>南瓜的甜融進湯裡，濃郁滑順。店裡少數不辣、不臭的選擇。</p></div>
       </article>
       <article class="pot-item">
         <div class="pot-number">02</div>
-        <div class="pot-picture brown"><span class="circle-label">溫潤飄香</span><div class="pot-icon">藥膳<br>鍋</div></div>
-        <div class="pot-text"><h3>藥膳鍋</h3><p>溫和的藥膳香氣，慢慢喝、慢慢吃。素食也點得到同款。</p></div>
+        <div class="pot-picture brown"><span class="circle-label">溫潤飄香</span><div class="pot-icon">養身<br>藥膳</div></div>
+        <div class="pot-text"><h3>養身藥膳</h3><p>溫和的藥膳香氣，慢慢喝、慢慢吃。素食也點得到同款。</p></div>
       </article>
       <article class="pot-item">
         <div class="pot-number">03</div>
@@ -235,9 +233,9 @@
 
 <footer><div class="container footer-inner">
 <a href="index.html" class="footer-logo"><img src="assets/mascot-transparent.png" width="43" height="43" alt="" loading="lazy">鍋序</a>
-<nav class="footer-nav" aria-label="頁尾導覽"><a href="menu.html">菜單</a><a href="visit.html">怎麼來</a><a href="index.html#hours">營業時間</a></nav>
+<nav class="footer-nav" aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="menu.html">菜單</a><a href="index.html#hours">營業時間</a></nav>
 <span>好好吃一鍋，好好過一天。</span>
-</div></footer>
+</div><div class="container"><p class="footer-note">平日晚間 17:00–21:30，週六 11:00 起・<a class="ink-link" href="index.html#hours">營業時間</a>・<a class="ink-link" href="visit.html">怎麼來</a></p></div></footer>
 
 <script>
 (function () {
@@ -339,7 +337,7 @@
     text = left <= 60 ? '還有 ' + left + ' 分鐘開鍋・' + fmt(openAt) : '今天 ' + fmt(openAt) + ' 開鍋';
   } else {
     var next = (day + 1) % 7;
-    text = '今天休息了・' + (next === 6 ? '週六' : '明天') + ' ' + fmt(HOURS[next][0] * 60 + HOURS[next][1]) + ' 開鍋';
+    text = '今天打烊了・' + (next === 6 ? '週六' : '明天') + ' ' + fmt(HOURS[next][0] * 60 + HOURS[next][1]) + ' 開鍋';
   }
   out.textContent = text;
 
