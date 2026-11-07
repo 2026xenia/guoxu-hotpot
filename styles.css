@@ -1,5 +1,5 @@
-:root{--red:#8e2428;--deep:#622027;--ink:#382620;--cream:#faf6ec;--line:#d9c9b4;--yellow:#f4cb5a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans TC',sans-serif}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.container{width:min(1140px,calc(100% - 44px));margin:auto}.header{height:94px;background:#fffdf7;border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:20}.navwrap{height:100%;display:flex;align-items:center;gap:35px}.logo{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:30px;font-weight:900;color:var(--deep)}.logo img{height:74px;width:74px;object-fit:contain}.logo small{display:block;letter-spacing:1.5px;font-size:11px;color:#765747}.header nav{display:flex;gap:26px;margin-left:auto}.header nav a{font-size:14px;font-weight:700}.header nav a:hover{color:var(--red)}.header-cta{border:2px solid var(--red);color:var(--red);font-size:14px;font-weight:900;padding:12px 19px;border-radius:4px;white-space:nowrap}.header-cta span{margin-left:12px}.hamburger{width:44px;height:44px;display:none;align-items:center;justify-content:center;border:0;background:none;font-size:27px;color:var(--red)}.hero{overflow:hidden;background:#f5e8d1}.hero-content{display:grid;grid-template-columns:1fr .9fr;min-height:470px}.hero-left{display:flex;flex-direction:column;justify-content:center;padding:40px 0 32px}.hero-kicker{font-weight:800;font-size:18px;color:var(--red);letter-spacing:2px}
-.hero p.hero-kicker{font-weight:800;font-size:18px;color:var(--red);letter-spacing:2px;line-height:1.4;margin:0}.hero h1{font-size:clamp(42px,11vw,90px);line-height:1.22;letter-spacing:-1.5px;margin:12px 0 28px;color:var(--deep);font-weight:900}.hero h1 em{font-style:normal}.hero p{font-size:17px;line-height:2;margin:0}.hero-links{display:flex;align-items:center;gap:25px;margin-top:24px}.main-btn{background:var(--red);color:white;padding:15px 23px;font-weight:800;border:2px solid var(--red)}.main-btn span{margin-left:20px}.text-link{font-weight:800;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--red)}.hero-right{position:relative;display:flex;align-items:center;justify-content:center}.hero-right .mascot{position:relative;width:min(380px,85%);filter:drop-shadow(12px 20px 0 rgba(98,32,39,.11));transform:rotate(-5deg)}.hand-note{position:absolute;z-index:1;top:65px;right:4px;font-size:18px;font-weight:900;color:var(--deep);transform:rotate(9deg)}.hero-bottom{position:absolute;bottom:34px;font-weight:800;letter-spacing:3px;font-size:12px;color:#744541}.marquee{background:var(--red);color:#fff5dc;padding:13px;text-align:center;font-size:13px;letter-spacing:5px;font-weight:800;overflow:hidden;white-space:nowrap}.section{padding:102px 0}.small-label{color:var(--red);font-size:13px;font-weight:900;letter-spacing:2px}.section-top{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid var(--ink);margin-bottom:32px;padding-bottom:22px;gap:20px}.section-top h2,.about h2,.menu-section h2,.contact h2{font-size:clamp(30px,3.6vw,48px);font-weight:900;letter-spacing:-1.3px;line-height:1.35;margin:12px 0 0}.section-top p{font-size:15px;margin:0 0 8px}.pot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.pot-item{border:2px solid var(--ink);background:#fffdf7;position:relative}.pot-number{position:absolute;top:13px;left:17px;z-index:1;font-size:15px;font-weight:900;color:var(--deep)}.pot-picture{height:245px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.pot-picture.orange{background:#f7c66f}.pot-picture.brown{background:#ceb190}.pot-picture.red{background:#bd6761}.pot-picture:before,.pot-picture:after{content:"";position:absolute;border:3px solid rgba(70,42,29,.21);border-radius:50%;width:280px;height:280px}.pot-picture:after{width:230px;height:230px}.pot-icon{position:relative;z-index:1;border:5px solid var(--ink);width:155px;height:155px;background:#fff9e6;border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:900;font-size:37px;line-height:1.1;color:var(--deep);transform:rotate(-7deg);box-shadow:9px 9px 0 rgba(56,38,32,.15)}.circle-label{position:absolute;z-index:2;right:12px;top:14px;background:#fffdf7;border:2px solid var(--ink);padding:8px 10px;font-size:12px;font-weight:800;transform:rotate(7deg)}.pot-text{padding:24px 23px 30px;min-height:195px}.pot-text h3{margin:0 0 10px;font-size:24px;color:var(--deep)}.pot-text p{margin:0;line-height:1.9;font-size:15px}.photo-note{color:#846c5e;font-size:12px;margin:18px 0 0}.menu-section{background:var(--red);color:#fff7e7;padding:92px 0}.menu-section .small-label{color:#f7ca70}.menu-layout{display:grid;grid-template-columns:1fr .86fr;gap:90px;align-items:center}.menu-heading p{font-size:16px;line-height:2;margin:26px 0 32px}.outline-btn{border:2px solid currentColor;padding:15px 23px;display:inline-flex;align-items:center;min-height:44px;font-weight:800}.menu-board{background:#fff8e8;color:var(--ink);border:3px solid var(--ink);padding:31px 33px;box-shadow:11px 11px 0 #5c1d23;transform:rotate(1deg)}.board-title{display:flex;align-items:baseline;gap:15px;border-bottom:3px double var(--ink);padding-bottom:20px;color:var(--deep)}.board-title b{font-size:39px;font-weight:900}.board-title span{font-size:17px;font-weight:800}.board-row{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px dashed #baaa94;padding:18px 0}.board-row span:first-child{font-size:22px;font-weight:900}.board-row span:last-child{font-size:14px}.board-foot{text-align:center;color:var(--red);font-weight:900;margin-top:22px}.about-layout{display:grid;grid-template-columns:.8fr 1.1fr;gap:110px;align-items:center}.about-image{background:transparent;border:0;min-height:375px;display:grid;place-items:center;position:relative}.about-image img{width:270px;height:auto}.handwriting{position:absolute;right:-35px;bottom:-32px;background:var(--red);color:#fff;padding:20px 26px;font-size:19px;font-weight:900;line-height:1.6;transform:rotate(7deg)}.about-copy p{max-width:600px;font-size:16px;line-height:2;margin:25px 0 0}.about-stamp{border:2px solid var(--red);padding:10px 17px;color:var(--red);display:inline-block;font-weight:900;margin-top:27px;transform:rotate(-3deg)}.contact{background:#f0dfc6;padding:80px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:95px}.contact p{line-height:1.95}.contact-right{border-left:2px solid var(--ink);padding-left:55px}.contact-right h3{font-size:25px;color:var(--deep);margin:0}.contact-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.contact-chips>span{padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}.contact-right small{display:block;margin-top:16px;color:#6b5346;font-size:12px}footer{background:#fffdf7;padding:23px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:16px}.footer-logo{display:flex;align-items:center;font-size:19px;font-weight:900;color:var(--deep);gap:7px}.footer-logo img{width:43px;height:43px;object-fit:contain}
+:root{--red:#8e2428;--deep:#622027;--ink:#382620;--cream:#faf6ec;--line:#d9c9b4;--yellow:#f4cb5a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans TC',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}.container{width:min(1140px,calc(100% - 44px));margin:auto}.header{height:94px;background:#fffdf7;border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:20}.navwrap{height:100%;display:flex;align-items:center;gap:35px}.logo{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:30px;font-weight:900;color:var(--deep)}.logo img{height:74px;width:74px;object-fit:contain}.logo small{display:block;letter-spacing:1.5px;font-size:11px;color:#765747}.header nav{display:flex;gap:26px;margin-left:auto}.header nav a{font-size:14px;font-weight:700}.header nav a:hover{color:var(--red)}.header-cta{border:2px solid var(--red);color:var(--red);font-size:14px;font-weight:900;padding:12px 19px;border-radius:4px;white-space:nowrap}.header-cta span{margin-left:12px}.hamburger{width:44px;height:44px;display:none;align-items:center;justify-content:center;border:0;background:none;font-size:27px;color:var(--red)}.hero{overflow:hidden;background:#f5e8d1}.hero-content{display:grid;grid-template-columns:1fr .9fr;min-height:470px}.hero-left{display:flex;flex-direction:column;justify-content:center;padding:40px 0 32px}.hero-kicker{font-weight:800;font-size:18px;color:var(--red);letter-spacing:2px}
+.hero p.hero-kicker{font-weight:800;font-size:18px;color:var(--red);letter-spacing:2px;line-height:1.4;margin:0}.hero h1{font-size:clamp(32px,4.8vw,56px);line-height:1.22;letter-spacing:-1.5px;margin:12px 0 28px;color:var(--deep);font-weight:900}.hero h1 em{font-style:normal}.hero p{font-size:17px;line-height:2;margin:0}.hero-links{display:flex;align-items:center;gap:25px;margin-top:24px}.main-btn{background:var(--red);color:white;padding:15px 23px;font-weight:800;border:2px solid var(--red)}.main-btn span{margin-left:20px}.text-link{font-weight:800;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--red)}.hero-right{position:relative;display:flex;align-items:center;justify-content:center}.hero-right .mascot{position:relative;width:min(380px,85%);filter:drop-shadow(12px 20px 0 rgba(98,32,39,.11));transform:rotate(-5deg)}.hand-note{position:absolute;z-index:1;top:65px;right:4px;font-size:18px;font-weight:900;color:var(--deep);transform:rotate(9deg)}.hero-bottom{position:absolute;bottom:34px;font-weight:800;letter-spacing:3px;font-size:12px;color:#744541}.marquee{background:var(--red);color:#fff5dc;padding:13px;text-align:center;font-size:13px;letter-spacing:5px;font-weight:800;overflow:hidden;white-space:nowrap}.section{padding:102px 0}.small-label{color:var(--red);font-size:13px;font-weight:900;letter-spacing:2px}.section-top{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid var(--ink);margin-bottom:32px;padding-bottom:22px;gap:20px}.section-top h2,.about h2,.menu-section h2,.contact h2{font-size:clamp(30px,3.6vw,48px);font-weight:900;letter-spacing:-1.3px;line-height:1.35;margin:12px 0 0}.section-top p{font-size:15px;line-height:1.8;margin:0 0 8px}.pot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.pot-item{border:2px solid var(--ink);background:#fffdf7;position:relative}.pot-number{position:absolute;top:13px;left:17px;z-index:1;font-size:15px;font-weight:900;color:var(--deep)}.pot-picture{height:245px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.pot-picture.orange{background:#f7c66f}.pot-picture.brown{background:#ceb190}.pot-picture.red{background:#bd6761}.pot-picture:before,.pot-picture:after{content:"";position:absolute;border:3px solid rgba(70,42,29,.21);border-radius:50%;width:280px;height:280px}.pot-picture:after{width:230px;height:230px}.pot-icon{position:relative;z-index:1;border:5px solid var(--ink);width:155px;height:155px;background:#fff9e6;border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:900;font-size:37px;line-height:1.1;color:var(--deep);transform:rotate(-7deg);box-shadow:4px 4px 0 rgba(56,38,32,.15)}.circle-label{position:absolute;z-index:2;right:12px;top:14px;background:#fffdf7;border:2px solid var(--ink);padding:8px 10px;font-size:12px;font-weight:800;transform:rotate(7deg)}.pot-text{padding:24px 23px 30px;min-height:195px}.pot-text h3{margin:0 0 10px;font-size:24px;color:var(--deep)}.pot-text p{margin:0;line-height:1.9;font-size:15px}.photo-note{color:#846c5e;font-size:12px;margin:18px 0 0}.menu-section{background:var(--red);color:#fff7e7;padding:92px 0}.menu-section .small-label{color:#f7ca70}.menu-layout{display:grid;grid-template-columns:1fr .86fr;gap:90px;align-items:center}.menu-heading p{font-size:16px;line-height:2;margin:26px 0 32px}.outline-btn{border:2px solid currentColor;padding:15px 23px;display:inline-flex;align-items:center;min-height:44px;font-weight:800}.menu-board{background:#fff8e8;color:var(--ink);border:3px solid var(--ink);padding:31px 33px;box-shadow:6px 6px 0 #5c1d23;transform:rotate(1deg)}.board-title{display:flex;align-items:baseline;gap:15px;border-bottom:3px double var(--ink);padding-bottom:20px;color:var(--deep)}.board-title b{font-size:39px;font-weight:900}.board-title span{font-size:17px;font-weight:800}.board-row{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px dashed #9a8a74;padding:18px 0}.board-row span:first-child{font-size:22px;font-weight:900}.board-row span:last-child{font-size:14px}.board-foot{text-align:center;color:var(--red);font-weight:900;margin-top:22px}.about-layout{display:grid;grid-template-columns:.8fr 1.1fr;gap:110px;align-items:center}.about-image{background:transparent;border:0;min-height:375px;display:grid;place-items:center;position:relative}.about-image img{width:270px;height:auto}.handwriting{position:absolute;right:-35px;bottom:-32px;background:var(--red);color:#fff;padding:20px 26px;font-size:19px;font-weight:900;line-height:1.6;transform:rotate(7deg)}.about-copy p{max-width:600px;font-size:16px;line-height:2;margin:25px 0 0}.about-stamp{border:2px solid var(--red);padding:10px 17px;color:var(--red);display:inline-block;font-weight:900;margin-top:27px;transform:rotate(-3deg)}.contact{background:#f0dfc6;padding:80px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:95px}.contact p{line-height:1.95}.contact-right{border-left:2px solid var(--ink);padding-left:55px}.contact-right h3{font-size:25px;color:var(--deep);margin:0}.contact-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.contact-chips>span{padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}.contact-right small{display:block;margin-top:16px;color:#6b5346;font-size:12px}footer{background:#fffdf7;padding:23px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:16px}.footer-logo{display:flex;align-items:center;font-size:19px;font-weight:900;color:var(--deep);gap:7px}.footer-logo img{width:43px;height:43px;object-fit:contain}
 
 /* V3: character integrated into hero, not a pasted square photograph. */
 .hero-right{isolation:isolate}
@@ -16,6 +16,7 @@
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip{position:absolute;left:0;top:-60px;z-index:99;background:var(--deep);color:#fff7e7;padding:12px 18px;font-weight:800;transition:top .15s}
 .skip:focus{top:0}
+.skip:focus-visible{outline-color:#fff7e7;outline-offset:-5px}
 
 .ink-link{color:var(--red);font-weight:800;border-bottom:2px solid var(--red)}
 
@@ -33,13 +34,13 @@ a.board-row:hover,a.board-row:focus-visible{background:#fdf3d8}
 .dot{width:10px;height:10px;border-radius:50%;background:#b9ab9c;display:inline-block;flex:0 0 auto}
 .open-now.is-open .dot{background:#4f9d69}
 /* 首屏版本的狀態列：壓成按鈕下方的一行小字，不撐高 hero */
-.hero .open-now{align-self:flex-start;margin:12px 0 0;padding:5px 12px;font-size:13px;line-height:1.6}
+.hero .open-now{display:none;align-self:flex-start;margin:12px 0 0;padding:5px 12px;font-size:13px;line-height:1.6}
 
 /* 營業時間表 */
 .hours-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
 .hours-table{width:100%;border-collapse:collapse;border:2px solid var(--ink);background:#fffdf7}
 .hours-table thead th{background:#f5e8d1;color:var(--deep);font-size:12px;letter-spacing:1px;text-align:left;padding:11px 18px;border-bottom:2px solid var(--ink)}
-.hours-table tbody th,.hours-table tbody td{padding:13px 18px;border-bottom:1px dashed #baaa94;font-size:15px}
+.hours-table tbody th,.hours-table tbody td{padding:13px 18px;border-bottom:1px dashed #9a8a74;font-size:15px}
 .hours-table tbody tr:last-child th,.hours-table tbody tr:last-child td{border-bottom:0}
 .hours-table tbody th{text-align:left;font-weight:700;white-space:nowrap}
 .hours-table thead th:last-child{text-align:right}
@@ -73,8 +74,8 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 /* 菜單頁：首區緊接頁首色帶，不留下原試算器位置的空白 */
 .menu-page{padding:72px 0 64px}
 .menu-page #classic{padding-top:0}
-.price-table{width:100%;border-collapse:collapse;border:2px solid var(--ink);background:#fffdf7}
-.price-table th,.price-table td{padding:15px 20px;border-bottom:1px dashed #baaa94;text-align:left}
+.price-table{width:100%;max-width:760px;border-collapse:collapse;border:2px solid var(--ink);background:#fffdf7}
+.price-table th,.price-table td{padding:15px 20px;border-bottom:1px dashed #9a8a74;text-align:left}
 .price-table tbody tr:last-child th,.price-table tbody tr:last-child td{border-bottom:0}
 .price-table th{font-size:19px;font-weight:900;color:var(--deep)}
 .price-table td.price{text-align:right;font-size:23px;font-weight:900;color:var(--deep);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -111,7 +112,7 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 /* visit 最后一節與底部 CTA 之間不要留一整節的空白 */
 .section-last{padding-bottom:40px}
 .footer-nav a:hover{color:var(--red)}
-.contact-chips a{display:inline-block;padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}
+.contact-chips a{display:inline-flex;align-items:center;min-height:44px;padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}
 .contact-chips a:hover{background:var(--red);color:#fff7e7}
 .contact-chips a span{border:0;padding:0}
 
@@ -122,7 +123,7 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 
 section[id]{scroll-margin-top:110px}
 main[id]{scroll-margin-top:96px}
-.header nav a[aria-current="page"]{color:var(--red);border-bottom:2px solid var(--red);padding-bottom:2px}
+.header nav a[aria-current="page"]{color:var(--red);box-shadow:inset 0 -2px 0 var(--red)}
 .hours-table tr.is-today td .today-dot{width:10px;height:10px;border-radius:50%;background:#4f9d69;display:inline-block;margin-left:8px;vertical-align:middle}
 .contact-chips .pending-chip{border-style:dashed;color:#6b5346}
 .map-facade{background:#f5e8d1;border:2px dashed var(--ink);min-height:300px;display:grid;place-items:center;text-align:center;padding:32px 20px}
@@ -136,14 +137,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 /* 按鈕：新粗野主義的浮起與按壓（硬陰影，不模糊） */
 .main-btn,.outline-btn,.header-cta{transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s cubic-bezier(.34,1.56,.64,1)}
 .main-btn:hover,.outline-btn:hover,.header-cta:hover,
-.main-btn:focus-visible,.outline-btn:focus-visible,.header-cta:focus-visible{transform:translate(-2px,-2px);box-shadow:3px 4px 0 var(--ink)}
-.main-btn:active,.outline-btn:active,.header-cta:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+.main-btn:focus-visible,.outline-btn:focus-visible,.header-cta:focus-visible{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.main-btn:active,.outline-btn:active,.header-cta:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
 @media(hover:hover){
-  .main-btn:active,.outline-btn:active,.header-cta:active{transform:translate(1px,1px)}
+  .main-btn:active,.outline-btn:active,.header-cta:active{transform:translate(2px,2px)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
   .main-btn,.outline-btn,.header-cta{transition:none}
   .main-btn:hover,.outline-btn:hover,.header-cta:hover{transform:none}
+  .main-btn:focus-visible,.outline-btn:focus-visible,.header-cta:focus-visible{transform:none}
+  .main-btn:active,.outline-btn:active,.header-cta:active{transform:none}
   a.board-row,.skip{transition:none}
 }
 
@@ -171,7 +174,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .js .hamburger{display:flex}
   .header-cta{margin-left:auto}
   .hero-content,.menu-layout,.about-layout,.contact-layout{grid-template-columns:1fr;gap:40px}
-  .hero h1{font-size:clamp(38px,7vw,60px)}
+  .hero h1{font-size:clamp(30px,6vw,48px)}
   .hero-left{padding:40px 0 20px}
   .hero-right{height:auto;padding:0 0 36px}
   .hero-right .mascot{width:300px}
@@ -184,7 +187,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .about-image{max-width:550px}
   .contact-right{border:0;padding:0}
   .hours-wrap{grid-template-columns:1fr;gap:28px}
-  .footer-nav{order:3;width:100%;margin-top:12px}
+  .footer-nav{order:3;width:100%;margin-top:12px;flex-wrap:wrap}
   .hero-bottom{bottom:26px}
 }
 
@@ -227,6 +230,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .hero-facts li{font-size:12px;padding:5px 10px}
   .marquee{font-size:12px;letter-spacing:2px;line-height:1.8;white-space:normal;padding:13px 16px}
   .menu-block{padding:44px 0 0}
+  .price-table{max-width:none}
   .price-table th,.price-table td{padding:13px 14px}
   .price-table thead th{padding-left:14px;padding-right:14px}
   .price-table th{font-size:17px}
@@ -247,7 +251,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 
 /* 菜單：分類徽章（只用頁面已有事實文字） */
 .menu-badge{display:inline-flex;align-items:center;background:var(--yellow);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);color:var(--deep);font-size:13px;font-weight:900;letter-spacing:.5px;line-height:1.4;padding:3px 10px;transform:rotate(-1deg);vertical-align:middle;white-space:nowrap}
-.menu-badge--sm{font-size:11px;padding:1px 7px;box-shadow:1px 1px 0 var(--ink);margin-left:6px;transform:none}
+.menu-badge--sm{font-size:11px;padding:1px 7px;box-shadow:2px 2px 0 var(--ink);margin-left:6px;transform:none}
 /* 菜單：分類標題左側色條 + 徽章同行，classic/featured/veg/sides 一致 */
 .menu-block .section-top{border-left:6px solid var(--red);padding-left:16px}
 .menu-block .section-top h2{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
@@ -270,4 +274,50 @@ a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
   #sides .price-table td.price{font-size:18px}
   .visit-card{padding:18px 16px;box-shadow:4px 4px 0 var(--ink)}
   .map{box-shadow:4px 4px 0 var(--ink)}
+}
+
+/* ============================================================
+   2026-11-07 版型借用（只借版型、自己重寫，不直接貼原碼）
+   已逐頁確認以下 demo 皆為 MIT，可商用：
+   - Tabs #03 Brutalist Press → 下方 .menu-shortcut（4px 按壓、反色）
+   - Tags #14 Neo-Brutalist Badge + #16 Live Pulsing Status → .open-now
+   - Banners #15 Icon Alignment（1lh）+ #16 Left Border Accent → .notice-bar
+   - Brutalism #01/#06 → 陰影只留 2 / 4 / 6 三級（徽章 2、按鈕/卡片 4、大面板 6）
+   ============================================================ */
+
+/* --- 菜單分類捷徑：純錨點，不切換/隱藏內容，關 JS 照常用 --- */
+.menu-shortcut{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
+.menu-shortcut a{flex:1 1 120px;display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:2px solid var(--ink);background:#fffdf7;color:var(--deep);font-weight:900;font-size:15px;letter-spacing:1px;text-align:center;box-shadow:4px 4px 0 var(--ink);transition:transform .12s ease,box-shadow .12s ease,background .15s,color .15s}
+.menu-shortcut a:hover{background:#fdf3d8}
+.menu-shortcut a:active,.menu-shortcut a.is-current{transform:translate(4px,4px);box-shadow:none;background:var(--ink);color:#fff7e7}
+.menu-shortcut a:focus-visible{outline-offset:6px}
+@media(max-width:680px){
+  .menu-shortcut a{flex-basis:calc(50% - 10px);font-size:14px}
+  .menu-shortcut a:focus-visible{outline-offset:4px}
+}
+
+/* --- 開鍋狀態徽章：2px 硬陰影（徽章級）＋只動 scale/opacity 的脈動 --- */
+.open-now{box-shadow:2px 2px 0 var(--ink);font-variant-numeric:tabular-nums}
+.dot{position:relative;flex:0 0 auto}
+.open-now.is-open .dot{background:#4f9d69}
+.open-now.is-open .dot::before{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:open-ping 1.6s cubic-bezier(0,0,.2,1) infinite}
+.open-now.is-closed .dot{background:var(--red)}
+@keyframes open-ping{0%{scale:1;opacity:.8}100%{scale:2.6;opacity:0}}
+/* 頁首（網站 header）版本：桌面才出現，手機靠首屏/營業時間，免撐高 header */
+.open-now--head{margin:0;padding:5px 12px;font-size:13px;line-height:1.6}
+@media(max-width:920px){.open-now--head{display:none}}
+
+/* --- 臨時公告列：預設不放 HTML，需要時才加（見各頁 HTML 註解） --- */
+.notice-bar{--icon:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;background:#fffdf7;border:2px solid var(--ink);border-inline-start:6px solid var(--red);box-shadow:4px 4px 0 var(--ink);padding:14px 16px;margin:0 0 20px;margin-inline:auto;max-width:1140px;font-size:15px;line-height:1.7}
+.notice-bar p{margin:0;min-width:0;overflow-wrap:anywhere}
+.notice-bar__icon{inline-size:var(--icon);block-size:var(--icon);flex:none;color:var(--red);margin-block-start:calc((1.5em - var(--icon)) / 2)}
+@supports(margin-block-start:calc((1lh - 1rem) / 2)){
+  .notice-bar__icon{margin-block-start:calc((1lh - var(--icon)) / 2)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .menu-shortcut a{transition:none}
+  .menu-shortcut a:hover{transform:none}
+  .menu-shortcut a:active,.menu-shortcut a.is-current{transform:none}
+  .open-now.is-open .dot::before{animation:none}
 }

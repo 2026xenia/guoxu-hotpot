@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#8e2428">
 <script>document.documentElement.classList.add('js')</script>
-<title>菜單與價目｜鍋序 — 民雄個人小火鍋 170 元起，素食三款</title>
+<title>菜單與價目｜鍋序 — 民雄個人小火鍋 170 元起，多數 190，素食三款</title>
 <meta name="description" content="鍋序完整菜單：經典鍋物 170–200、特色鍋物 190–250、素食鍋物 190。換牛肉或羊肉 +10、加肉 +30，內用外帶同價。">
 <link rel="canonical" href="https://2026xenia.github.io/guoxu-hotpot/menu.html">
 <meta property="og:site_name" content="鍋序 GUO XU HOT POT">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://2026xenia.github.io/guoxu-hotpot/menu.html">
-<meta property="og:title" content="鍋序菜單｜170 元起，多數鍋物 190">
+<meta property="og:title" content="鍋序菜單｜170 元起，多數 190">
 <meta property="og:description" content="18 種鍋物、素食三款，價格全部公開。換牛肉或羊肉 +10、加肉 +30，內用外帶同價。">
 <meta property="og:image" content="https://2026xenia.github.io/guoxu-hotpot/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -51,20 +51,21 @@
 
 <header class="header"><div class="container navwrap">
 <a href="index.html" class="logo" aria-label="鍋序首頁"><img src="assets/mascot-hero.png" width="377" height="391" alt="鍋序笑臉鍋吉祥物"><span>鍋序<small>GUO XU HOT POT</small></span></a>
+<p class="open-now open-now--head"><span class="dot" aria-hidden="true"></span><span class="open-now-text">平日晚間 17:00–21:30，週六 11:00–21:30</span></p>
 <nav id="nav" aria-label="網站選單">
 <a href="index.html">首頁</a>
 <a href="menu.html" aria-current="page">菜單</a>
 <a href="visit.html">怎麼來</a>
 </nav>
-<a class="header-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">導航 <span aria-hidden="true">↗</span></a>
+<a class="header-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a>
 <button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
 </div></header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
 <section class="page-head">
   <div class="container">
-    <span class="small-label">MENU / 菜單</span>
+    <span class="small-label">菜單</span>
     <h1>菜單與價目</h1>
     <p>170 元起，<strong>18 種鍋物中多數是 190</strong>。內用外帶同價，換牛肉或羊肉 +10、加肉 +30。</p>
   </div>
@@ -73,9 +74,17 @@
 <section class="section menu-page">
   <div class="container">
 
+    <!-- 臨時公告（預設隱藏）：只有改時間或臨時公休時才在這裡加 .notice-bar 一列，平常不放。樣式見 styles.css。 -->
+    <nav class="menu-shortcut" aria-label="菜單分類捷徑">
+      <a href="#classic">經典</a>
+      <a href="#featured">特色</a>
+      <a href="#veg">素食</a>
+      <a href="#sides">單點</a>
+    </nav>
+
     <section class="menu-block" id="classic">
       <div class="section-top">
-        <div><span class="small-label">CLASSIC / 01</span><h2>經典鍋物 <span class="menu-badge">170–200</span></h2></div>
+        <div><span class="small-label">經典</span><h2>經典鍋物 <span class="menu-badge">170–200</span></h2></div>
         <p>170–200 元。第一次來，從這一區挑最安全。</p>
       </div>
       <table class="price-table">
@@ -109,7 +118,7 @@
 
     <section class="menu-block" id="featured">
       <div class="section-top">
-        <div><span class="small-label">FEATURED / 02</span><h2>特色鍋物 <span class="menu-badge">190–250</span></h2></div>
+        <div><span class="small-label">特色</span><h2>特色鍋物 <span class="menu-badge">190–250</span></h2></div>
         <p>190–250 元。臭臭系列、泡菜、南瓜、牛奶都在這裡。</p>
       </div>
       <table class="price-table">
@@ -163,8 +172,7 @@
 
     <section class="menu-block" id="veg">
       <div class="section-top">
-        <div><span class="small-label">VEGETARIAN / 03</span><h2>素食鍋物 <span class="menu-badge">素食</span></h2></div>
-        <p>三款都 190，與葷食同價、同一張桌子。</p>
+        <div><span class="small-label">素食</span><h2>素食鍋物 <span class="menu-badge">素食</span></h2></div>
       </div>
       <p class="veg-note">素食鍋物獨立一區，與葷食同價。這三款不選肉、不加肉，價格就是表上的數字。</p>
       <table class="price-table">
@@ -185,12 +193,11 @@
           </tr>
         </tbody>
       </table>
-      <p class="table-note">素食三款不選肉、不加肉・內用外帶同價</p>
     </section>
 
     <section class="menu-block" id="sides">
       <div class="section-top">
-        <div><span class="small-label">SIDES / 04</span><h2>單點 <span class="menu-badge">30 起</span></h2></div>
+        <div><span class="small-label">單點</span><h2>單點 <span class="menu-badge">30 起</span></h2></div>
         <p>想吃豐盛一點，再從這裡加。</p>
       </div>
       <table class="price-table">
@@ -200,7 +207,7 @@
           <tr><th scope="row">火鍋料</th><td>每樣 30，任選兩樣 50</td><td class="price">30<span class="sr-only">元</span></td></tr>
           <tr><th scope="row">蔬菜</th><td>每樣 35，任選兩樣 60</td><td class="price">35<span class="sr-only">元</span></td></tr>
           <tr><th scope="row">海鮮</th><td>鯛魚、白蝦、蛤蜊、軟絲</td><td class="price">65<span class="sr-only">元</span></td></tr>
-          <tr><th scope="row">超值海鮮拼盤</th><td>A–D 四種組合</td><td class="price">99<span class="sr-only">元</span></td></tr>
+          <tr><th scope="row">海鮮拼盤</th><td>A–D 四種組合</td><td class="price">99<span class="sr-only">元</span></td></tr>
         </tbody>
       </table>
       <p class="photo-note">單點品項以現場菜單為準。</p>
@@ -208,14 +215,13 @@
 
     <section class="menu-block" id="rules">
       <div class="section-top">
-        <div><span class="small-label">HOUSE RULES / 05</span><h2>用餐須知</h2></div>
+        <div><span class="small-label">用餐須知</span><h2>用餐須知</h2></div>
         <p>出發前先看一眼，少跑一趟。</p>
       </div>
       <ul class="hours-note">
         <li><strong>用餐時間 90 分鐘。</strong></li>
-        <li><strong>共鍋費依現場公告</strong>（原文待補）。</li>
+        <li><strong>共鍋費請現場詢問。</strong></li>
         <li><strong>禁帶外食與飲料。</strong></li>
-        <li><strong>口味可依個人需求調整。</strong></li>
         <li><strong>外帶</strong>：電話或現場皆可，無價差。</li>
         <li><strong>不用訂位</strong>：現場候位為主。</li>
       </ul>
@@ -234,7 +240,7 @@
 <a href="index.html" class="footer-logo"><img src="assets/mascot-transparent.png" width="43" height="43" alt="" loading="lazy">鍋序</a>
 <nav class="footer-nav" aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="menu.html">菜單</a><a href="index.html#hours">營業時間</a></nav>
 <span>好好吃一鍋，好好過一天。</span>
-</div><div class="container"><p class="footer-note">平日晚間 17:00–21:30，週六 11:00 起・<a class="ink-link" href="index.html#hours">營業時間</a>・<a class="ink-link" href="visit.html">怎麼來</a></p></div></footer>
+</div><div class="container"><p class="footer-note">平日晚間 17:00–21:30，週六 11:00–21:30・<a class="ink-link" href="index.html#hours">營業時間</a>・<a class="ink-link" href="visit.html">怎麼來</a></p></div></footer>
 
 <script>
 (function () {
@@ -267,6 +273,83 @@
   nav.addEventListener('focusout', function (e) {
     if (!nav.contains(e.relatedTarget) && e.relatedTarget !== toggle) closeMenu(false);
   });
+})();
+
+/* 分類捷徑 scroll-spy：只給目前區塊的捷徑加上壓按態，內容不隱藏、關 JS 也照樣能點 */
+(function () {
+  var links = document.querySelectorAll('.menu-shortcut a');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) {
+    var hash = (a.getAttribute('href') || '').split('#')[1];
+    if (hash) map[hash] = a;
+  });
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var link = map[en.target.id];
+      if (!link) return;
+      links.forEach(function (a) { a.classList.remove('is-current'); a.removeAttribute('aria-current'); });
+      link.classList.add('is-current');
+      link.setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  Object.keys(map).forEach(function (id) {
+    var s = document.getElementById(id);
+    if (s) obs.observe(s);
+  });
+})();
+
+/* 營業狀態：以 Asia/Taipei 判斷，取不到時區就保留 HTML 的靜態說明（同首頁） */
+(function () {
+  var HOURS = { 0: [17, 0, 21, 30], 1: [17, 0, 21, 30], 2: [17, 0, 21, 30], 3: [17, 0, 21, 30], 4: [17, 0, 21, 30], 5: [17, 0, 21, 30], 6: [11, 0, 21, 30] };
+  var boxes = document.querySelectorAll('.open-now');
+  var outs = document.querySelectorAll('.open-now-text');
+  if (!boxes.length || !outs.length) return;
+  function updateOpenNow() {
+  var day, mins;
+  try {
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Taipei', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+    var names = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    day = names[map.weekday];
+    var h = parseInt(map.hour, 10) % 24;
+    mins = h * 60 + parseInt(map.minute, 10);
+  } catch (e) {
+    var now = new Date();
+    day = now.getDay();
+    mins = now.getHours() * 60 + now.getMinutes();
+  }
+  if (typeof day !== 'number' || isNaN(day)) return;
+  function fmt(m) {
+    var hh = Math.floor(m / 60), mm = m % 60;
+    return (hh < 10 ? '0' : '') + hh + ':' + (mm < 10 ? '0' : '') + mm;
+  }
+  var slot = HOURS[day];
+  var openAt = slot[0] * 60 + slot[1];
+  var closeAt = slot[2] * 60 + slot[3];
+  var text;
+  var isOpen = mins >= openAt && mins < closeAt;
+  if (isOpen) {
+    text = '現在開鍋中・到 ' + fmt(closeAt);
+  } else if (mins < openAt) {
+    var left = openAt - mins;
+    text = left <= 60 ? '還有 ' + left + ' 分鐘開鍋・' + fmt(openAt) : '今天 ' + fmt(openAt) + ' 開鍋';
+  } else {
+    var next = (day + 1) % 7;
+    text = '今天打烊了・' + (next === 6 ? '週六' : '明天') + ' ' + fmt(HOURS[next][0] * 60 + HOURS[next][1]) + ' 開鍋';
+  }
+  outs.forEach(function (o) { o.textContent = text; });
+  boxes.forEach(function (b) {
+    b.classList.toggle('is-open', isOpen);
+    b.classList.toggle('is-closed', !isOpen);
+  });
+  }
+  updateOpenNow();
+  setInterval(updateOpenNow, 60000);
 })();
 </script>
 </body>
