@@ -1,0 +1,248 @@
+---
+name: 鍋序網站
+description: 民雄・中正大學旁個人小火鍋「鍋序」——門口價目牌式的新粗野主義紙感網站
+colors:
+  primary: "#8e2428"
+  primary-deep: "#622027"
+  ink: "#382620"
+  cream: "#faf6ec"
+  paper: "#fffdf7"
+  sand: "#f5e8d1"
+  highlight: "#fdf3d8"
+  mustard: "#f4cb5a"
+  line: "#d9c9b4"
+  open-green: "#4f9d69"
+  soup-gold: "#f7c66f"
+  soup-brown: "#ceb190"
+  soup-red: "#bd6761"
+  board: "#fff8e8"
+  contact: "#f0dfc6"
+  dash: "#9a8a74"
+  note: "#6b5346"
+  pot-face: "#fff9e6"
+  on-red: "#fff7e7"
+  brown-deep: "#5c1d23"
+typography:
+  display:
+    fontFamily: "'Noto Sans TC', sans-serif"
+    fontSize: "clamp(32px, 4.8vw, 56px)"
+    fontWeight: 900
+    lineHeight: 1.22
+    letterSpacing: "-1.5px"
+  headline:
+    fontFamily: "'Noto Sans TC', sans-serif"
+    fontSize: "clamp(30px, 3.6vw, 48px)"
+    fontWeight: 900
+    lineHeight: 1.35
+    letterSpacing: "-1.3px"
+  title:
+    fontFamily: "'Noto Sans TC', sans-serif"
+    fontSize: "24px"
+    fontWeight: 900
+    lineHeight: 1.4
+  body:
+    fontFamily: "'Noto Sans TC', sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.9
+  label:
+    fontFamily: "'Noto Sans TC', sans-serif"
+    fontSize: "13px"
+    fontWeight: 900
+    lineHeight: 1.4
+    letterSpacing: "2px"
+rounded:
+  sm: "4px"
+spacing:
+  xs: "8px"
+  sm: "12px"
+  md: "22px"
+  lg: "32px"
+  xl: "44px"
+  section: "102px"
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.paper}"
+    typography: "{typography.body}"
+    rounded: "{rounded.sm}"
+    padding: "15px 23px"
+  button-primary-hover:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.sm}"
+    padding: "15px 23px"
+  button-outline:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.sm}"
+    padding: "15px 23px"
+  button-header-cta:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.primary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: "12px 19px"
+  card-pot:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.sm}"
+    padding: "24px 23px 30px"
+  badge-menu:
+    backgroundColor: "{colors.mustard}"
+    textColor: "{colors.primary-deep}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: "3px 10px"
+  status-open-now:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.primary-deep}"
+    typography: "{typography.body}"
+    rounded: "{rounded.sm}"
+    padding: "9px 16px"
+---
+
+# Design System: 鍋序網站
+
+## Overview
+
+**Creative North Star: "門口價目牌"**
+
+本站像一面掛在店門口的價目牌：奶油紙底、粗黑描邊、深紅標題、芥末黃貼紙，30 秒內回答「貴不貴、停哪、什麼時候開」。語氣誠實直白，不編品牌故事、不寫招牌／評分，只呈現已確認的事實——170 元起、多數 190、週六唯一中午時段。密度偏舒適，桌面以寬敞留白撐起層次，手機收斂為單欄掃讀。
+
+設計哲學是新粗野主義的「粗實可按」：不用漸層、不用模糊柔光，表情只靠字重（900）、2px 描邊、硬陰影與微傾斜（約 -7° 至 9°）完成。吉祥物與手寫字條是唯一的手感裝飾，且只出現在 hero 與介紹區。
+
+**Key Characteristics:**
+- 奶油紙底＋墨棕粗邊＋鍋湯深紅，誠實、好讀、不花俏
+- 硬陰影 2/4/6px 為唯一深度語言，無模糊陰影
+- Noto Sans TC 400/700/900 單一字體，900 承擔標題與價格
+- 微傾斜徽章／字條作人工貼紙感，但不犧牲可讀性
+
+## Colors
+
+鍋湯深紅是唯一的行動色，奶油與紙白承擔底面，芥末黃只給需要被注意的價格與素食標籤。
+
+### Primary
+- **鍋湯深紅** (#8e2428): 主按鈕底色、標籤字、連結下劃線、頁首色帶與跑馬燈底色——全站行動與強調只用這一紅。
+- **燉煮深紅** (#622027): 大標題與 Logo 字色、深色狀態底，比主紅更暗，用於需要穩定、不刺眼的文字重量。
+
+### Secondary
+- **芥末黃** (#f4cb5a): 菜單分類徽章與素食提示底色。只用在價格帶或需要快速掃到的分類，不作大面積底色。
+
+### Tertiary
+- **開鍋綠** (#4f9d69): 僅作營業中狀態圓點，不進其他元件，避免第二口音色。
+
+### Neutral
+- **奶油底** (#faf6ec): 全站頁面底色。
+- **紙白** (#fffdf7): 卡片、表格、頁首底色，與奶油底靠 2px 墨棕邊分明。
+- **沙米** (#f5e8d1): 首屏與表頭的淺米色面，暖但不搶主紅。
+- **亮黃紙** (#fdf3d8): 今日／週六與價目列懸停的極淺黃，提示「今天／週六」而不另造色。
+- **墨棕描邊** (#382620): 2px 粗邊、陰影色與內文字色，承擔結構。
+- **舊紙線** (#d9c9b4): 手機版導覽虛線分隔等低強度線條。
+
+### Soup（湯頭三色，僅用於湯頭展示）
+- **南瓜黃** (#f7c66f): 黃金南瓜的湯頭展示面。
+- **藥膳米** (#ceb190): 養身藥膳的湯頭展示面。
+- **沙茶磚** (#bd6761): 台式沙茶的湯頭展示面。
+- 湯頭三色只作為鍋物展示區的底面（各配 2px 墨棕邊的圓形鍋標），不得進按鈕、徽章或連結，避免與鍋湯深紅的行動語意打架。
+
+### 區塊面與低強度色
+- **看板紙** (#fff8e8): 『門口價目牌』看板（menu-board）的底色。
+- **聯絡米** (#f0dfc6): 找我們／聯絡區塊的整段底面。
+- **虛線灰棕** (#9a8a74): 表格列間、導覽分隔等 1px 虛線（更淺的 #c3b09a 用於資訊列虛線）。
+- **腳註棕** (#6b5346): 腳註、待補 chip 與小型附註文字，比墨棕輕一階，不用其他灰。
+- **鍋標內底** (#fff9e6): 湯頭圓形鍋標的內底。
+- **反紅奶白** (#fff7e7): 鍋湯深紅／燉煮深紅底上的文字與內縮焦點框顏色。
+- **深紅陰影** (#5c1d23): 看板 6px 硬陰影的實色（僅看板使用，等於比 --ink 更暖的一級偏移）。
+
+### Named Rules
+**The One Voice Rule.** 紅只說一件事：可點、重要、或現在。不要再引入第二口音色去稀釋它。
+
+## Typography
+
+**Display Font:** Noto Sans TC (with sans-serif fallback)
+**Body Font:** Noto Sans TC (with sans-serif fallback)
+
+**Character:** 單一字體靠重量說話。900 是招牌字體，400 只作內文，700 作次標籤。價格用 tabular-nums 對齊，讓價目掃讀像數字一樣整齊。
+
+### Hierarchy
+- **Display** (900, clamp(32px, 4.8vw, 56px), 1.22, -1.5px): 首屏大標題，含地名關鍵字，不為大字犧牲 SEO。
+- **Headline** (900, clamp(30px, 3.6vw, 48px), 1.35, -1.3px): 區塊標題與內頁 h1 副級。
+- **Title** (900, 24px, 1.4): 卡片標題如鍋物名稱。
+- **Body** (400, 16–17px, 1.9–2.0): 內文，行高偏鬆，適合手機長時間閱讀。
+- **Label** (900, 13px, 1.4, 2px): 小標籤如「今日菜單」「推薦」。
+
+### Named Rules
+**The Weight-Only Rule.** 不引入第二字體；層次只靠 400/700/900 與大小、行高、字距區分。
+
+## Layout
+
+容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 920px 收為單欄，680px 再壓字級與間距。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
+
+## Elevation & Depth
+
+深度只來自硬陰影，沒有模糊、沒有漸層。陰影三級：徽章 2px、按鈕／卡片 4px、大面板 6px，皆為不透明色塊偏移。按壓時元件向陰影方向平移（translate(2px,2px)），陰影縮至 2px，像紙板被壓下。靜態主按鈕不帶陰影，懸停／焦點才浮起。
+
+### Shadow Vocabulary
+- **徽章 2px** (`box-shadow: 2px 2px 0 var(--ink)`): 菜單徽章、開鍋狀態徽章。
+- **元件 4px** (`box-shadow: 4px 4px 0 var(--ink)`): 按鈕懸停、分類捷徑、訪問卡。
+- **面板 6px** (`box-shadow: 6px 6px 0 var(--ink)`): 地圖、訪問大卡、價目牌看板。
+
+### 吉祥物輪廓陰影例外（2026-11-08 登記）
+首頁 Hero 大吉祥物是全站唯一使用 `filter: drop-shadow` 的元素，為 Hard-Shadow Rule 的明文例外：吉祥物是透明底 PNG，`drop-shadow` 能讓陰影貼著鍋體輪廓走；若改用 `box-shadow` 實色硬陰影會框出方形色塊、印在透明圖下變成「第二個鍋」，破壞原始視覺。規格：
+- **吉祥物基準** (`filter: drop-shadow(12px 20px 0 …)`，取樣 `--deep` 11%：`color-mix(in srgb, var(--deep) 11%, transparent)`): `.mascot` 基礎規則（配 `rotate(-5deg)`）。
+- **吉祥物 V3** (`filter: drop-shadow(10px 12px 0 …)`，取樣 `--deep` 14%：`color-mix(in srgb, var(--deep) 14%, transparent)`): V3 覆寫後生效值（配 `rotate(-4deg)`、`width:min(430px,89%)`）。
+
+規則：blur 恆為 0（仍是實色偏移，不是柔光模糊），但顏色必須用 `--deep` 的低透明取樣（`color-mix`，不新增色簿 hex）；吉祥物保持微傾 `-4°` 至 `-5°`。其餘元件仍一律遵守 Hard-Shadow Rule。
+
+### Named Rules
+**The Hard-Shadow Rule.** 陰影只用實色偏移，不用 blur；需要深度就加一級偏移，不要加柔光。
+
+## Shapes
+
+小圓角（4px）為主，圓形只給鍋物圖示與狀態圓點。邊框一律 2px 實線墨棕（看板 3px），表格內分隔用 1px 虛線。少量元件微傾斜（-7° 至 9°）營造貼紙感，但文字本身不傾斜，傾的是容器。首屏吉祥物後有機形狀弧（52%/48% 橢圓）只作底襯，不用幾何裝飾。
+
+## Components
+
+元件觸感統一為「粗實可按」：粗邊、硬陰影、按下去會凹陷。
+
+### Buttons
+- **Shape:** 小圓角 (4px)，2px 描邊
+- **Primary:** 鍋湯深紅底＋紙白字，padding 15px 23px，字重 800；懸停／焦點浮起 4px 硬陰影並位移 -2px，按壓回落 2px
+- **Hover / Focus:** 輕微位移＋硬陰影；焦點外框 3px，紅底上改用奶油色內縮框確保可見
+- **Secondary / Ghost:** 描邊按鈕用 currentColor 描邊，深紅底區用米色描邊；頁首 CTA 為白底紅字描邊版
+
+### Chips
+- **Style:** 紙白或芥末黃底，2px 墨棕邊，字重 800–900
+- **State:** 菜單徽章微傾 -1°；開鍋狀態圓點綠（營業中）／紅（未營業），營業中帶脈動環（reduced-motion 下關閉）
+
+### Cards / Containers
+- **Corner Style:** 小圓角 (4px) 為主；鍋物圓圖與狀態點為正圓
+- **Background:** 紙白 (#fffdf7) 卡片，沙米 (#f5e8d1) 或鍋湯深紅作區塊底
+- **Shadow Strategy:** 見 Elevation & Depth 三級硬陰影
+- **Border:** 2px 墨棕實線；看板 3px 實線＋雙線標題分隔
+- **Internal Padding:** 24px 左右，卡片內文 24px 23px 30px
+
+### Inputs / Fields
+本站無表單輸入；僅有連結與按鈕。焦點一律 3px 外框，紅底區塊用奶油色內縮框。
+
+### Navigation
+頁首 94px 紙白底＋2px 墨棕底邊，導覽字 14px/700，懸停變鍋湯深紅，現行頁以紅色底線標記。手機版 44px 漢堡選單展開為整列，桌面版常駐。
+
+### Tables
+價目與營業時間皆為 2px 墨棕邊表格，表頭沙米底，列間 1px 虛線；今日／週六用亮黃紙整列標示，今日加紅色「今天」貼標，不另加圖示。
+
+## Do's and Don'ts
+
+### Do:
+- **Do** 用 900 字重與硬陰影說話，保留 Noto Sans TC 400/700/900 單一字體。
+- **Do** 價格只寫在菜單頁 `<td class="price">` 文字；首頁只寫摘要「170 元起，多數 190」。
+- **Do** 週六是唯一中午時段，所有時間呈現必須與 PRODUCT.md 一致。
+- **Do** 觸控目標至少 44px，關 JS 時菜單與營業時間仍可讀。
+
+### Don't:
+- **Don't** 用模糊陰影、漸層或第二口音色稀釋鍋湯深紅。
+- **Don't** 編品牌故事、寫「招牌」、評分或自創品名（如「沙茶豬肉鍋」）。
+- **Don't** 一句 `17:00-21:30` 打天下，營業時間與 JSON-LD 必須逐日分開。
+- **Don't** 在首頁逐項列價或在菜單頁加價格 JS 試算。
