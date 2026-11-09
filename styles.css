@@ -1,5 +1,7 @@
 :root{--red:#8e2428;--deep:#622027;--ink:#382620;--cream:#faf6ec;--line:#d9c9b4;--yellow:#f4cb5a;--paper:#fffdf7;--sand:#f5e8d1;--highlight:#fdf3d8;--soup-gold:#f7c66f;--soup-brown:#ceb190;--soup-red:#bd6761;--board:#fff8e8;--contact:#f0dfc6;--dash:#9a8a74;--dash-soft:#c3b09a;--note:#6b5346;--pot-face:#fff9e6;--green:#4f9d69;--dot-idle:#b9ab9c;--on-red:#fff7e7;--brown-deep:#5c1d23;--arc:#eed2b0}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans TC',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}.container{width:min(1140px,calc(100% - 44px));margin:auto}.header{height:94px;background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:20}.navwrap{height:100%;display:flex;align-items:center;gap:35px}.logo{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:30px;font-weight:900;color:var(--deep)}.logo img{height:74px;width:74px;object-fit:contain}.logo small{display:block;letter-spacing:1.5px;font-size:12px;color:var(--ink)}.header nav{display:flex;gap:26px;margin-left:auto}.header nav a{font-size:14px;font-weight:700;display:inline-flex;align-items:center;min-height:44px}.header nav a:hover{color:var(--red)}.header-cta{border:2px solid var(--red);color:var(--red);font-size:14px;font-weight:900;padding:12px 19px;border-radius:4px;white-space:nowrap}.header-cta span{margin-left:12px}.hamburger{width:44px;height:44px;display:none;align-items:center;justify-content:center;border:0;background:none;font-size:27px;color:var(--red)}.hero{overflow:hidden;background:var(--sand)}.hero-content{display:grid;grid-template-columns:1fr .9fr;min-height:470px}.hero-left{display:flex;flex-direction:column;justify-content:center;padding:40px 0 32px}
-.hero h1{font-size:clamp(32px,4.8vw,56px);line-height:1.22;letter-spacing:-1.5px;margin:0 0 22px;color:var(--deep);font-weight:900}.hero h1 em{font-style:normal}.hero p{font-size:17px;line-height:2;margin:0}.hero-links{display:flex;align-items:center;gap:25px;margin-top:26px}.main-btn{background:var(--red);color:var(--on-red);padding:15px 23px;font-weight:800;border:2px solid var(--red);border-radius:4px;display:inline-flex;align-items:center;min-height:44px}.main-btn span{margin-left:20px}.text-link{font-weight:800;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--red)}.hero-right{position:relative;display:flex;align-items:center;justify-content:center}.hero-right .mascot{position:relative;width:min(380px,85%);filter:drop-shadow(12px 20px 0 color-mix(in srgb,var(--deep) 11%,transparent));transform:rotate(-5deg)}.section{padding:102px 0}.small-label{color:var(--red);font-size:13px;font-weight:900;letter-spacing:2px}.section-top{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid var(--ink);margin-bottom:32px;padding-bottom:22px;gap:20px}.section-top h2,.about h2,.menu-section h2,.contact h2{font-size:clamp(30px,3.6vw,48px);font-weight:900;letter-spacing:-1.3px;line-height:1.35;margin:12px 0 0}.section-top p{font-size:15px;line-height:1.8;margin:0 0 8px}.pot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.pot-item{border:2px solid var(--ink);background:var(--paper);position:relative}.pot-picture{height:245px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.pot-picture.orange{background:var(--soup-gold)}.pot-picture.brown{background:var(--soup-brown)}.pot-picture.red{background:var(--soup-red)}.pot-picture:before,.pot-picture:after{content:"";position:absolute;border:3px solid rgba(70,42,29,.21);border-radius:50%;width:280px;height:280px}.pot-picture:after{width:230px;height:230px}.pot-icon{position:relative;z-index:1;border:5px solid var(--ink);width:155px;height:155px;background:var(--pot-face);border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:900;font-size:37px;line-height:1.1;color:var(--deep);transform:rotate(-7deg);box-shadow:4px 4px 0 var(--ink)}.circle-label{position:absolute;z-index:2;right:12px;top:14px;background:var(--paper);border:2px solid var(--ink);padding:8px 10px;font-size:12px;font-weight:800;transform:rotate(7deg)}.pot-text{padding:24px 23px 30px;min-height:195px}.pot-text h3{margin:0 0 10px;font-size:24px;color:var(--deep)}.pot-text p{margin:0;line-height:1.9;font-size:15px}.photo-note{color:var(--ink);font-size:12px;margin:18px 0 0}.menu-section{background:var(--red);color:var(--on-red);padding:92px 0}.menu-section .small-label{color:var(--yellow)}.menu-layout{display:grid;grid-template-columns:1fr .86fr;gap:90px;align-items:center}.menu-heading p{font-size:16px;line-height:2;margin:26px 0 32px}.outline-btn{border:2px solid currentColor;padding:15px 23px;display:inline-flex;align-items:center;min-height:44px;font-weight:800}.menu-board{background:var(--board);color:var(--ink);border:3px solid var(--ink);padding:31px 33px;box-shadow:6px 6px 0 var(--brown-deep);transform:rotate(1deg)}.board-title{display:flex;align-items:baseline;gap:15px;border-bottom:3px double var(--ink);padding-bottom:20px;color:var(--deep)}.board-title b{font-size:39px;font-weight:900}.board-title span{font-size:17px;font-weight:800}.board-row{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px dashed var(--dash);padding:18px 0}.board-row span:first-child{font-size:22px;font-weight:900}.board-row span:last-child{font-size:14px}.board-foot{text-align:center;color:var(--red);font-weight:900;margin-top:22px}.about-layout{display:grid;grid-template-columns:.8fr 1.1fr;gap:110px;align-items:center}.about-image{background:transparent;border:0;min-height:375px;display:grid;place-items:center;position:relative}.about-image img{width:270px;height:auto}.handwriting{position:absolute;right:0;bottom:-32px;background:var(--red);color:var(--on-red);padding:20px 26px;font-size:19px;font-weight:900;line-height:1.6;transform:rotate(7deg);max-width:calc(100% - 12px);white-space:normal}.about-copy p{max-width:600px;font-size:16px;line-height:2;margin:25px 0 0}.contact{background:var(--contact);padding:80px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:95px}.contact p{line-height:1.95}.contact-right{border-left:2px solid var(--ink);padding-left:55px}.contact-right h3{font-size:25px;color:var(--deep);margin:0}.contact-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.contact-chips>span{padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}.contact-right small{display:block;margin-top:16px;color:var(--note);font-size:12px}footer{background:var(--paper);padding:23px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:16px}.footer-logo{display:flex;align-items:center;font-size:19px;font-weight:900;color:var(--deep);gap:7px}.footer-logo img{width:43px;height:43px;object-fit:contain}
+.hero h1{font-size:clamp(32px,4.8vw,56px);line-height:1.22;letter-spacing:-1.5px;margin:0 0 22px;color:var(--deep);font-weight:900}.hero h1 em{font-style:normal}.hero p{font-size:17px;line-height:2;margin:0}.hero-links{display:flex;align-items:center;gap:25px;margin-top:26px}.main-btn{background:var(--red);color:var(--on-red);padding:15px 23px;font-weight:800;border:2px solid var(--red);border-radius:4px;display:inline-flex;align-items:center;min-height:44px}.main-btn span{margin-left:20px}.text-link{font-weight:800;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--red)}/* 內文靠左、裝飾置中：主內文一律靠左可讀；hero 吉祥物屬裝飾視覺，僅此置中，不改版面 */
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center}.hero-right .mascot{position:relative;width:min(380px,85%);filter:drop-shadow(12px 20px 0 color-mix(in srgb,var(--deep) 11%,transparent));transform:rotate(-5deg)}.section{padding:102px 0}.small-label{color:var(--red);font-size:13px;font-weight:900;letter-spacing:2px}.section-top{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid var(--ink);margin-bottom:32px;padding-bottom:22px;gap:20px}.section-top h2,.about h2,.menu-section h2,.contact h2{font-size:clamp(30px,3.6vw,48px);font-weight:900;letter-spacing:-1.3px;line-height:1.35;margin:12px 0 0}.section-top p{font-size:16px;line-height:1.8;margin:0 0 8px}.pot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.pot-item{border:2px solid var(--ink);background:var(--paper);position:relative}.pot-picture{height:245px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.pot-picture.orange{background:var(--soup-gold)}.pot-picture.brown{background:var(--soup-brown)}.pot-picture.red{background:var(--soup-red)}.pot-picture:before,.pot-picture:after{content:"";position:absolute;border:3px solid rgba(70,42,29,.21);border-radius:50%;width:280px;height:280px}.pot-picture:after{width:230px;height:230px}.pot-icon{position:relative;z-index:1;border:5px solid var(--ink);width:155px;height:155px;background:var(--pot-face);border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:900;font-size:37px;line-height:1.1;color:var(--deep);transform:rotate(-7deg);box-shadow:4px 4px 0 var(--ink)}.circle-label{position:absolute;z-index:2;right:12px;top:14px;background:var(--paper);border:2px solid var(--ink);padding:8px 10px;font-size:12px;font-weight:800;transform:rotate(7deg)}.pot-text{padding:24px 23px 30px;min-height:195px}.pot-text h3{margin:0 0 10px;font-size:24px;color:var(--deep)}.pot-text p{margin:0;line-height:1.9;font-size:16px}.photo-note{color:var(--ink);font-size:12px;margin:18px 0 0}.menu-section{background:var(--red);color:var(--on-red);padding:92px 0}.menu-section .small-label{color:var(--yellow)}.menu-layout{display:grid;grid-template-columns:1fr .86fr;gap:90px;align-items:center}.menu-heading p{font-size:16px;line-height:2;margin:26px 0 32px}.outline-btn{border:2px solid currentColor;padding:15px 23px;display:inline-flex;align-items:center;min-height:44px;font-weight:800}.menu-board{background:var(--board);color:var(--ink);border:3px solid var(--ink);padding:31px 33px;box-shadow:6px 6px 0 var(--brown-deep);transform:rotate(1deg)}.board-title{display:flex;align-items:baseline;gap:15px;border-bottom:3px double var(--ink);padding-bottom:20px;color:var(--deep)}.board-title b{font-size:39px;font-weight:900}.board-title span{font-size:17px;font-weight:800}.board-row{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px dashed var(--dash);padding:18px 0}.board-row span:first-child{font-size:22px;font-weight:900}.board-row span:last-child{font-size:14px}/* 內文靠左、裝飾置中：board-foot 是價目牌底部收尾字屬裝飾，置中保留；表內價目列照舊靠左 */
+.board-foot{text-align:center;color:var(--red);font-weight:900;margin-top:22px}.about-layout{display:grid;grid-template-columns:.8fr 1.1fr;gap:110px;align-items:center}.about-image{background:transparent;border:0;min-height:375px;display:grid;place-items:center;position:relative}.about-image img{width:270px;height:auto}.handwriting{position:absolute;right:0;bottom:-32px;background:var(--red);color:var(--on-red);padding:20px 26px;font-size:19px;font-weight:900;line-height:1.6;transform:rotate(7deg);max-width:calc(100% - 12px);white-space:normal}.about-copy p{max-width:600px;font-size:16px;line-height:2;margin:25px 0 0}.contact{background:var(--contact);padding:80px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:95px}.contact p{line-height:1.95}.contact-right{border-left:2px solid var(--ink);padding-left:55px}.contact-right h3{font-size:25px;color:var(--deep);margin:0}.contact-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.contact-chips>span{padding:12px 14px;border:1px solid var(--red);font-size:13px;font-weight:800;color:var(--red)}.contact-right small{display:block;margin-top:16px;color:var(--note);font-size:12px}footer{background:var(--paper);padding:23px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:16px}.footer-logo{display:flex;align-items:center;font-size:19px;font-weight:900;color:var(--deep);gap:7px}.footer-logo img{width:43px;height:43px;object-fit:contain}
 
 /* V3: character integrated into hero, not a pasted square photograph. */
 .hero-right{isolation:isolate}
@@ -20,7 +22,7 @@
 
 /* 首屏：事實貼紙（門口價目牌；價格用芥末黃，其餘紙白） */
 .hero-facts{list-style:none;display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 0;padding:0}
-.hero-facts li{background:var(--paper);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);border-radius:4px;padding:7px 12px;font-size:15px;line-height:1.5;font-weight:800;color:var(--ink)}
+.hero-facts li{background:var(--paper);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);border-radius:4px;padding:7px 12px;font-size:16px;line-height:1.5;font-weight:800;color:var(--ink)}
 .hero-facts li.hero-price{background:var(--yellow);color:var(--deep);font-weight:900;font-size:16px;font-variant-numeric:tabular-nums;transform:rotate(-1deg)}
 
 /* 價目牌：可點的列 */
@@ -38,7 +40,7 @@ a.board-row:hover,a.board-row:focus-visible{background:var(--highlight)}
 .hours-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
 .hours-table{width:100%;border-collapse:collapse;border:2px solid var(--ink);background:var(--paper)}
 .hours-table thead th{background:var(--sand);color:var(--deep);font-size:12px;letter-spacing:1px;text-align:left;padding:11px 18px;border-bottom:2px solid var(--ink)}
-.hours-table tbody th,.hours-table tbody td{padding:13px 18px;border-bottom:1px dashed var(--dash);font-size:15px}
+.hours-table tbody th,.hours-table tbody td{padding:13px 18px;border-bottom:1px dashed var(--dash);font-size:16px}
 .hours-table tbody tr:last-child th,.hours-table tbody tr:last-child td{border-bottom:0}
 .hours-table tbody th{text-align:left;font-weight:700;white-space:nowrap}
 .hours-table thead th:last-child{text-align:right}
@@ -46,7 +48,7 @@ a.board-row:hover,a.board-row:focus-visible{background:var(--highlight)}
 .hours-table tr.is-sat{background:var(--highlight)}
 .hours-table tr.is-today th{color:var(--red)}
 .hours-table tr.is-today th::after{content:"今天";margin-left:8px;padding:2px 7px;background:var(--red);color:var(--on-red);font-size:11px;font-weight:800;vertical-align:2px}
-.hours-note p,.hours-note li{font-size:15px;line-height:1.8;margin:0 0 12px}
+.hours-note p,.hours-note li{font-size:16px;line-height:1.8;margin:0 0 12px}
 ul.hours-note{padding-left:1.2em}
 #rules li strong{font-weight:900}
 .hours-note p:last-child{margin-bottom:0}
@@ -72,7 +74,7 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 /* 菜單頁：首區緊接頁首色帶，不留下原試算器位置的空白 */
 .menu-page{padding:72px 0 64px}
 .menu-page #classic{padding-top:0}
-.price-table{width:100%;max-width:760px;border-collapse:collapse;border:2px solid var(--ink);background:var(--paper)}
+.price-table{width:100%;border-collapse:collapse;border:2px solid var(--ink);background:var(--paper)}
 .price-table th,.price-table td{padding:15px 20px;border-bottom:1px dashed var(--dash);text-align:left}
 .price-table tbody tr:last-child th,.price-table tbody tr:last-child td{border-bottom:0}
 .price-table th{font-size:19px;font-weight:900;color:var(--deep)}
@@ -82,9 +84,9 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 .price-table td:nth-child(2):not(.price){text-align:left}
 .price-table thead th{background:var(--sand);color:var(--deep);font-size:12px;letter-spacing:1px;text-align:left;padding:11px 20px;border-bottom:2px solid var(--ink)}
 .price-table thead th:last-child{text-align:right}
-.veg-note{background:var(--yellow);border:2px solid var(--ink);padding:18px 22px;margin:0 0 22px;font-weight:700;line-height:1.8}
+.veg-note{width:100%;background:var(--yellow);border:2px solid var(--ink);padding:18px 22px;margin:0 0 22px;font-weight:700;line-height:1.8}
 /* 價目表下方的一行提醒：不加框、不加底色，讀起來是腳註 */
-.table-note{margin:10px 0 0;font-size:13px;color:var(--ink);line-height:1.6}
+.table-note{width:100%;margin:10px 0 0;font-size:13px;color:var(--ink);line-height:1.6}
 
 /* 交通頁 */
 /* 地圖搬到最前面：第一段留白收窄，讓地圖與導航 CTA 一起進手機首屏 */
@@ -95,7 +97,7 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 .info-rows{margin:20px 0 0;padding:0}
 .info-rows>div{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--dash-soft)}
 .info-rows dt{flex:0 0 56px;font-size:13px;font-weight:900;color:var(--red)}
-.info-rows dd{margin:0;font-size:15px;line-height:1.7}
+.info-rows dd{margin:0;font-size:16px;line-height:1.7}
 .pending{display:inline-block;padding:2px 9px;border:2px dashed var(--red);color:var(--red);font-size:13px;font-weight:800}
 @media(max-width:680px){
   .section.visit-top{padding:32px 0 0}
@@ -200,7 +202,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .header-cta{display:block;font-size:12px;padding:8px 10px;min-height:44px;line-height:1.2}
   .header-cta span{margin-left:6px}
   .hamburger{flex:0 0 44px}
-  .hero p{font-size:15px}
+  .hero p{font-size:16px}
   .hero-right{height:auto;padding:6px 0 40px}
   .hero-right .mascot{width:260px}
   .hero-arc{inset:9% 7% 8% 7%}
@@ -220,7 +222,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   .page-head{padding:40px 0 34px}
   .menu-page{padding:44px 0 40px}
   .hero-facts{gap:6px}
-  .hero-facts li{font-size:14px}
+  .hero-facts li{font-size:16px}
   .menu-block{padding:44px 0 0}
   .price-table{max-width:none}
   .price-table th,.price-table td{padding:13px 14px}
@@ -233,7 +235,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
   #sides .price-table td.price{width:22%;font-size:17px}
   .price-table td.price{font-size:19px}
   .map iframe{height:300px}
-  .hours-table thead th,.hours-table tbody th,.hours-table tbody td{padding:10px 10px;font-size:14px}
+  .hours-table thead th{padding:10px 10px;font-size:14px}
+  .hours-table tbody th,.hours-table tbody td{padding:10px 10px;font-size:16px}
 }
 
 /* ============================================================
@@ -245,7 +248,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .menu-badge{display:inline-flex;align-items:center;background:var(--yellow);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);color:var(--deep);font-size:13px;font-weight:900;letter-spacing:.5px;line-height:1.4;padding:3px 10px;transform:rotate(-1deg);vertical-align:middle;white-space:nowrap}
 .menu-badge--sm{font-size:11px;padding:1px 7px;box-shadow:2px 2px 0 var(--ink);margin-left:6px;transform:none}
 /* 菜單：分類標題左側色條 + 徽章同行，classic/featured/veg/sides 一致 */
-.menu-block .section-top{border-left:6px solid var(--red);padding-left:16px}
+.menu-block .section-top{width:100%;border-left:6px solid var(--red);padding-left:16px}
 .menu-block .section-top h2{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
 
 /* 交通頁：卡片化（PARKING / HOURS / LOCATION），地圖沿用同一系統 */
@@ -295,12 +298,20 @@ a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 .open-now.is-open .dot::before{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:open-ping 1.6s cubic-bezier(0,0,.2,1) infinite}
 .open-now.is-closed .dot{background:var(--red)}
 @keyframes open-ping{0%{scale:1;opacity:.8}100%{scale:2.6;opacity:0}}
-/* 頁首（網站 header）版本：唯一動態來源；桌機白框徽章，手機獨立一行不擠壓 logo/CTA */
-.open-now--head{display:inline-flex;align-items:center;gap:7px;margin:0;padding:5px 12px;font-size:13px;line-height:1.4;white-space:normal}
+/* 頁首（網站 header）版本：唯一動態來源；桌機白框徽章，手機併入第一行不獨佔一行，漢堡與 CTA 保第一行 */
+.open-now--head{display:inline-flex;align-items:center;gap:7px;margin:0;padding:5px 12px;font-size:13px;line-height:1.4;white-space:normal;min-width:0;position:relative}
 .open-now--head .dot{width:8px;height:8px}
-@media(max-width:920px){.open-now--head{flex:1 0 100%;min-width:0;order:4;padding:5px 10px;font-size:13px;white-space:normal}
-.open-now--head .open-now-text{overflow:visible;text-overflow:clip;white-space:normal}}
-@media(max-width:680px){.open-now--head{padding:4px 8px;font-size:13px}}
+@media(max-width:920px){.open-now--head{flex:0 1 auto;order:2;margin-left:4px;min-width:0;max-width:250px;padding:5px 10px;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.open-now--head .open-now-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.header nav{order:5}
+.header-cta{order:3}
+.hamburger{order:4}}
+@media(max-width:680px){.open-now--head{flex:0 1 auto;order:2;margin-left:0;max-width:110px;padding:4px 8px;font-size:13px}
+.open-now--head .open-now-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.open-now--head::after{content:"營業時間"}
+.open-now--head.is-open::after{content:"開鍋中"}
+.open-now--head.is-closed::after{content:"未開鍋"}
+.navwrap{gap:8px}}
 
 /* --- 臨時公告列：預設不放 HTML，需要時才加（見各頁 HTML 註解） --- */
 .notice-bar{--icon:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;background:var(--paper);border:2px solid var(--ink);border-inline-start:6px solid var(--red);box-shadow:4px 4px 0 var(--ink);padding:14px 16px;margin:0 0 20px;margin-inline:auto;max-width:1140px;font-size:15px;line-height:1.7}
@@ -315,4 +326,96 @@ a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
   .menu-shortcut a:hover{transform:none}
   .menu-shortcut a:active,.menu-shortcut a.is-current{transform:none}
   .open-now.is-open .dot::before{animation:none}
+}
+
+/* ============================================================
+   2026-11-09 追加：鍋品介紹頁（pot.html）文字卡
+   只借既有色票與硬陰影規則；不新增鍋品照片，全部文字卡呈現
+   ============================================================ */
+
+/* 每卡：純文字鍋物卡片，沿用紙白＋2px 墨棕邊的既有系統 */
+.pot-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.pot-card{background:var(--paper);border:2px solid var(--ink);padding:20px 22px 22px}
+.pot-card h3{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 10px;font-size:21px;line-height:1.4;font-weight:900;color:var(--deep)}
+.pot-card h3 .menu-badge--sm{margin-left:0}
+.pot-card h3 .pot-tag{margin-left:0}
+.pot-card p{margin:0;font-size:16px;line-height:1.9}
+.pot-card .pot-lede{margin:0}
+.pot-card details.pot-detail{margin-top:8px}
+.pot-card details.pot-detail summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-size:14px;font-weight:900;color:var(--red);cursor:pointer;list-style:none}
+.pot-card details.pot-detail summary::-webkit-details-marker{display:none}
+.pot-card details.pot-detail summary::after{content:"+";flex:0 0 auto;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--ink);border-radius:4px;font-size:14px;font-weight:900;color:var(--deep);background:var(--paper)}
+.pot-card details.pot-detail[open] summary::after{content:"−"}
+.pot-card details.pot-detail summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.pot-card details.pot-detail .pot-reminder{margin:0;padding:10px 12px 10px;background:var(--highlight);border:2px solid var(--ink);font-size:15px;line-height:1.8}
+.pot-price-link{margin:18px 0 0;font-size:15px;line-height:1.8;font-weight:700}
+
+/* 頁首注意事項：亮黃紙提示，僅用既有色票 */
+.pot-note{background:var(--highlight);border:2px solid var(--ink);padding:12px 16px;margin:0 0 20px;font-size:16px;line-height:1.8;font-weight:700}
+
+@media(max-width:920px){
+  .pot-cards{gap:14px}
+}
+@media(max-width:680px){
+  .pot-cards{grid-template-columns:1fr;gap:16px}
+  .pot-card{padding:16px 16px 18px}
+  .pot-card h3{font-size:19px}
+  .pot-card details.pot-detail summary{font-size:14px}
+}
+
+/* 頁首 h1 已併入前綴（P2-1），不再有 small-label，需收緊上距 */
+.page-head h1{margin-top:0}
+
+/* 地圖閘門：靜態色塊地圖示意（零流量，純 HTML/CSS/SVG） */
+.map-facade-inner{display:grid;gap:16px;justify-items:center;max-width:520px}
+.map-preview{width:100%;border:2px solid var(--ink);background:var(--paper);padding:8px}
+.map-preview svg{display:block;width:100%;height:auto}
+.map-facade .map-parking{margin:0;font-size:14px;font-weight:800;color:var(--deep);background:var(--yellow);border:2px solid var(--ink);padding:6px 10px;transform:rotate(-1deg)}
+.map-facade .map-title{margin:0 0 4px;font-weight:900;color:var(--deep);font-size:17px}
+.map-facade .map-sub{margin:0;font-size:15px;line-height:1.7;color:var(--ink)}
+.map-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:4px}
+
+/* 頁尾 5 項在手機自動分兩行（避免一行塞滿） */
+@media(max-width:680px){
+  .footer-nav{flex-wrap:wrap;gap:2px 8px}
+  .footer-nav a{padding:12px 12px}
+  .footer-note{word-break:break-word;overflow-wrap:anywhere}
+}
+
+/* ============================================================
+   2026-11-09 追加：吃鍋指南 guide.html（導讀版位與 <details> FAQ）
+   沿用既有色票與三級硬陰影；無 JS 時 details 預設展開的讀法照舊
+   ============================================================ */
+
+/* 導讀：吉祥物＋文字的雙欄，手機收單欄 */
+.guide-lead{display:flex;align-items:center;gap:44px;flex-wrap:wrap}
+.guide-lead img{flex:0 0 auto;width:170px;height:auto;transform:rotate(-4deg)}
+.guide-lead>div{flex:1 1 320px;min-width:min(100%,280px)}
+.guide-lead h2{font-size:24px;font-weight:900;line-height:1.4;margin:10px 0 14px;color:var(--ink)}
+.guide-lead p{margin:0;font-size:17px;line-height:2}
+
+/* 指南頁：捷徑緊接導讀，內文各段之間不再整節留白 */
+.section.guide-top{padding:0 0 0}
+.section.guide-body{padding:44px 0 0}
+.section.guide-top+.section{padding-top:44px}
+
+/* FAQ：<details> 卡片，4px 硬陰影（元件級），展開不加動畫 */
+.faq-list{display:grid;gap:14px}
+.faq-item{background:var(--paper);border:2px solid var(--ink);border-radius:4px;box-shadow:4px 4px 0 var(--ink)}
+.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:14px 18px;font-weight:900;font-size:17px;color:var(--deep);cursor:pointer;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";flex:0 0 auto;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--ink);border-radius:4px;font-weight:900;font-size:14px;color:var(--deep);transform:translateY(-1px)}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:hover{background:var(--highlight)}
+.faq-item .faq-body{padding:0 18px 16px}
+.faq-item .faq-body p{margin:0;line-height:1.9;font-size:16px}
+details.faq-item summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+@media(max-width:680px){
+  .guide-lead{gap:20px}
+  .guide-lead img{width:118px}
+  .guide-lead p{font-size:16px}
+  .faq-item summary{padding:13px 14px;font-size:16px}
+  .faq-item .faq-body{padding:0 14px 14px}
+  .faq-item{box-shadow:2px 2px 0 var(--ink)}
 }

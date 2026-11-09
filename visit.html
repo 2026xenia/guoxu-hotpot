@@ -17,6 +17,7 @@
 <meta property="og:image" content="https://2026xenia.github.io/guoxu-hotpot/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="鍋序吉祥物與價位：一個人 170 元起，多數 190">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -75,8 +76,7 @@
 
 <section class="page-head">
   <div class="container">
-    <span class="small-label">怎麼來</span>
-    <h1>店旁就是停車場</h1>
+    <h1>怎麼來｜店旁就是停車場</h1>
     <p>機車、汽車都停得下，下車走約 1 分鐘。從中正大學過來，走路或騎車都只是一小段路。</p>
   </div>
 </section>
@@ -86,9 +86,31 @@
     <p class="small-label">地圖</p>
     <div class="map" id="mapWrap">
       <div class="map-facade" id="mapFacade">
-        <div>
-          <p>鍋序位置地圖</p>
-          <button type="button" class="main-btn" id="loadMap">載入地圖</button>
+        <div class="map-facade-inner">
+          <p class="map-title">鍋序位置地圖</p>
+          <div class="map-preview" aria-hidden="true">
+            <svg viewBox="0 0 640 360" role="img" aria-label="示意地圖：店旁有公共停車場，步行 1 分鐘">
+              <rect x="0" y="0" width="640" height="360" fill="#f5e8d1"/>
+              <path d="M0 210 H640" stroke="#d9c9b4" stroke-width="18" fill="none"/>
+              <path d="M0 210 H640" stroke="#fffdf7" stroke-width="8" stroke-dasharray="18 14" fill="none"/>
+              <path d="M120 0 V360" stroke="#d9c9b4" stroke-width="14" fill="none"/>
+              <path d="M420 0 V360" stroke="#d9c9b4" stroke-width="14" fill="none"/>
+              <rect x="160" y="235" width="140" height="70" fill="#fffdf7" stroke="#382620" stroke-width="3"/>
+              <text x="230" y="262" text-anchor="middle" font-size="22" font-weight="900" fill="#8e2428">鍋序</text>
+              <text x="230" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#382620">23.5572, 120.4720</text>
+              <circle cx="230" cy="180" r="10" fill="#8e2428" stroke="#382620" stroke-width="3"/>
+              <path d="M230 170 v-20" stroke="#8e2428" stroke-width="4" stroke-linecap="round"/>
+              <rect x="335" y="160" width="170" height="62" fill="#f4cb5a" stroke="#382620" stroke-width="3"/>
+              <text x="420" y="185" text-anchor="middle" font-size="16" font-weight="900" fill="#622027">公共停車場</text>
+              <text x="420" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="#382620">步行 1 分鐘</text>
+            </svg>
+          </div>
+          <p class="map-parking">店旁公共停車場，步行 1 分鐘</p>
+          <p class="map-sub">上圖為位置示意，不載入地圖圖磚，省流量。點下方按鈕才會載入完整的 Google 地圖。</p>
+          <div class="map-actions">
+            <button type="button" class="main-btn" id="loadMap">看地圖</button>
+            <a class="outline-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">Google 導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a>
+          </div>
         </div>
         <noscript><p><a class="main-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">開啟 Google 導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a></p></noscript>
       </div>
@@ -152,7 +174,7 @@
 
 <footer><div class="container footer-inner">
 <a href="index.html" class="footer-logo"><img src="assets/mascot-transparent.png" width="43" height="43" alt="" loading="lazy">鍋序</a>
-<nav class="footer-nav" aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="menu.html">菜單</a><a href="index.html#hours">營業時間</a></nav>
+<nav class="footer-nav" aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="menu.html">菜單</a><a href="index.html#hours">營業時間</a><a href="pot.html">鍋品介紹</a><a href="guide.html">吃鍋指南</a></nav>
 <span>好好吃一鍋，好好過一天。</span>
 </div><div class="container"><p class="footer-note">平日晚間 17:00–21:30，週六 11:00–21:30・<a class="ink-link" href="index.html#hours">營業時間</a>・<a class="ink-link" href="visit.html">怎麼來</a></p></div></footer>
 
