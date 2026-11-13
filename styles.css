@@ -434,21 +434,24 @@ details.faq-item summary:focus-visible{outline:3px solid var(--red);outline-offs
 
 @media(max-width:920px){.platter-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.platter-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
-/* 2026-11-12 追加：內文 inline 連結觸控區（不影響行距，純擴充可點範圍） */
-.ink-link{padding-block:14px;margin-inline:-2px}
+/* ============ 2026-11-13 修正：內文 inline 連結底部對齊與觸控區 ============
+   移除 2026-11-12 的 padding-block:14px——行內元素 padding 不擴行高
+   卻撐大 hover 底色，會遮蓋上下行文字；行內連結依 WCAG 2.5.8 inline
+   例外不需 44px 觸控目標。保留 3px 水平內距（box-decoration-break:clone），
+   跨行時每行片段各自完整呈現、不再孤字落單醜化。 */
+.ink-link{padding-inline:3px;margin-inline:-3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
 .footer-logo{min-height:44px}
 
 /* ============================================================
-   2026-11-12 追加：內文連結底線改用 text-decoration
-   問題：.ink-link 用 border-bottom 2px 畫線，又用 padding-block
-   擴觸控區，線會被畫在 padding 下緣、離字形太遠（「底線跑掉」）。
-   text-decoration 貼著字形畫、與 padding 無關，觸控區不受影響。
+   2026-11-12 起：內文連結底線改用 text-decoration
+   border-bottom 畫線離字形太遠。text-decoration 貼著字形畫。
+   2026-11-13 修正：觸控區改為水平 3px（box-decoration-break:clone），
+   不再用 padding-block 擴垂直觸控。
    ============================================================ */
 .ink-link{border-bottom:0;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--red)}
 
-/* hover 統一：內文連結給亮黃紙底 */
-.ink-link:hover{background:var(--highlight)}
+/* 2026-11-13：內文 inline 連結移除 hover 底色（附註性質，不給黃底；區塊連結才保留 hover 亮黃） */
 /* ============ 2026-11-13 追加：可及性 ============ */
 main:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 .header-cta{min-height:44px}

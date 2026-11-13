@@ -282,7 +282,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 - **首頁三卡** `.pot-picture--photo`：照片取代湯色展示面（退役 Soup 三色）；img 撐滿卡片寬、aspect-ratio 1440/1053、object-fit cover；價格以 `.circle-label` chip 標示於右上（紙白底、2px 墨棕邊、7° 微傾、字重 900）。
 - **鍋物卡照片** `.pot-photo`（pot.html）：2px 墨棕邊＋4px 硬陰影（var(--ink)）、aspect-ratio 1440/1053、object-fit cover；內文排列不受影響。
 - **超值海鮮拼盤格** `.platter-grid`／`.platter-item`（menu.html）：桌機 4 欄 → 920px 以下 2 欄；格項紙白底、2px 邊＋2px 硬陰影、內距 8px；figcaption 14px，`<b>` 為深紅 var(--deep) 字重 900。
-- **內文 inline 連結**（`.ink-link`）：鍋湯深紅字＋900 字重，紅色 `text-decoration` 下劃線（thickness 2px、offset 6px）貼著字形畫；`padding-block` 擴充行內觸控區至 ≥44px（不增內文行距、不改字級）；hover 亮黃紙底（var(--highlight)）。電話在首頁資訊卡為純文字，不做 tel: 連結（2026-11-12）。
+- **內文 inline 連結**（`.ink-link`）：鍋湯深紅字＋900 字重，紅色 `text-decoration` 下劃線（thickness 2px、offset 6px）貼著字形畫；跨行時 `box-decoration-break:clone` 讓每行片段各自完整呈現 3px 水平內距與下劃線（內距對稱抵消 margin，不影響字位）；行內連結屬 WCAG 2.5.8 inline 例外，不強求 44px 觸控目標（2026-11-13 移除 padding-block:14px——hover 底色曾遮蓋上下行）。**無 hover 底色**（2026-11-13，附註性質；亮黃紙底 hover 僅保留給 `a.board-row`、`.menu-shortcut a`、`.faq-item summary` 等區塊連結）；下劃線＋紅字為連結訊號，鍵盤由全域 `a:focus-visible` 3px 紅框負責。電話在首頁資訊卡為純文字，不做 tel: 連結（2026-11-12）。
 
 ### Inputs / Fields
 本站無表單輸入；僅有連結與按鈕。焦點一律 3px 外框，紅底區塊用奶油色內縮框。
