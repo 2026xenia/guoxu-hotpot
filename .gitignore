@@ -1,2 +1,9 @@
 # Impeccable design/critique workspace — not part of the website
 .impeccable/
+
+# 本機量測臨時頁（不納入版控、不部署）
+measure.html
+
+# Agent 專用指示檔：與 Pages 供檔的產品網站分離
+AGENTS.md
+

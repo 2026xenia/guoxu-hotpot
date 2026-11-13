@@ -11,17 +11,15 @@ colors:
   highlight: "#fdf3d8"
   mustard: "#f4cb5a"
   line: "#d9c9b4"
-  open-green: "#4f9d69"
-  soup-gold: "#f7c66f"
-  soup-brown: "#ceb190"
-  soup-red: "#bd6761"
+  open-green: "#3f7f52"
   board: "#fff8e8"
   contact: "#f0dfc6"
   dash: "#9a8a74"
   note: "#6b5346"
-  pot-face: "#fff9e6"
   on-red: "#fff7e7"
   brown-deep: "#5c1d23"
+  dot-idle: "#6b5346"
+  arc: "#eed2b0"
 typography:
   display:
     fontFamily: "'Noto Sans TC', sans-serif"
@@ -59,47 +57,64 @@ spacing:
   md: "22px"
   lg: "32px"
   xl: "44px"
-  section: "102px"
+  section: "102px"        # .section（@680px 收 section-mobile）
+  section-mobile: "70px"  # .section @680px
+  pad-page-head: "54px 0 46px"  # .page-head（@680px: 40px 0 34px）
+  pad-menu-page: "72px 0 64px"  # .menu-page（菜單內頁主軸；@680px 見 pad-sides）
+  pad-sides: "44px 0 40px"      # .menu-page @680px
+  pad-contact: "80px 0"         # .contact
+  pad-band: "92px 0"            # .menu-section（紅底精選帶；@680px: 70px 0）
+  # gap-layout：三處 grid 版面統一 90px（2026-11-13 code 已收斂；@920px 全收 40px、.about-layout 80px、@680px .contact-layout 30px）
+  gap-layout: "90px"            # .menu-layout／.about-layout／.contact-layout
+  gap-pot-grid: "22px"          # .pot-grid（@920px 12px／@680px 20px；.pot-cards 同 22px）
+  gap-hours: "44px"             # .hours-wrap（@920px 28px；.guide-lead 同 44px）
+  gap-hero-links: "25px"        # .hero-links（首屏按鈕列）
+  scroll-margin-page: "110px"   # section[id]（scroll-margin-top）
+  scroll-margin-main: "96px"    # main[id]（scroll-margin-top）
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
-    textColor: "{colors.paper}"
+    textColor: "{colors.on-red}"
     typography: "{typography.body}"
     rounded: "{rounded.sm}"
     padding: "15px 23px"
   button-primary-hover:
     backgroundColor: "{colors.primary}"
-    textColor: "{colors.paper}"
+    textColor: "{colors.on-red}"
     rounded: "{rounded.sm}"
     padding: "15px 23px"
+    transform: "translate(-2px, -2px)" # 懸停／焦點浮起
+    boxShadow: "4px 4px 0 {colors.ink}"
+    # active：transform 改為 translate(2px, 2px)、box-shadow 縮至 2px 2px 0 {colors.ink}
   button-outline:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.primary}"
+    backgroundColor: "transparent"
+    textColor: "currentColor"
     typography: "{typography.body}"
-    rounded: "{rounded.sm}"
     padding: "15px 23px"
   button-header-cta:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.primary}"
-    typography: "{typography.label}"
+    fontSize: "14px"
+    letterSpacing: "normal"
+    fontWeight: 900
     rounded: "{rounded.sm}"
     padding: "12px 19px"
   card-pot:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.sm}"
     padding: "24px 23px 30px"
   badge-menu:
     backgroundColor: "{colors.mustard}"
     textColor: "{colors.primary-deep}"
-    typography: "{typography.label}"
-    rounded: "{rounded.sm}"
+    fontSize: "14px"
+    letterSpacing: "0.5px"
+    fontWeight: 900
     padding: "3px 10px"
   status-open-now:
     backgroundColor: "{colors.paper}"
-    textColor: "{colors.primary-deep}"
-    typography: "{typography.body}"
-    rounded: "{rounded.sm}"
+    textColor: "{colors.ink}"
+    fontSize: "14px"
+    fontWeight: 900
     padding: "9px 16px"
 ---
 
@@ -131,7 +146,7 @@ components:
 - **芥末黃** (#f4cb5a): 菜單分類徽章與素食提示底色。只用在價格帶或需要快速掃到的分類，不作大面積底色。
 
 ### Tertiary
-- **開鍋綠** (#4f9d69): 僅作營業中狀態圓點，不進其他元件，避免第二口音色。
+- **開鍋綠** (#3f7f52): 僅作營業中狀態圓點，不進其他元件，避免第二口音色。
 
 ### Neutral
 - **奶油底** (#faf6ec): 全站頁面底色。
@@ -141,23 +156,41 @@ components:
 - **墨棕描邊** (#382620): 2px 粗邊、陰影色與內文字色，承擔結構。
 - **舊紙線** (#d9c9b4): 手機版導覽虛線分隔等低強度線條。
 
-### Soup（湯頭三色，僅用於湯頭展示）
-- **南瓜黃** (#f7c66f): 黃金南瓜的湯頭展示面。
-- **藥膳米** (#ceb190): 養身藥膳的湯頭展示面。
-- **沙茶磚** (#bd6761): 台式沙茶的湯頭展示面。
-- 湯頭三色只作為鍋物展示區的底面（各配 2px 墨棕邊的圓形鍋標），不得進按鈕、徽章或連結，避免與鍋湯深紅的行動語意打架。
-
 ### 區塊面與低強度色
 - **看板紙** (#fff8e8): 『門口價目牌』看板（menu-board）的底色。
 - **聯絡米** (#f0dfc6): 找我們／聯絡區塊的整段底面。
-- **虛線灰棕** (#9a8a74): 表格列間、導覽分隔等 1px 虛線（更淺的 #c3b09a 用於資訊列虛線）。
+- **虛線灰棕** (#9a8a74): 表格列間、導覽分隔等 1px 虛線（#c3b09a（--dash-soft，已於 2026-11-13 停用））。
 - **腳註棕** (#6b5346): 腳註、待補 chip 與小型附註文字，比墨棕輕一階，不用其他灰。
-- **鍋標內底** (#fff9e6): 湯頭圓形鍋標的內底。
 - **反紅奶白** (#fff7e7): 鍋湯深紅／燉煮深紅底上的文字與內縮焦點框顏色。
 - **深紅陰影** (#5c1d23): 看板 6px 硬陰影的實色（僅看板使用，等於比 --ink 更暖的一級偏移）。
 
 ### Named Rules
 **The One Voice Rule.** 紅只說一件事：可點、重要、或現在。不要再引入第二口音色去稀釋它。
+
+### YAML ↔ :root 命名對照
+
+YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，僅名稱不同。`--dash-soft` 已於 2026-11-13 停用，不列。
+
+| YAML | :root |
+|---|---|
+| primary | --red |
+| primary-deep | --deep |
+| ink | --ink |
+| cream | --cream |
+| paper | --paper |
+| sand | --sand |
+| highlight | --highlight |
+| mustard | --yellow |
+| line | --line |
+| open-green | --green |
+| board | --board |
+| contact | --contact |
+| dash | --dash |
+| note | --note |
+| on-red | --on-red |
+| brown-deep | --brown-deep |
+| dot-idle | --dot-idle |
+| arc | --arc |
 
 ## Typography
 
@@ -170,59 +203,86 @@ components:
 - **Display** (900, clamp(32px, 4.8vw, 56px), 1.22, -1.5px): 首屏大標題，含地名關鍵字，不為大字犧牲 SEO。
 - **Headline** (900, clamp(30px, 3.6vw, 48px), 1.35, -1.3px): 區塊標題與內頁 h1 副級。
 - **Title** (900, 24px, 1.4): 卡片標題如鍋物名稱。
-- **Body** (400, 16–17px, 1.9–2.0): 內文，行高偏鬆，適合手機長時間閱讀。
+- **Body** (400, 16px, 1.9–2.0): 16px（內文唯一正文級；17px 僅 hero p），行高偏鬆，適合手機長時間閱讀。
 - **Label** (900, 13px, 1.4, 2px): 小標籤如「今日菜單」「推薦」。
+
+### 例外（登記，2026-11-13）
+
+- **Label-sm**（menu-badge--sm，11px/900）：小於 label 下限 13px 的刻意小寫徽章，僅用於菜單徽章。
+- **Price 主視覺**（td.price，23px/900、tabular-nums）：菜單價格唯一特例。
+- **Board-title 收尾字**（39px/900）：『門口價目牌』看板裝飾級，不入 display 階。
 
 ### Named Rules
 **The Weight-Only Rule.** 不引入第二字體；層次只靠 400/700/900 與大小、行高、字距區分。
 
 ## Layout
 
-容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 920px 收為單欄，680px 再壓字級與間距。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
+容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 1100px 先收窄頁首導覽間距（26px→18px），920px 收為單欄，680px 再壓字級與間距；頁首高度桌機 94px，920px 以下 `min-height` 94px，680px 以下 `min-height` 75px。錨點捲動留白 `scroll-margin-top` 110px（`section[id]`）／96px（`main[id]`），避免 sticky header 遮住標題。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
 
 ## Elevation & Depth
 
-深度只來自硬陰影，沒有模糊、沒有漸層。陰影三級：徽章 2px、按鈕／卡片 4px、大面板 6px，皆為不透明色塊偏移。按壓時元件向陰影方向平移（translate(2px,2px)），陰影縮至 2px，像紙板被壓下。靜態主按鈕不帶陰影，懸停／焦點才浮起。
+深度只來自硬陰影，沒有模糊、沒有漸層。陰影三級：徽章 2px、按鈕懸停／分類捷徑 4px、大面板（訪問卡・地圖・看板）6px；靜態卡片無陰影，皆為不透明色塊偏移。按壓時元件向陰影方向平移（translate(2px,2px)），陰影縮至 2px，像紙板被壓下。靜態主按鈕不帶陰影，懸停／焦點才浮起。
 
 ### Shadow Vocabulary
 - **徽章 2px** (`box-shadow: 2px 2px 0 var(--ink)`): 菜單徽章、開鍋狀態徽章。
-- **元件 4px** (`box-shadow: 4px 4px 0 var(--ink)`): 按鈕懸停、分類捷徑、訪問卡。
+- **元件 4px** (`box-shadow: 4px 4px 0 var(--ink)`): 按鈕懸停、分類捷徑。
 - **面板 6px** (`box-shadow: 6px 6px 0 var(--ink)`): 地圖、訪問大卡、價目牌看板。
+- **頁首現行頁** (`box-shadow: inset 0 -2px 0 var(--red)`): 頁首導覽 aria-current 現行頁下劃線。
 
 ### 吉祥物輪廓陰影例外（2026-11-08 登記）
 首頁 Hero 大吉祥物是全站唯一使用 `filter: drop-shadow` 的元素，為 Hard-Shadow Rule 的明文例外：吉祥物是透明底 PNG，`drop-shadow` 能讓陰影貼著鍋體輪廓走；若改用 `box-shadow` 實色硬陰影會框出方形色塊、印在透明圖下變成「第二個鍋」，破壞原始視覺。規格：
-- **吉祥物基準** (`filter: drop-shadow(12px 20px 0 …)`，取樣 `--deep` 11%：`color-mix(in srgb, var(--deep) 11%, transparent)`): `.mascot` 基礎規則（配 `rotate(-5deg)`）。
+- **吉祥物基準（已退役 2026-11-13）**: 舊 `.mascot` 基礎規則（12px 20px／11%／-5°）已由 V3（10px 12px／14%／-4°）覆寫並清除；此處僅存歷史登記。
 - **吉祥物 V3** (`filter: drop-shadow(10px 12px 0 …)`，取樣 `--deep` 14%：`color-mix(in srgb, var(--deep) 14%, transparent)`): V3 覆寫後生效值（配 `rotate(-4deg)`、`width:min(430px,89%)`）。
 
-規則：blur 恆為 0（仍是實色偏移，不是柔光模糊），但顏色必須用 `--deep` 的低透明取樣（`color-mix`，不新增色簿 hex）；吉祥物保持微傾 `-4°` 至 `-5°`。其餘元件仍一律遵守 Hard-Shadow Rule。
+規則：blur 恆為 0（仍是實色偏移，不是柔光模糊），但顏色必須用 `--deep` 的低透明取樣（`color-mix`，不新增色簿 hex）；吉祥物保持微傾 `-4°`。其餘元件仍一律遵守 Hard-Shadow Rule。
 
 ### Named Rules
 **The Hard-Shadow Rule.** 陰影只用實色偏移，不用 blur；需要深度就加一級偏移，不要加柔光。
 
 ## Shapes
 
-小圓角（4px）為主，圓形只給鍋物圖示與狀態圓點。邊框一律 2px 實線墨棕（看板 3px），表格內分隔用 1px 虛線。少量元件微傾斜（-7° 至 9°）營造貼紙感，但文字本身不傾斜，傾的是容器。首屏吉祥物後有機形狀弧（52%/48% 橢圓）只作底襯，不用幾何裝飾。
+小圓角（4px）為主，圓形只給狀態圓點。邊框一律 2px 實線墨棕（看板 3px），表格內分隔用 1px 虛線。少量元件微傾斜（-7° 至 9°）營造貼紙感，但文字本身不傾斜，傾的是容器。首屏吉祥物後有機形狀弧（52%/48% 橢圓）只作底襯，不用幾何裝飾。
 
 ## Components
 
-元件觸感統一為「粗實可按」：粗邊、硬陰影、按下去會凹陷。
+元件觸感統一為「粗實可按」：粗邊、硬陰影、按下去會凹陷。本站原則零圓角；YAML rounded 僅供 button-header-cta 等實際 4px 元件。
 
 ### Buttons
 - **Shape:** 小圓角 (4px)，2px 描邊
-- **Primary:** 鍋湯深紅底＋紙白字，padding 15px 23px，字重 800；懸停／焦點浮起 4px 硬陰影並位移 -2px，按壓回落 2px
+- **Primary:** 鍋湯深紅底＋反紅奶白字（var(--on-red)），padding 15px 23px，字重 900；懸停／焦點浮起 4px 硬陰影並位移 -2px，按壓回落 2px
+- **404 例外：** 404／錯誤頁唯一紅主按鈕指向 `index.html`（錯誤頁最普適的恢復路徑）；其餘頁紅主按鈕一律指向向前動作。
 - **Hover / Focus:** 輕微位移＋硬陰影；焦點外框 3px，紅底上改用奶油色內縮框確保可見
 - **Secondary / Ghost:** 描邊按鈕用 currentColor 描邊，深紅底區用米色描邊；頁首 CTA 為白底紅字描邊版
 
 ### Chips
-- **Style:** 紙白或芥末黃底，2px 墨棕邊，字重 800–900
+- **Style:** 紙白或芥末黃底，2px 墨棕邊，字重 900
 - **State:** 菜單徽章微傾 -1°；開鍋狀態圓點綠（營業中）／紅（未營業），營業中帶脈動環（reduced-motion 下關閉）
 
 ### Cards / Containers
-- **Corner Style:** 小圓角 (4px) 為主；鍋物圓圖與狀態點為正圓
+- **Corner Style:** 小圓角 (4px) 為主；狀態點為正圓
 - **Background:** 紙白 (#fffdf7) 卡片，沙米 (#f5e8d1) 或鍋湯深紅作區塊底
 - **Shadow Strategy:** 見 Elevation & Depth 三級硬陰影
 - **Border:** 2px 墨棕實線；看板 3px 實線＋雙線標題分隔
 - **Internal Padding:** 24px 左右，卡片內文 24px 23px 30px
+
+### 營業狀態徽章（.open-now--head）（2026-11-13 登記）
+
+頁首的唯一動態營業狀態來源；script.js 以 Asia/Taipei 每 60 秒判斷並寫入（文字不變就不覆寫，避免 aria-live 打斷讀屏）。
+
+- **佈局**: inline-flex、gap 7px、margin 0；paper 底＋2px 墨棕框＋2px 硬陰影（`2px 2px 0 var(--ink)`）；font-size 13px、字重 900、line-height 1.4；padding 5px 12px；`font-variant-numeric: tabular-nums`；`white-space: normal`。
+- **圓點** `.dot`: 8px、正圓；營業中 var(--green)（帶脈動環，reduced-motion 下關閉）、未營業 var(--red)、閒置 var(--dot-idle)。
+- **≤920px**: 徽章併入頁首第一行（order 2、padding 5px 10px）；`.open-now-text` 退為 sr-only 全句，`::after` 改顯示 `data-mobile` 短字（開鍋中・21:30／N 分後開鍋／今天 17:00／明天 17:00／週六 11:00）；JS 關閉時 `data-mobile` 缺席，以 CSS2.1 相容雙宣告 fallback 為「營業時間」（2026-11-13：預設 `.open-now--head::after{content:"營業時間"}`、`.open-now--head[data-mobile]::after{content:attr(data-mobile)}`；雙參數 `attr(name,fallback)` 為 CSS Values Level 4 語法，Firefox 會整行丟棄）。
+- **`aria-live="polite"`**: 掛在徽章本體；script.js 只在文字實際改變時寫入。
+- **靜態 fallback**: JS 關閉時桌機讀到 HTML 靜態句「平日晚間 17:00–21:30，週六 11:00–21:30」。
+
+### 實拍照片元件（2026-11-12 登記）
+
+**照片帶 4px 陰影的鍋物卡本體不加陰影**（`.pot-card`）——照片自帶深度，再疊會過重；訪問卡／地圖／看板等無照片者用 6px。
+
+- **首頁三卡** `.pot-picture--photo`：照片取代湯色展示面（退役 Soup 三色）；img 撐滿卡片寬、aspect-ratio 1440/1053、object-fit cover；價格以 `.circle-label` chip 標示於右上（紙白底、2px 墨棕邊、7° 微傾、字重 900）。
+- **鍋物卡照片** `.pot-photo`（pot.html）：2px 墨棕邊＋4px 硬陰影（var(--ink)）、aspect-ratio 1440/1053、object-fit cover；內文排列不受影響。
+- **超值海鮮拼盤格** `.platter-grid`／`.platter-item`（menu.html）：桌機 4 欄 → 920px 以下 2 欄；格項紙白底、2px 邊＋2px 硬陰影、內距 8px；figcaption 14px，`<b>` 為深紅 var(--deep) 字重 900。
+- **內文 inline 連結**（`.ink-link`）：鍋湯深紅字＋900 字重，紅色 `text-decoration` 下劃線（thickness 2px、offset 6px）貼著字形畫；跨行時 `box-decoration-break:clone` 讓每行片段各自完整呈現 3px 水平內距與下劃線（內距對稱抵消 margin，不影響字位）；行內連結屬 WCAG 2.5.8 inline 例外，不強求 44px 觸控目標（2026-11-13 移除 padding-block:14px——hover 底色曾遮蓋上下行）。**無 hover 底色**（2026-11-13，附註性質；亮黃紙底 hover 僅保留給 `a.board-row`、`.menu-shortcut a`、`.faq-item summary` 等區塊連結）；下劃線＋紅字為連結訊號，鍵盤由全域 `a:focus-visible` 3px 紅框負責。電話在首頁資訊卡為純文字，不做 tel: 連結（2026-11-12）。
 
 ### Inputs / Fields
 本站無表單輸入；僅有連結與按鈕。焦點一律 3px 外框，紅底區塊用奶油色內縮框。
