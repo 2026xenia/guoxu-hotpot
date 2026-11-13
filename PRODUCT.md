@@ -2,7 +2,7 @@
 
 <!-- impeccable:product-schema 1 -->
 
-> 最後更新：2026-11-12
+> 最後更新：2026-11-13
 > 本檔是「內容與資料」的唯一真實來源（Single Source of Truth）。改文案、改價、補資料，先改這裡或照這裡的規則改。
 
 ## Platform
@@ -71,6 +71,7 @@ web
 | 共鍋費 | 每人 100 元，可折抵單點加購；菜單板標示身高超過 120 公分適用 | ✅（2026-04 菜單板照片） |
 | 鯛魚鍋／海鮮鍋換肉 | 換肉欄打 X，不可換牛／羊／雞（2026-04 板） | ⬜ 待店家確認（板子可能為舊版） |
 | 座標 | 23.5572127, 120.472024 | ✅ |
+| 社群 | Instagram @hot_pot_03_20（https://www.instagram.com/hot_pot_03_20/）：IG 官方 QR 圖按鈕 assets/ig-qr.png；LINE：lin.ee/pNhpsoc 頻道官方 QR 圖按鈕 assets/line-qr.png（皆自官方 QR 衍生、用戶裁決；來源圖不入版控） | ✅（2026-11-13 用戶裁決＋兩次改版） |
 
 **菜單板照片（2026-04）增補事實**（未納入網站正文，只作查證依據）
 - 共鍋費 100 元／人、可折抵單點加購（英文原文 `Sharing Charge: NT$100 per peace (for guests 120 cm and above).`；括號內「童」為板上用字）。
@@ -104,9 +105,10 @@ web
 | 營業時間 | JSON-LD 逐日分開寫，不可用一句 `17:00-21:30` 打天下 |
 | 共用 JS | 漢堡選單、營業狀態（`HOURS`）、scroll-spy 都在 `script.js`（單一真相，改時間改這一個檔）；`menu.html` 分類捷徑與 `visit.html` 地圖閘門為各頁 inline |
 | 字型 | Noto Sans TC，僅 400／700／900 三種字重 |
-| 外部依賴 | 只有 Google Fonts 與 Google Maps iframe（皆有 `loading="lazy"`，地圖除外） |
+| 外部依賴 | 只有 Google Fonts 與 Google Maps iframe（皆有 `loading="lazy"`，地圖除外）；2026-11-13 LINE 綠按鈕退役後，站內無任何第三方熱連結圖 |
 | 圖片 | 一律給 `width`／`height`，首屏吉祥物 `fetchpriority="high"`，其餘 `loading="lazy"`；所有圖檔集中在 `assets/` |
 | 網址 | 正式站 `https://2026xenia.github.io/guoxu-hotpot/`；若換自訂網域，需同步 `canonical`／`og:url`／`og:image`／`sitemap.xml`／JSON-LD 的 `url` 與 `hasMenu` |
+- IG 與 LINE 官方 QR 圖按鈕（assets/ig-qr.png、assets/line-qr.png，皆官方素材、用戶裁決；scdn.line-apps.com 綠按鈕已退役）為全站唯二外部品牌素材例外（2026-11-13 用戶裁決＋改版）；其他顏色仍只取 styles.css :root。JSON-LD sameAs=[IG, LINE]。
 
 ## 8. 未決清單（等店家）
 - [x] 門牌地址（→ `visit.html`、`index.html` 資訊卡、JSON-LD `address`）
@@ -115,7 +117,8 @@ web
 - [ ] 招牌是哪一鍋
 - [x] 共鍋費原文（2026-11-12：每人 100 元、可折抵單點加購、身高超過 120 公分適用；來源：2026-04 菜單板照片）
 - [ ] 鯛魚鍋／海鮮鍋可否換牛／羊／雞肉（2026-04 板打 X，與現行 +10 寫法牴觸；待店家確認）
-- [ ] Instagram／LINE 官方帳號網址
+- [x] Instagram／LINE 官方帳號網址（2026-11-13：IG @hot_pot_03_20 → https://www.instagram.com/hot_pot_03_20/ 去 ?dlrf= 追蹤參數；LINE 加好友 https://lin.ee/pNhpsoc；已上站：footer 5 頁＋visit.html 資訊卡＋JSON-LD sameAs）
+- [ ] IG bio 營業時間寫「一～五、日｜17:00－22:30」，與站上以 Google 商家檔案為權威源的 21:30 不一致；2026-11-13 記錄，待店家確認（網站維持 21:30 不動）
 
 ## 9. 上線檢查清單
 - [x] `robots.txt`、`sitemap.xml`

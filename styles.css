@@ -460,3 +460,18 @@ main:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 
 /* ============ 2026-11-13 追加：內文細節對齊 DESIGN.md ============ */
 body{font-weight:400}
+
+/* 2026-11-13 社群連結列（footer 與 visit.html 資訊卡共用）：IG 文字連結（沿用 .ink-link）＋LINE 官方按鈕圖（綠色，唯一外部品牌色例外，見 PRODUCT.md §7） */
+.footer-social{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap}
+.footer-social>a{display:inline-flex;align-items:center;min-height:44px}
+.footer-social img{display:block;border:0}
+
+/* 2026-11-13 追加二：IG 官方 QR 按鈕（用戶提供之 IG 名片 QR；與 LINE 官方按鈕同屬外部品牌素材例外，見 PRODUCT.md §7） */
+.ig-qr{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;text-decoration:none}
+.ig-qr img{display:block;width:80px;height:80px}
+.ig-qr--lg img{width:144px;height:144px}
+
+/* 2026-11-13 追加三：LINE QR 視覺對齊（點陣較粗，footer 72px／visit 136px）*/
+.line-qr img{width:72px;height:72px}
+.ig-qr--lg.line-qr img{width:136px;height:136px}
+@media(max-width:680px){.footer-social{order:0;width:100%;justify-content:flex-start}}

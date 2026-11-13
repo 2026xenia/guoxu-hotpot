@@ -166,6 +166,7 @@ components:
 
 ### Named Rules
 **The One Voice Rule.** 紅只說一件事：可點、重要、或現在。不要再引入第二口音色去稀釋它。
+IG 與 LINE 官方 QR 圖按鈕（assets/ig-qr.png、assets/line-qr.png，用戶提供之官方素材；scdn.line-apps.com 已退役）為唯二外部品牌素材例外，不入 :root；2026-11-13 用戶裁決＋改版，見 PRODUCT.md §7。
 
 ### YAML ↔ :root 命名對照
 
