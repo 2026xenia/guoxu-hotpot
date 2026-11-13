@@ -16,12 +16,14 @@
 - `menu.html` 菜單（逐項價格唯一來源：`<td class="price">`）
 - `pot.html`／`guide.html` 鍋品介紹、吃鍋指南（`WebPage` + `about: Restaurant` JSON-LD）
 - `visit.html` 交通（地址、電話、停車、地圖）
-- `404.html`（`noindex`，不進 sitemap）；`styles.css`；`assets/`；`robots.txt`；`sitemap.xml`
-- `measure.html` 本機量測用臨時頁（目前未納入 git）：不連首頁、不進 sitemap、不要部署
+- `script.js` 全站共用 JS（漢堡選單、`HOURS` 營業狀態、scroll-spy）；改營業時間改這一個檔
+- `assets/` 衍生實拍圖：`pot-<slug>-{800,400}.jpg|.webp`、`platter-*-{800,400}.*`，單檔 ≤90KB、webp+jpg 雙格式、400/800 兩寬度版本；`og-image.jpg` 為 1200×630 實拍裁切。來源大圖不入版控，`assets/` 只放壓縮衍生圖
+- `404.html`（`noindex`，不進 sitemap）；`styles.css`；`robots.txt`；`sitemap.xml`
+- `measure.html` 本機量測用臨時頁（已列入 `.gitignore`）：不連首頁、不進 sitemap、不要部署
 
-## 沒有樣板引擎：共用區塊是複製貼上的
+## 沒有樣板引擎：共用區塊是複製貼上的（JS 除外）
 
-每頁各有一份 header、nav、footer、skip link，以及同一段 inline JS（漢堡選單＋`.open-now` 開鍋狀態，含 `HOURS` 常數）。**改導覽／頁首／頁尾／營業狀態必須逐頁改**：index、menu、pot、guide、visit（404 另有簡化版 header/footer）。
+每頁各有一份 header、nav、footer、skip link。**共用 JS 已抽到 `script.js`**：漢堡選單、`.open-now` 開鍋狀態（含 `HOURS` 常數）、scroll-spy，改營業狀態邏輯只改這一個檔。`menu.html` 的分類捷徑 scroll-spy、`visit.html` 的地圖載入閘門仍是各頁 inline。**改導覽／頁首／頁尾的 HTML 結構仍必須逐頁改**：index、menu、pot、guide、visit（404 另有簡化版 header/footer，且無 script.js）。
 
 ## 改資料的連動清單（最容易漏）
 
@@ -41,7 +43,7 @@
 2. 5 頁 footer `.footer-note`
 3. `index.html` `table.hours-table`（`data-day="6"`）
 4. `index.html` JSON-LD `openingHoursSpecification`（週六單獨一條）
-5. 5 頁 inline JS 的 `HOURS` 物件
+5. `script.js` 的 `HOURS` 物件
 6. `visit.html` 摘要句、`guide.html` FAQ
 
 → 少一處就會出現「靜態字說 17:00、徽章說 11:00」的矛盾。
@@ -52,6 +54,10 @@
 - 未確認資料留「待補」chip，不得代填。
 - 繁體中文、`lang="zh-Hant"`；每頁只有一個 `<h1>`，h1 保留地名關鍵字。
 - 免 JS 可讀：菜單價格是純 HTML，不要在菜單頁加價格腳本；關 JS 仍要看得到營業時間。
+- 實拍照都是「入鍋前生鮮食材配置」，alt／caption 不得寫成成品湯照。
+- 素食鍋不得配葷食照片；沒有照片的鍋物保留文字卡，不可硬配。
+- 2026-04 菜單板照片只作查證依據：可用於補缺（共鍋費、拼盤內容），不得拿來改現有價格；板上英文品名有誤植，一律不上站。
+- 板子查證一律看 PRODUCT.md「菜單板照片（2026-04）增補事實」；板子為舊版（16 鍋），衝突時以網站現行文案為準。
 
 ## 樣式規則
 
@@ -63,11 +69,12 @@
 
 ## 新增頁面
 
-複製任一內頁當模板（head meta + canonical + og + JSON-LD + header/footer + inline JS），`aria-current="page"` 指到自己，補進所有頁面的 nav 與 footer，更新 `sitemap.xml` 的 `lastmod`。全站用絕對網址 `https://2026xenia.github.io/guoxu-hotpot/...`；換網域要同步 canonical／`og:url`／`og:image`／sitemap／JSON-LD。
+複製任一內頁當模板（head meta + canonical + og + JSON-LD + header/footer + `<script src="script.js"></script>`），`aria-current="page"` 指到自己，補進所有頁面的 nav 與 footer，更新 `sitemap.xml` 的 `lastmod`。全站用絕對網址 `https://2026xenia.github.io/guoxu-hotpot/...`；換網域要同步 canonical／`og:url`／`og:image`／sitemap／JSON-LD。
 
 ## 驗證（沒有測試，只能手動）
 
 - repo 根目錄跑 `python -m http.server 8000` → `http://localhost:8000/`（頁面全用相對路徑，直接開檔也可）。
-- 檢查：五頁導覽／footer 一致、單一 `<h1>`、關 JS 可讀菜單與時間、360px 與 920px 寬不爆版。
+- 檢查：五頁導覽／footer 一致、單一 `<h1>`、關 JS 可讀菜單與時間（script.js 無 script 時所有 JS 皆缺席）、360px 與 920px 寬不爆版；`script.js` 也能在無 toggle/nav 的頁面安全 no-op。
+- 進階量測（可選）：先 `Start-Process msedge --headless=new --remote-debugging-port=9357 --user-data-dir=<獨立目錄>` 手動開 Edge，再用外部一次性 CDP 腳本（放 temp、不入版控）以 `Emulation.setDeviceMetricsOverride` 量 360／920／1440；不要用 `--window-size`。
 - 不要為了「補測試」新增工具鏈。
 - commit 慣例（沿用 git log）：`feat:`／`fix:`／`style:`／`content:`／`docs:`／`refactor:` + 中文描述。

@@ -12,14 +12,10 @@ colors:
   mustard: "#f4cb5a"
   line: "#d9c9b4"
   open-green: "#4f9d69"
-  soup-gold: "#f7c66f"
-  soup-brown: "#ceb190"
-  soup-red: "#bd6761"
   board: "#fff8e8"
   contact: "#f0dfc6"
   dash: "#9a8a74"
   note: "#6b5346"
-  pot-face: "#fff9e6"
   on-red: "#fff7e7"
   brown-deep: "#5c1d23"
 typography:
@@ -141,18 +137,11 @@ components:
 - **墨棕描邊** (#382620): 2px 粗邊、陰影色與內文字色，承擔結構。
 - **舊紙線** (#d9c9b4): 手機版導覽虛線分隔等低強度線條。
 
-### Soup（湯頭三色，僅用於湯頭展示）
-- **南瓜黃** (#f7c66f): 黃金南瓜的湯頭展示面。
-- **藥膳米** (#ceb190): 養身藥膳的湯頭展示面。
-- **沙茶磚** (#bd6761): 台式沙茶的湯頭展示面。
-- 湯頭三色只作為鍋物展示區的底面（各配 2px 墨棕邊的圓形鍋標），不得進按鈕、徽章或連結，避免與鍋湯深紅的行動語意打架。
-
 ### 區塊面與低強度色
 - **看板紙** (#fff8e8): 『門口價目牌』看板（menu-board）的底色。
 - **聯絡米** (#f0dfc6): 找我們／聯絡區塊的整段底面。
 - **虛線灰棕** (#9a8a74): 表格列間、導覽分隔等 1px 虛線（更淺的 #c3b09a 用於資訊列虛線）。
 - **腳註棕** (#6b5346): 腳註、待補 chip 與小型附註文字，比墨棕輕一階，不用其他灰。
-- **鍋標內底** (#fff9e6): 湯頭圓形鍋標的內底。
 - **反紅奶白** (#fff7e7): 鍋湯深紅／燉煮深紅底上的文字與內縮焦點框顏色。
 - **深紅陰影** (#5c1d23): 看板 6px 硬陰影的實色（僅看板使用，等於比 --ink 更暖的一級偏移）。
 
@@ -201,7 +190,7 @@ components:
 
 ## Shapes
 
-小圓角（4px）為主，圓形只給鍋物圖示與狀態圓點。邊框一律 2px 實線墨棕（看板 3px），表格內分隔用 1px 虛線。少量元件微傾斜（-7° 至 9°）營造貼紙感，但文字本身不傾斜，傾的是容器。首屏吉祥物後有機形狀弧（52%/48% 橢圓）只作底襯，不用幾何裝飾。
+小圓角（4px）為主，圓形只給狀態圓點。邊框一律 2px 實線墨棕（看板 3px），表格內分隔用 1px 虛線。少量元件微傾斜（-7° 至 9°）營造貼紙感，但文字本身不傾斜，傾的是容器。首屏吉祥物後有機形狀弧（52%/48% 橢圓）只作底襯，不用幾何裝飾。
 
 ## Components
 
@@ -209,20 +198,26 @@ components:
 
 ### Buttons
 - **Shape:** 小圓角 (4px)，2px 描邊
-- **Primary:** 鍋湯深紅底＋紙白字，padding 15px 23px，字重 800；懸停／焦點浮起 4px 硬陰影並位移 -2px，按壓回落 2px
+- **Primary:** 鍋湯深紅底＋紙白字，padding 15px 23px，字重 900；懸停／焦點浮起 4px 硬陰影並位移 -2px，按壓回落 2px
 - **Hover / Focus:** 輕微位移＋硬陰影；焦點外框 3px，紅底上改用奶油色內縮框確保可見
 - **Secondary / Ghost:** 描邊按鈕用 currentColor 描邊，深紅底區用米色描邊；頁首 CTA 為白底紅字描邊版
 
 ### Chips
-- **Style:** 紙白或芥末黃底，2px 墨棕邊，字重 800–900
+- **Style:** 紙白或芥末黃底，2px 墨棕邊，字重 900
 - **State:** 菜單徽章微傾 -1°；開鍋狀態圓點綠（營業中）／紅（未營業），營業中帶脈動環（reduced-motion 下關閉）
 
 ### Cards / Containers
-- **Corner Style:** 小圓角 (4px) 為主；鍋物圓圖與狀態點為正圓
+- **Corner Style:** 小圓角 (4px) 為主；狀態點為正圓
 - **Background:** 紙白 (#fffdf7) 卡片，沙米 (#f5e8d1) 或鍋湯深紅作區塊底
 - **Shadow Strategy:** 見 Elevation & Depth 三級硬陰影
 - **Border:** 2px 墨棕實線；看板 3px 實線＋雙線標題分隔
 - **Internal Padding:** 24px 左右，卡片內文 24px 23px 30px
+
+### 實拍照片元件（2026-11-12 登記）
+- **首頁三卡** `.pot-picture--photo`：照片取代湯色展示面（退役 Soup 三色）；img 撐滿卡片寬、aspect-ratio 1440/1053、object-fit cover；價格以 `.circle-label` chip 標示於右上（紙白底、2px 墨棕邊、7° 微傾、字重 900）。
+- **鍋物卡照片** `.pot-photo`（pot.html）：2px 墨棕邊＋4px 硬陰影（var(--ink)）、aspect-ratio 1440/1053、object-fit cover；內文排列不受影響。
+- **超值海鮮拼盤格** `.platter-grid`／`.platter-item`（menu.html）：桌機 4 欄 → 920px 以下 2 欄；格項紙白底、2px 邊＋2px 硬陰影、內距 8px；figcaption 14px，`<b>` 為深紅 var(--deep) 字重 900。
+- **內文 inline 連結**（`.ink-link`）：鍋湯深紅字＋900 字重，紅色 `text-decoration` 下劃線（thickness 2px、offset 6px）貼著字形畫；`padding-block` 擴充行內觸控區至 ≥44px（不增內文行距、不改字級）；hover 亮黃紙底（var(--highlight)）。電話在首頁資訊卡為純文字，不做 tel: 連結（2026-11-12）。
 
 ### Inputs / Fields
 本站無表單輸入；僅有連結與按鈕。焦點一律 3px 外框，紅底區塊用奶油色內縮框。

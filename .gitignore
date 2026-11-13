@@ -1,2 +1,5 @@
 # Impeccable design/critique workspace — not part of the website
 .impeccable/
+
+# 本機量測臨時頁（不納入版控、不部署）
+measure.html
