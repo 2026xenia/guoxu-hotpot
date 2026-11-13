@@ -271,7 +271,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 - **佈局**: inline-flex、gap 7px、margin 0；paper 底＋2px 墨棕框＋2px 硬陰影（`2px 2px 0 var(--ink)`）；font-size 13px、字重 900、line-height 1.4；padding 5px 12px；`font-variant-numeric: tabular-nums`；`white-space: normal`。
 - **圓點** `.dot`: 8px、正圓；營業中 var(--green)（帶脈動環，reduced-motion 下關閉）、未營業 var(--red)、閒置 var(--dot-idle)。
-- **≤920px**: 徽章併入頁首第一行（order 2、padding 5px 10px）；`.open-now-text` 退為 sr-only 全句，`::after` 改顯示 `data-mobile` 短字（開鍋中・21:30／N 分後開鍋／今天 17:00／明天 17:00／週六 11:00）；JS 關閉時 `data-mobile` 缺席，fallback 為「營業時間」。
+- **≤920px**: 徽章併入頁首第一行（order 2、padding 5px 10px）；`.open-now-text` 退為 sr-only 全句，`::after` 改顯示 `data-mobile` 短字（開鍋中・21:30／N 分後開鍋／今天 17:00／明天 17:00／週六 11:00）；JS 關閉時 `data-mobile` 缺席，以 CSS2.1 相容雙宣告 fallback 為「營業時間」（2026-11-13：預設 `.open-now--head::after{content:"營業時間"}`、`.open-now--head[data-mobile]::after{content:attr(data-mobile)}`；雙參數 `attr(name,fallback)` 為 CSS Values Level 4 語法，Firefox 會整行丟棄）。
 - **`aria-live="polite"`**: 掛在徽章本體；script.js 只在文字實際改變時寫入。
 - **靜態 fallback**: JS 關閉時桌機讀到 HTML 靜態句「平日晚間 17:00–21:30，週六 11:00–21:30」。
 

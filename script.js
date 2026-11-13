@@ -61,6 +61,30 @@
   document.querySelectorAll('section[id]').forEach(function (s) { if (map[s.id]) obs.observe(s); });
 })();
 
+/* 分類捷徑 scroll-spy（menu/guide/pot 頁）：只給目前區塊的捷徑加上壓按態，內容不隱藏、關 JS 也照樣能點 */
+(function () {
+  var links = document.querySelectorAll('.menu-shortcut a');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) {
+    var hash = (a.getAttribute('href') || '').split('#')[1];
+    if (hash) map[hash] = a;
+  });
+  var targets = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if (!targets.length) return;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var link = map[en.target.id];
+      if (!link) return;
+      links.forEach(function (a) { a.classList.remove('is-current'); a.removeAttribute('aria-current'); });
+      link.classList.add('is-current');
+      link.setAttribute('aria-current', 'page');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  targets.forEach(function (el) { obs.observe(el); });
+})();
+
 /* 營業狀態：以 Asia/Taipei 判斷，取不到時區就保留 HTML 的靜態說明。
    桌機寫完整句（aria-live），手機 ≤680px 由 CSS ::after 讀 data-mobile。 */
 (function () {

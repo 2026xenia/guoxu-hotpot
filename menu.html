@@ -265,31 +265,5 @@
 </div><div class="container"><p class="footer-note">平日晚間 17:00–21:30，週六 11:00–21:30・<a class="ink-link" href="index.html#hours">營業時間</a>・<a class="ink-link" href="visit.html">怎麼來</a></p></div></footer>
 
 <script src="script.js"></script>
-<script>
-/* 分類捷徑 scroll-spy：只給目前區塊的捷徑加上壓按態，內容不隱藏、關 JS 也照樣能點 */
-(function () {
-  var links = document.querySelectorAll('.menu-shortcut a');
-  if (!links.length || !('IntersectionObserver' in window)) return;
-  var map = {};
-  links.forEach(function (a) {
-    var hash = (a.getAttribute('href') || '').split('#')[1];
-    if (hash) map[hash] = a;
-  });
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      var link = map[en.target.id];
-      if (!link) return;
-      links.forEach(function (a) { a.classList.remove('is-current'); a.removeAttribute('aria-current'); });
-      link.classList.add('is-current');
-      link.setAttribute('aria-current', 'page');
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  Object.keys(map).forEach(function (id) {
-    var s = document.getElementById(id);
-    if (s) obs.observe(s);
-  });
-})();
-</script>
 </body>
 </html>
