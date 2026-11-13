@@ -1,7 +1,7 @@
 /* 鍋序共用腳本：漢堡選單、營業狀態、麵包屑 scroll-spy
    單一真相：營業時間只寫這個檔（HOURS）。各個 IIFE 都自我防護，
    元素不存在就直接 no-op。
-   行動裝置 ≤680px 的狀態徽章文字由此設定 data-mobile（styles.css 讀取）。 */
+   行動裝置 ≤920px 的狀態徽章文字由此設定 data-mobile（styles.css 讀取）。 */
 (function () {
   var toggle = document.getElementById('toggle');
   var nav = document.getElementById('nav');
@@ -18,6 +18,10 @@
   toggle.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
     syncToggle(open);
+    if (open) {
+      var first = nav.querySelector('a');
+      if (first) first.focus();
+    }
   });
   nav.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { closeMenu(false); });
