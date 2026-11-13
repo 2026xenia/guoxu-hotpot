@@ -475,3 +475,65 @@ body{font-weight:400}
 .line-qr img{width:72px;height:72px}
 .ig-qr--lg.line-qr img{width:136px;height:136px}
 @media(max-width:680px){.footer-social{order:0;width:100%;justify-content:flex-start}}
+
+/* 2026-11-13 追加四：header 高度 token → 錨點 scroll-margin、h1 斷行、404 撐滿視窗、晶片為連結、footer 連結不斷詞 */
+html{--header-h:94px}
+@media(max-width:680px){html{--header-h:118px}}
+section[id]{scroll-margin-top:calc(var(--header-h) + 14px)}
+main[id]{scroll-margin-top:calc(var(--header-h) + 6px)}
+.nowrap{white-space:nowrap}
+.page-head h1{text-wrap:balance}
+@media(max-width:680px){.page-head h1{font-size:clamp(27px,7vw,30px)}}
+.footer-note a{white-space:nowrap}
+a.open-now--head{text-decoration:none;color:inherit;cursor:pointer}
+a.open-now--head:hover{background:var(--highlight)}
+body.page-404{display:flex;flex-direction:column;min-height:100vh}
+body.page-404 main{flex:1 0 auto}
+
+/* 2026-11-13 追加五：404 內容垂直置中（含 flex 撐高後的剩餘空間） */
+body.page-404 main{display:flex;flex-direction:column;justify-content:center}
+
+/* ============================================================
+   2026-11-13 追加六：懸浮按鈕統一
+   範圍＝.menu-shortcut a（menu/pot/guide 捷徑）、.contact-chips a（Google 地圖）、
+   a.open-now--head（header 開鍋晶片）。沿用站內 .main-btn 語言：
+   hover translate(-2px,-2px)＋陰影加深、active 壓下；open-now 為徽章級用小幅 -1px。
+   借既有 token，不新增色票；is-current 壓下反色維持原樣，不跟 hover 混。
+   ============================================================ */
+.menu-shortcut a:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.menu-shortcut a:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.menu-shortcut a.is-current:hover{transform:translate(4px,4px);box-shadow:none}
+.contact-chips a{transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s cubic-bezier(.34,1.56,.64,1)}
+.contact-chips a{box-shadow:4px 4px 0 var(--ink)}
+.contact-chips a:hover{background:var(--highlight);color:var(--deep);transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.contact-chips a:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+a.open-now--head{transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s cubic-bezier(.34,1.56,.64,1)}
+a.open-now--head:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+a.open-now--head:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+@media(prefers-reduced-motion:reduce){
+.menu-shortcut a{transition:none}
+.menu-shortcut a:hover,.menu-shortcut a:active,.menu-shortcut a.is-current:hover{transform:none}
+.contact-chips a{transition:none}
+.contact-chips a:hover,.contact-chips a:active{transform:none}
+a.open-now--head{transition:none}
+a.open-now--head:hover,a.open-now--head:active{transform:none}
+}
+/* ============================================================
+   2026-11-13 追加七：rest 無陰影，hover／focus-visible 才浮起
+   覆蓋追加六與既有 base 陰影；is-current 壓下反色維持無陰影
+   ============================================================ */
+.menu-shortcut a{box-shadow:none}
+.menu-shortcut a:hover,.menu-shortcut a:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.menu-shortcut a:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.menu-shortcut a.is-current:hover,.menu-shortcut a.is-current:focus-visible{transform:translate(4px,4px);box-shadow:none}
+.contact-chips a{box-shadow:none}
+.contact-chips a:hover,.contact-chips a:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.contact-chips a:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+a.open-now--head{box-shadow:none}
+a.open-now--head:hover,a.open-now--head:focus-visible{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+a.open-now--head:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+@media(prefers-reduced-motion:reduce){
+.menu-shortcut a:focus-visible,.menu-shortcut a.is-current:focus-visible{transform:none}
+.contact-chips a:focus-visible{transform:none}
+a.open-now--head:focus-visible{transform:none}
+}

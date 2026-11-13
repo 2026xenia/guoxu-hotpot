@@ -55,7 +55,7 @@
       var link = map[en.target.id];
       if (!link) return;
       links.forEach(function (a) { if (!a.closest('.menu-shortcut')) a.removeAttribute('aria-current'); });
-      link.setAttribute('aria-current', 'page');
+      link.setAttribute('aria-current', 'location');
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   document.querySelectorAll('section[id]').forEach(function (s) { if (map[s.id]) obs.observe(s); });
@@ -79,7 +79,7 @@
       if (!link) return;
       links.forEach(function (a) { a.classList.remove('is-current'); a.removeAttribute('aria-current'); });
       link.classList.add('is-current');
-      link.setAttribute('aria-current', 'page');
+      link.setAttribute('aria-current', 'location');
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
   targets.forEach(function (el) { obs.observe(el); });
