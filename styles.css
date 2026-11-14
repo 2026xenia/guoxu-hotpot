@@ -586,3 +586,22 @@ section[id],main[id],#pot-nav{scroll-margin-top:0}
 /* 2026-11-14 追加：字型載入前後的行數不跳動（Noto Sans TC swap 期間的系統 CJK 替代字過寬） */
 body{font-size-adjust:from-font}
 
+/* 2026-11-14 追加十：跨文件轉場（5 頁 MPA 整頁淡接）。只在允許動效時啟用，
+   reduced-motion 使用者完全不轉場；不給任何元素 view-transition-name，
+   避免命名根元素與 sticky 頁首／--header-h 契約衝突。 */
+@media (prefers-reduced-motion: no-preference){
+  @view-transition{navigation:auto}
+}
+
+/* 2026-11-14 追加十一：Windows 強制色彩模式（forced colors）下，瀏覽器會丟棄 box-shadow 並強制 color，
+   現行頁唯一的非顏色線索（紅色下劃線）因此消失 → 換成邊框／外框補回形狀線索（WCAG 1.4.1 不得只靠顏色）。
+   currentColor 是系統色，不是新色票。 */
+@media (forced-colors: active){
+  .header nav a[aria-current="page"]{border-bottom:2px solid currentColor}
+  .menu-shortcut a.is-current{outline:2px solid currentColor;outline-offset:2px}
+}
+
+/* 2026-11-14 追加十二：吉祥物包進 <picture> 後，版面項會從 img 變成 picture；
+   display:contents 讓 img 繼續當 flex/grid 項目，版面與包裝前完全一致（沿用 .hero-right picture 的做法） */
+.about-image picture,.guide-lead picture{display:contents}
+
