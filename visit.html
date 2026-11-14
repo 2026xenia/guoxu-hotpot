@@ -91,35 +91,82 @@
   <div class="container">
     <p class="small-label">地圖</p>
     <div class="map" id="mapWrap">
-      <div class="map-facade" id="mapFacade">
-        <div class="map-facade-inner">
-          <p class="map-title">鍋序位置地圖</p>
-          <div class="map-preview" aria-hidden="true">
-            <svg viewBox="0 0 640 360">
-              <rect x="0" y="0" width="640" height="360" fill="#f5e8d1"/>
-              <path d="M0 210 H640" stroke="#d9c9b4" stroke-width="18" fill="none"/>
-              <path d="M0 210 H640" stroke="#fffdf7" stroke-width="8" stroke-dasharray="18 14" fill="none"/>
-              <path d="M120 0 V360" stroke="#d9c9b4" stroke-width="14" fill="none"/>
-              <path d="M420 0 V360" stroke="#d9c9b4" stroke-width="14" fill="none"/>
-              <rect x="160" y="235" width="140" height="70" fill="#fffdf7" stroke="#382620" stroke-width="3"/>
-              <text x="230" y="262" text-anchor="middle" font-size="22" font-weight="900" fill="#8e2428">鍋序</text>
-              <text x="230" y="288" text-anchor="middle" font-size="14" font-weight="700" fill="#382620">23.5572, 120.4720</text>
-              <circle cx="230" cy="180" r="10" fill="#8e2428" stroke="#382620" stroke-width="3"/>
-              <path d="M230 170 v-20" stroke="#8e2428" stroke-width="4" stroke-linecap="round"/>
-              <rect x="335" y="160" width="170" height="62" fill="#f4cb5a" stroke="#382620" stroke-width="3"/>
-              <text x="420" y="185" text-anchor="middle" font-size="16" font-weight="900" fill="#622027">公共停車場</text>
-              <text x="420" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="#382620">步行 1 分鐘</text>
-            </svg>
-          </div>
-          <p class="map-parking">店旁公共停車場，步行 1 分鐘</p>
-          <p class="map-sub">上圖為位置示意，不載入地圖圖磚，省流量。點下方按鈕才會載入完整的 Google 地圖。</p>
-          <div class="map-actions">
-            <button type="button" class="outline-btn" id="loadMap">看地圖</button>
+      <div class="map-studio" id="mapFacade">
+        <div class="map-frame">
+          <span class="map-screw" aria-hidden="true" style="left:5px;top:5px"></span>
+          <span class="map-screw" aria-hidden="true" style="right:5px;top:5px"></span>
+          <span class="map-screw" aria-hidden="true" style="left:5px;bottom:5px"></span>
+          <span class="map-screw" aria-hidden="true" style="right:5px;bottom:5px"></span>
+
+          <div class="map-window">
+            <picture>
+              <source srcset="assets/map-guoxu.webp" type="image/webp">
+              <img src="assets/map-guoxu.png" width="960" height="512" alt="鍋序周邊的等角像素風立體示意圖：街區中間是店面，旁邊是公共停車場，周邊有道路與行道樹。示意圖，非實際比例。">
+            </picture>
+
+            <div class="road-plate" style="--x:30.63%;--y:31.84%;--r:-26.6deg">富農路</div>
+            <div class="road-plate" style="--x:65.10%;--y:27.34%;--r:26.6deg">神農一街</div>
+            <div class="road-plate" style="--x:81.67%;--y:48.83%;--r:-26.6deg">神農路</div>
+
+            <div class="gx-ringbox" style="--x:57.71%;--y:32.81%" aria-hidden="true">
+              <div class="gx-ring"></div>
+              <div class="gx-ring gx-ring2"></div>
+              <div class="gx-shadow"></div>
+            </div>
+
+            <div class="gx-pin" role="img" aria-label="鍋序位置標記" style="--x:57.71%;--y:25%">
+              <div class="gx-glow" aria-hidden="true"></div>
+              <div class="gx-pin-in">
+                <svg aria-hidden="true" viewBox="0 0 12 15" shape-rendering="crispEdges">
+                  <g class="pin-edge"><rect x="4" y="0" width="4" height="1"/><rect x="2" y="1" width="8" height="1"/><rect x="1" y="2" width="10" height="1"/><rect x="0" y="3" width="12" height="6"/><rect x="1" y="9" width="10" height="1"/><rect x="2" y="10" width="8" height="1"/><rect x="3" y="11" width="6" height="1"/><rect x="4" y="12" width="4" height="1"/><rect x="5" y="13" width="2" height="2"/></g>
+                  <g class="pin-body"><rect x="4" y="1" width="4" height="1"/><rect x="3" y="2" width="6" height="1"/><rect x="1" y="3" width="10" height="5"/><rect x="2" y="8" width="8" height="1"/><rect x="3" y="9" width="6" height="1"/><rect x="4" y="10" width="4" height="1"/><rect x="5" y="11" width="2" height="1"/><rect x="5" y="12" width="2" height="1"/></g>
+                  <g class="pin-hi"><rect x="4" y="1" width="3" height="1"/><rect x="3" y="2" width="3" height="1"/><rect x="1" y="3" width="3" height="1"/><rect x="1" y="4" width="2" height="3"/></g>
+                  <g class="pin-lo"><rect x="9" y="4" width="2" height="4"/><rect x="8" y="8" width="2" height="1"/><rect x="7" y="9" width="2" height="1"/><rect x="6" y="10" width="2" height="1"/><rect x="6" y="11" width="1" height="2"/></g>
+                  <g class="pin-face"><rect x="5" y="4" width="2" height="1"/><rect x="4" y="5" width="4" height="2"/><rect x="5" y="7" width="2" height="1"/></g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="shop-tag" style="--x:57.71%;--y:14.26%">鍋序 小火鍋</div>
+
+            <div class="park-leader" aria-hidden="true"></div>
+            <div class="park-tag" style="--x:26.15%;--y:25.59%"><span class="park-p" aria-hidden="true">P</span><span>停車場・步行約 1 分鐘</span></div>
+
+            <div class="campus-arrow" role="img" aria-label="往國立中正大學：畫面左下方" style="--x:33.33%;--y:78.91%">
+              <svg aria-hidden="true" viewBox="0 0 42 10" shape-rendering="crispEdges">
+                <g class="arrow-edge"><rect x="0" y="3" width="4" height="4"/><rect x="2" y="2" width="4" height="6"/><rect x="4" y="1" width="4" height="8"/><rect x="6" y="0" width="4" height="10"/><rect x="8" y="3" width="34" height="4"/></g>
+                <g class="arrow-body"><rect x="1" y="4" width="2" height="2"/><rect x="3" y="3" width="2" height="4"/><rect x="5" y="2" width="2" height="6"/><rect x="7" y="1" width="2" height="8"/><rect x="9" y="4" width="32" height="2"/></g>
+              </svg>
+            </div>
+            <div class="campus-tag" style="--x:35.21%;--y:87.89%">往國立中正大學</div>
+
+            <div class="compass" role="img" aria-label="指北針：北方在畫面左下方，指向國立中正大學" style="--x:93.33%;--y:11.72%">
+              <svg aria-hidden="true" viewBox="0 0 74 74" shape-rendering="crispEdges">
+                <g transform="rotate(-116.6 37 37)">
+                  <polygon class="compass-north" points="37,8 44,37 30,37"/>
+                  <polygon class="compass-south" points="37,66 44,37 30,37"/>
+                  <rect class="compass-hub" x="35" y="35" width="4" height="4"/>
+                </g>
+              </svg>
+              <div class="compass-n" aria-hidden="true">N</div>
+            </div>
+
+            <div class="map-address">
+              <div class="map-address-name">鍋序 GUO XU HOT POT</div>
+              <div class="map-address-line">嘉義縣民雄鄉三興村神農路186巷2-7號</div>
+            </div>
+
+            <div class="map-scale">示意圖，非實際比例</div>
           </div>
         </div>
-        <noscript><p><a class="outline-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">開啟 Google 地圖／導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a></p></noscript>
+
+        <div class="map-plaque">鍋序位置地圖</div>
+        <div class="map-caption">民雄・中正大學旁</div>
       </div>
     </div>
+    <p class="map-sub" id="mapSub">上圖是等角示意圖，非實際比例；店旁公共停車場步行約 1 分鐘。不載入地圖圖磚，省流量，點下方按鈕才載入完整的 Google 地圖。</p>
+    <div class="map-actions" id="mapActions"><button type="button" class="outline-btn" id="loadMap">看 Google 地圖</button></div>
+    <noscript><p><a class="outline-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">開啟 Google 地圖／導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a></p></noscript>
     <div class="page-cta">
       <a class="main-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">開啟 Google 導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a>
       <a class="outline-btn" href="menu.html">先看菜單</a>
@@ -194,6 +241,10 @@
     wrap.innerHTML = '<iframe title="鍋序位置地圖" src="https://www.google.com/maps?q=23.5572127,120.472024&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
     var frame = wrap.querySelector('iframe');
     if (frame) frame.focus();
+    var actions = document.getElementById('mapActions');
+    if (actions) actions.hidden = true;
+    var note = document.getElementById('mapSub');
+    if (note) note.hidden = true;
   });
 })();
 </script>

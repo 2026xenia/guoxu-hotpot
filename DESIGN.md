@@ -289,6 +289,19 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 - **超值海鮮拼盤格** `.platter-grid`／`.platter-item`（menu.html）：桌機 4 欄 → 920px 以下 2 欄；格項紙白底、2px 邊＋2px 硬陰影、內距 8px；figcaption 14px，`<b>` 為深紅 var(--deep) 字重 900。
 - **內文 inline 連結**（`.ink-link`）：鍋湯深紅字＋900 字重，紅色 `text-decoration` 下劃線（thickness 2px、offset 6px）貼著字形畫；跨行時 `box-decoration-break:clone` 讓每行片段各自完整呈現 3px 水平內距與下劃線（內距對稱抵消 margin，不影響字位）；行內連結屬 WCAG 2.5.8 inline 例外，不強求 44px 觸控目標（2026-11-13 移除 padding-block:14px——hover 底色曾遮蓋上下行）。**無 hover 底色**（2026-11-13，附註性質；亮黃紙底 hover 僅保留給 `a.board-row`、`.menu-shortcut a`、`.faq-item summary` 等區塊連結）；下劃線＋紅字為連結訊號，鍵盤由全域 `a:focus-visible` 3px 紅框負責。電話在首頁資訊卡為純文字，不做 tel: 連結（2026-11-12）。
 
+### 位置示意圖元件 `.map-studio`（2026-11-14 登記，設計稿移植）
+
+`visit.html` 的地圖區塊整包移植自設計稿 `鍋序位置地圖-html/Main.dc.html`。**這是本站第二個明文視覺例外**（第一個是吉祥物的 `drop-shadow`）：使用者裁定保留設計稿的木框、黃銅排字牌、銅釘、漸層與點陣字，因為那個區塊的設定是「掛在網頁上的一塊實體招牌」，不是頁面內容的一部分。
+
+- **例外邊界**：木框的顏色**只在 `:root` 的 `--map-*` 群組裡**（26 個 token，含 `--map-canvas`、`--map-wood`、`--map-brass`、`--map-sign`、`--map-pin` 等）。`--map-*` 出了 `.map-studio` 就不得使用；本站的 `--red` 仍是唯一行動色，木框的黃銅與路牌藍不參與任何 UI 狀態。漸層同理：只出現在 `.map-frame`、`.map-plaque`、`.gx-glow`、`.map-address` 與 `.map-studio` 的點紋底。
+- **沒有搬進來的東西**：React runtime（`vendor/react*.js` 142KB＋`support.js` 46KB）只為了渲染一個靜態版面，一行都不進 repo；`<x-dc>`、`<helmet>`、`text/x-dc` 區塊也一併拆掉。
+- **版面**：不用 `transform:scale`、不用 JS，靠百分比 `padding`（`62/50/76` 相對 1100 寬）＋ `cqw` 等比縮放。`.map-studio` 與 `.map-window` 各自是 `container-type:inline-size`，所以外框與圖上的 overlay 可以分別以各自的寬度換算字級。這是全站唯一的 container query。
+- **字型**：`DotGothic16` 自架 subset（`assets/fonts/dotgothic16-subset.woff2`，只用得到的約 45 字），`font-family:'DotGothic16','Noto Sans TC',sans-serif`。**DotGothic16 只有 400 一個字重**，所以 `.map-studio *{font-weight:400}` 是必要的——否則繼承到 900 會觸發合成粗體，把像素邊緣糊掉。繁體專用字（鄉／縣／號／圖／際／實／義）若不在字型裡，會逐字落回 Noto Sans TC，這是可接受的混字而不是壞字。
+- **圖**：`map-guoxu.png`／`map-guoxu.webp`（20,890／7,948B），`<picture>` 先給 WebP。原生設計稿只有 480×256，資產是 2× NEAREST 倍增值，顯示寬度約 1:1，`image-rendering:pixelated` 在 ≤680px 關閉（那裡是縮圖，像素內插會鋸齒）。
+- **方位**：中正大學在畫面左下方。設計稿原本只有**指北針**是錯的（`rotate(-63.4 37 37)` 指左上），改為 `rotate(-116.6 37 37)`；「往國立中正大學」那支箭頭的 SVG 本身是朝左繪製，`rotate:-26.6deg` 正好使它指向左下，**沿用設計稿原值不動**。
+- **動態**：`gx-bob`／`gx-ring`／`gx-ring2`／`gx-glow`／`gx-shadow` 全部由 `infinite` 改為 **3 次**（最長 7.2 秒），避免 WCAG 2.2.2 的「超過 5 秒的並行動畫需提供暫停機制」。`prefers-reduced-motion` 下全關。
+- **≤680px**：路牌、指北針、停車 chip、地址牌、示意圖角標全部隱藏，字級改用固定 px 下限；停車資訊已寫進 `.map-sub`，收掉 chip 不掉資訊。1100px 的構圖在 320px 本來就不可能等比可讀（13px 標籤會縮成 3px），所以低於斷點是換一套簡化版，不是縮小版。
+
 ### Inputs / Fields
 本站無表單輸入；僅有連結與按鈕。焦點一律 3px 外框，紅底區塊用奶油色內縮框。
 
