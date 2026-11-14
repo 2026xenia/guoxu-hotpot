@@ -218,7 +218,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 ## Layout
 
-容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 1100px 先收窄頁首導覽間距（26px→18px），920px 收為單欄，680px 再壓字級與間距；頁首高度桌機 94px，920px 以下 `min-height` 94px，680px 以下 `min-height` 75px。錨點捲動留白 `scroll-margin-top` 110px（`section[id]`）／96px（`main[id]`），避免 sticky header 遮住標題。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
+容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 1100px 先收窄頁首導覽間距（26px→18px），920px 收為單欄，680px 再壓字級與間距；頁首高度桌機 94px，920px 以下 `min-height` 94px，680px 以下 75px（logo 只留圖示、CTA 隱藏，見 Navigation）。錨點捲動留白 `scroll-margin-top: calc(var(--header-h) + 14px)`（`section[id]`）／`+ 6px`（`main[id]`），`--header-h` 94px、680px 以下 75px，避免 sticky header 遮住標題。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
 
 ## Elevation & Depth
 
@@ -282,6 +282,8 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 - **首頁三卡** `.pot-picture--photo`：照片取代湯色展示面（退役 Soup 三色）；img 撐滿卡片寬、aspect-ratio 1440/1053、object-fit cover；價格以 `.circle-label` chip 標示於右上（紙白底、2px 墨棕邊、7° 微傾、字重 900）。
 - **鍋物卡照片** `.pot-photo`（pot.html）：2px 墨棕邊＋4px 硬陰影（var(--ink)）、aspect-ratio 1440/1053、object-fit cover；內文排列不受影響。
+- **首屏 hero 吉祥物**（2026-11-14）：`<picture>` 先給 `assets/mascot-hero.webp`（377×391、約 18KB）＋PNG fallback `assets/mascot-hero.png`；`.hero-right picture{display:contents}` 讓 `<img>` 仍是 `.hero-right` 的 flex item，原 `.mascot` 寬度、rotate(-4deg)、drop-shadow 不變；`fetchpriority="high"` 保留在 img（首屏不 lazy）。
+- **文字卡 `.pot-photo--text`（pot.html）**（2026-11-14）：5 張無照片鍋物用 `--board` 底＋2px 墨棕邊＋4px 硬陰影，內縮 10px `--dash` 虛線框；中央單字 monogram 48–56px／900／`--deep`，整塊 `aria-hidden`，名稱由 `<h3>` 提供。足印同 `.pot-photo`（aspect-ratio 1440/1053、14px 下距），13 張有照片的卡不受影響。
 - **超值海鮮拼盤格** `.platter-grid`／`.platter-item`（menu.html）：桌機 4 欄 → 920px 以下 2 欄；格項紙白底、2px 邊＋2px 硬陰影、內距 8px；figcaption 14px，`<b>` 為深紅 var(--deep) 字重 900。
 - **內文 inline 連結**（`.ink-link`）：鍋湯深紅字＋900 字重，紅色 `text-decoration` 下劃線（thickness 2px、offset 6px）貼著字形畫；跨行時 `box-decoration-break:clone` 讓每行片段各自完整呈現 3px 水平內距與下劃線（內距對稱抵消 margin，不影響字位）；行內連結屬 WCAG 2.5.8 inline 例外，不強求 44px 觸控目標（2026-11-13 移除 padding-block:14px——hover 底色曾遮蓋上下行）。**無 hover 底色**（2026-11-13，附註性質；亮黃紙底 hover 僅保留給 `a.board-row`、`.menu-shortcut a`、`.faq-item summary` 等區塊連結）；下劃線＋紅字為連結訊號，鍵盤由全域 `a:focus-visible` 3px 紅框負責。電話在首頁資訊卡為純文字，不做 tel: 連結（2026-11-12）。
 
@@ -289,7 +291,10 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 本站無表單輸入；僅有連結與按鈕。焦點一律 3px 外框，紅底區塊用奶油色內縮框。
 
 ### Navigation
-頁首 94px 紙白底＋2px 墨棕底邊，導覽字 14px/700，懸停變鍋湯深紅，現行頁以紅色底線標記。手機版 44px 漢堡選單展開為整列，桌面版常駐。
+頁首 94px 紙白底＋2px 墨棕底邊，導覽字 14px/700，懸停變鍋湯深紅，現行頁以紅色底線標記。手機版 44px 漢堡選單展開為整列，桌面版常駐。≤680px 頁首收為 75px 單行：logo 只留吉祥物圖示（文字隱藏）、頁首「導航」CTA 隱藏（404 保留「回首頁」），狀態晶片保留完整短字。
+
+### 社群 QR 按鈕（.ig-qr／.line-qr）（2026-11-14 登記）
+2026-11-14 用戶裁決：**QR 維持現狀**——不加可見文字標籤、不改手機文字按鈕；`visit.html` 資訊卡與 footer 兩組 QR 都保留（footer IG 80px／LINE 72px，visit 144px／136px）。
 
 ### Tables
 價目與營業時間皆為 2px 墨棕邊表格，表頭沙米底，列間 1px 虛線；今日／週六用亮黃紙整列標示，今日加紅色「今天」貼標，不另加圖示。

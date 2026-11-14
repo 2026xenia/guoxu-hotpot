@@ -336,13 +336,6 @@ a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 .pot-card h3 .pot-tag{margin-left:0}
 .pot-card p{margin:0;font-size:16px;line-height:1.9}
 .pot-card .pot-lede{margin:0}
-.pot-card details.pot-detail{margin-top:8px}
-.pot-card details.pot-detail summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;font-size:14px;font-weight:900;color:var(--red);cursor:pointer;list-style:none}
-.pot-card details.pot-detail summary::-webkit-details-marker{display:none}
-.pot-card details.pot-detail summary::after{content:"+";flex:0 0 auto;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--ink);border-radius:4px;font-size:14px;font-weight:900;color:var(--deep);background:var(--paper)}
-.pot-card details.pot-detail[open] summary::after{content:"−"}
-.pot-card details.pot-detail summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-.pot-card details.pot-detail .pot-reminder{margin:0;padding:10px 12px 10px;background:var(--highlight);border:2px solid var(--ink);font-size:16px;line-height:1.8}
 .pot-price-link{margin:18px 0 0;font-size:16px;line-height:1.8;font-weight:700}
 
 /* 頁首注意事項：亮黃紙提示，僅用既有色票 */
@@ -355,7 +348,6 @@ a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
   .pot-cards{grid-template-columns:1fr;gap:16px}
   .pot-card{padding:16px 16px 18px}
   .pot-card h3{font-size:19px}
-  .pot-card details.pot-detail summary{font-size:14px}
 }
 
 /* 頁首 h1 已併入前綴（P2-1），不再有 small-label，需收緊上距 */
@@ -478,7 +470,6 @@ body{font-weight:400}
 
 /* 2026-11-13 追加四：header 高度 token → 錨點 scroll-margin、h1 斷行、404 撐滿視窗、晶片為連結、footer 連結不斷詞 */
 html{--header-h:94px}
-@media(max-width:680px){html{--header-h:118px}}
 section[id]{scroll-margin-top:calc(var(--header-h) + 14px)}
 main[id]{scroll-margin-top:calc(var(--header-h) + 6px)}
 .nowrap{white-space:nowrap}
@@ -537,3 +528,53 @@ a.open-now--head:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--
 .contact-chips a:focus-visible{transform:none}
 a.open-now--head:focus-visible{transform:none}
 }
+
+/* ============================================================
+   2026-11-14 追加一：手機頁首單行（P1）
+   ≤680px：logo 只留吉祥物圖示、頁首「導航」CTA 隱藏（404 保留）、
+   狀態晶片維持單行完整短字；實際高度 75px，同步 --header-h。
+   ============================================================ */
+@media(max-width:680px){
+  .logo span{display:none}
+  body:not(.page-404) .header-cta{display:none}
+  .hamburger{margin-left:auto}
+  .open-now--head{white-space:nowrap}
+  html{--header-h:75px}
+}
+
+/* 2026-11-14 追加二：頁尾吉祥物改用 74px 衍生圖，改由 width 控制比例 */
+.footer-logo img{width:43px;height:auto}
+
+/* 2026-11-14 追加三：頁尾導覽 6 項，手機改 3 欄避免孤行 */
+@media(max-width:680px){
+  .footer-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 8px;width:100%}
+  .footer-nav a{padding:12px 6px}
+}
+
+/* 2026-11-14 追加四：菜單分類捷徑留白，讓 4px 硬陰影有呼吸空間 */
+.menu-shortcut{margin:0 0 20px}
+
+/* 2026-11-14 追加五：拼盤圖改由 aspect-ratio 控制高度，避免拉伸 */
+.platter-item img{height:auto}
+
+/* 2026-11-14 追加六：首頁鍋卡不再預留固定高度，交由 grid 自然等高 */
+.pot-text{min-height:auto}
+
+/* 2026-11-14 追加七：鍋品頁「點鍋通則」與分類回跳 */
+.pot-rules p{margin:0 0 6px}
+.pot-rules ul{margin:0;padding-left:1.2em}
+.pot-rules li{line-height:1.9}
+.pot-back{margin:10px 0 0}
+.pot-back a{display:inline-flex;align-items:center;min-height:44px}
+#pot-nav{scroll-margin-top:calc(var(--header-h) + 14px)}
+
+/* ============================================================
+   2026-11-14 追加八：無照片鍋物卡的文字面板（P3-A）
+   沿用 .pot-photo 的 2px 邊＋4px 硬陰影；--dash 只做內框虛線，不當文字色。
+   ============================================================ */
+.pot-photo--text{display:flex;align-items:center;justify-content:center;background:var(--board);position:relative}
+.pot-photo--text::before{content:"";position:absolute;inset:10px;border:1px dashed var(--dash);pointer-events:none}
+.pot-monogram{font-size:clamp(48px,7vw,56px);line-height:1;font-weight:900;color:var(--deep);letter-spacing:-2px}
+
+/* 2026-11-14 追加九：hero 用 picture 包 WebP＋PNG fallback；display:contents 讓 img 仍是 .hero-right 的 flex item */
+.hero-right picture{display:contents}

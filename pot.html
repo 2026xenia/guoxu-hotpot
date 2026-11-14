@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#8e2428">
 <script>document.documentElement.classList.add('js')</script>
 <title>鍋品介紹｜鍋序 18 種鍋物，一鍋一則 — 民雄火鍋</title>
-<meta name="description" content="鍋品介紹把鍋序 18 種鍋物一鍋一則說清楚：分區、價位帶與點鍋提醒。經典 170–200、特色 190–250、素食三款同價。民雄火鍋、中正大學旁，實際風味以店家現煮為準。">
+<meta name="description" content="鍋品介紹把鍋序 18 種鍋物一鍋一則說清楚：分區、價位帶與點鍋通則。經典 170–200、特色 190–250、素食三款同價。民雄火鍋、中正大學旁，實際風味以店家現煮為準。">
 <link rel="canonical" href="https://2026xenia.github.io/guoxu-hotpot/pot.html">
 <meta property="og:site_name" content="鍋序 GUO XU HOT POT">
 <meta property="og:locale" content="zh_TW">
@@ -87,18 +87,26 @@
 <section class="section menu-page">
   <div class="container">
 
-    <nav class="menu-shortcut" aria-label="鍋品分類捷徑">
+    <nav class="menu-shortcut" id="pot-nav" aria-label="鍋品分類捷徑">
       <a href="#classic">經典 5 鍋</a>
       <a href="#featured">特色 10 鍋</a>
       <a href="#veg">素食 3 鍋</a>
       <a href="menu.html">看價目</a>
     </nav>
     <p class="pot-note">※ 本頁不列逐項價格（完整價目見菜單頁）。實際風味與口味細節以店家現煮、現場說明為準。</p>
+    <div class="pot-note pot-rules">
+      <p><strong>點鍋通則</strong></p>
+      <ul>
+        <li>豬肉為底價；換牛肉或羊肉 +10、雞肉不加價；加肉 +30。內用與外帶同價。</li>
+        <li>素食三款（素食蔬菜鍋、田園番茄鍋、養身藥膳鍋）不分選肉、不加肉，與葷食鍋同價。</li>
+        <li>鯛魚、海鮮鍋物的換肉方式請現場確認。</li>
+      </ul>
+    </div>
 
     <section class="menu-block" id="classic">
       <div class="section-top">
         <div><span class="small-label">經典</span><h2>經典鍋物 <span class="menu-badge">170–200</span></h2></div>
-        <p>價位帶 170–200 元，第一次來可以從這一區開始。經典 5 鍋的逐項價格與完整價目，見<a class="ink-link" href="menu.html#classic">菜單頁經典鍋物</a></p>
+        <p>價位帶 170–200 元，第一次來可以從這一區開始。單點另有鯛魚片、白蝦、蛤蜊、軟絲，可逐樣加點。經典 5 鍋的逐項價格與完整價目，見<a class="ink-link" href="menu.html#classic">菜單頁經典鍋物</a></p>
       </div>
       <div class="pot-cards">
 
@@ -106,39 +114,35 @@
           <figure class="pot-photo"><picture><source srcset="assets/pot-original-broth-800.webp 800w, assets/pot-original-broth-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-original-broth-800.jpg" alt="原味鍋的食材照：豬肉片、青江菜、玉米、豆皮、魚餃、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>原味鍋</h3>
           <p class="pot-lede">原味鍋是這一區最單純的一款：原味高湯，沒有額外主打的食材。第一次上門、或習慣自己蘸醬調味的人，先看這鍋。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">豬肉為底價，換牛肉或羊肉加 10 元，雞肉不加價，想吃得飽一點可以加肉。</p></details>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-satay-800.webp 800w, assets/pot-satay-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-satay-800.jpg" alt="沙茶鍋的食材照：豬肉片、青江菜、玉米、豆皮、黑木耳、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>沙茶鍋</h3>
           <p class="pot-lede">想吃沙茶，直球對決點這鍋就對了——沙茶在湯裡，不是另外附的醬。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">想吃辣味請改看麻辣鍋；經典 5 鍋的價格，見菜單頁。</p></details>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-spicy-mala-800.webp 800w, assets/pot-spicy-mala-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-spicy-mala-800.jpg" alt="麻辣鍋的食材照：豬肉片、豆皮、青江菜、玉米、黑木耳、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>麻辣鍋</h3>
           <p class="pot-lede">想吃辣的先看麻辣鍋，麻跟辣都在湯裡。想直接來一鍋麻辣、不想再加辣醬的人，就是它。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">怕辣的話可以先從原味或黃金南瓜開始；價格以菜單頁價目表為準。</p></details>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-sea-bream-fish-800.webp 800w, assets/pot-sea-bream-fish-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-sea-bream-fish-800.jpg" alt="鯛魚鍋的食材照：生魚片、青江菜、玉米、豆皮、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>鯛魚鍋</h3>
-          <p class="pot-lede">鯛魚鍋走魚湯方向，以鯛魚為底。想喝魚湯類湯底的人，這鍋可以列入。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">想讓料豐盛一點，單點區還有鯛魚、白蝦、蛤蜊、軟絲，一樣一樣加也行。</p></details>
+          <p class="pot-lede">想喝魚湯類湯底的人，這鍋可以列入。</p>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-seafood-800.webp 800w, assets/pot-seafood-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-seafood-800.jpg" alt="海鮮鍋的食材照：蝦、蛤蜊、魚片與青江菜、玉米、豆皮" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>海鮮鍋</h3>
           <p class="pot-lede">海鮮鍋以蝦、蛤蜊、魚片打底。愛吃蝦貝、想一次吃到多種海鮮的人，這鍋比較合適。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">想把料升級，單點區另有海鮮拼盤，A 到 D 四種組合可以挑一組加上。</p></details>
         </article>
 
       </div>
       <p class="pot-price-link">核對價位：到<a class="ink-link" href="menu.html#classic">菜單頁經典鍋物</a>看逐項價格（本頁不列價）。</p>
+      <p class="pot-back"><a class="ink-link" href="#pot-nav">↑ 回分類</a></p>
     </section>
 
     <section class="menu-block" id="featured">
@@ -152,71 +156,65 @@
           <figure class="pot-photo"><picture><source srcset="assets/pot-satay-stinky-800.webp 800w, assets/pot-satay-stinky-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-satay-stinky-800.jpg" alt="沙茶臭臭鍋的食材照：豆腐、豬肉片、玉米、青江菜、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>沙茶臭臭</h3>
           <p class="pot-lede">沙茶臭臭＝沙茶湯底配臭豆腐，兩個口味一次滿足。原本就愛沙茶、又想吃臭豆腐的人，點這鍋就對了。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">臭臭系列一共兩款，一款沙茶、一款麻辣，點的時候說清楚要哪一款。</p></details>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-spicy-mala-stinky-800.webp 800w, assets/pot-spicy-mala-stinky-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-spicy-mala-stinky-800.jpg" alt="麻辣臭臭鍋的食材照：豆腐、豬肉片、玉米、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>麻辣臭臭</h3>
           <p class="pot-lede">麻辣臭臭是臭臭系列裡走辣的那款：麻辣湯底配臭豆腐。想吃辣、又捨不得臭豆腐的人，這鍋剛好。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">辣度或內容想調整，現場問店家最準。</p></details>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-korean-kimchi-800.webp 800w, assets/pot-korean-kimchi-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-korean-kimchi-800.jpg" alt="韓式泡菜鍋的食材照：韓式泡菜、豬肉片、青江菜、玉米、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>韓式泡菜</h3>
-          <p class="pot-lede">韓式泡菜的底就是韓式泡菜。想吃泡菜湯底的人先看這鍋；內用跟外帶同價，不用糾結。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">豬肉為底價，換牛肉或羊肉加 10 元，雞肉不加價，內用與外帶價格相同。</p></details>
+          <p class="pot-lede">想吃泡菜湯底的人先看這鍋；內用跟外帶同價，不用糾結。</p>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-herbal-health-800.webp 800w, assets/pot-herbal-health-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-herbal-health-800.jpg" alt="養身藥膳鍋的食材照：豬肉片、青江菜、玉米、豆皮、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>養身藥膳</h3>
-          <p class="pot-lede">養身藥膳是藥膳湯底，名字直接寫明方向。想喝藥膳湯底的人點這鍋；不吃葷的話，素食區也有同名款。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">不吃葷的話也不用放棄，素食區有同名款，素食的養身藥膳鍋一樣點得到。</p></details>
+          <p class="pot-lede">想喝藥膳湯底的人點這鍋；不吃葷的話，素食區也有同名款。</p>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-garden-tomato-800.webp 800w, assets/pot-garden-tomato-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-garden-tomato-800.jpg" alt="田園番茄鍋的食材照：番茄切片、豬肉片、青江菜、玉米、豆皮" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>田園番茄</h3>
-          <p class="pot-lede">田園番茄以番茄為底。想喝番茄湯底的人看這鍋；吃素的朋友記得開口說「素食的」，素食區有同名款。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">吃素的朋友請記得點素食鍋物區的同名款田園番茄鍋，兩個名字一樣，開口時說清楚。</p></details>
+          <p class="pot-lede">想喝番茄湯底的人看這鍋；吃素的朋友記得開口說「素食的」，素食區有同名款。</p>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-golden-pumpkin-800.webp 800w, assets/pot-golden-pumpkin-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-golden-pumpkin-800.jpg" alt="黃金南瓜鍋的食材照：南瓜、豬肉片、青江菜、玉米、豆皮" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>黃金南瓜</h3>
-          <p class="pot-lede">黃金南瓜以南瓜為湯底。想喝南瓜湯底的人，看這鍋就對。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">黃金南瓜的價格公開寫在菜單頁，本頁不重複列價。</p></details>
+          <p class="pot-lede">想喝南瓜湯底的人，看這鍋就對。</p>
         </article>
 
         <article class="pot-card">
+          <div class="pot-photo pot-photo--text" aria-hidden="true"><span class="pot-monogram">奶</span></div>
           <h3>香醇牛奶</h3>
           <p class="pot-lede">香醇牛奶是單純牛奶湯底，想喝牛奶、先不加起司，選它就對。內用外帶同價。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">特色鍋的價位帶是 190–250 元，逐項價格請看菜單頁；內用外帶同價。</p></details>
         </article>
 
         <article class="pot-card">
           <figure class="pot-photo"><picture><source srcset="assets/pot-cheese-milk-800.webp 800w, assets/pot-cheese-milk-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-cheese-milk-800.jpg" alt="起司牛奶鍋的食材照：起司片、豬肉片、青江菜、玉米、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>起司牛奶</h3>
           <p class="pot-lede">起司牛奶是牛奶湯底再加起司，跟香醇牛奶的差別就在那份起司。想喝牛奶、又想多一點起司的人，點這鍋。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">第一次想先試牛奶湯底的話，可以先點香醇牛奶，下一次再試起司牛奶。</p></details>
         </article>
 
         <article class="pot-card">
+          <div class="pot-photo pot-photo--text" aria-hidden="true"><span class="pot-monogram">椰</span></div>
           <h3>童心椰奶鍋 <span class="pot-tag">限內用</span></h3>
           <p class="pot-lede">童心椰奶以椰奶為湯底，標了限內用，外帶點不到。內用、想試椰奶口味的人，這鍋可以點。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">菜單上標了「限內用」，外帶點不到，想順路帶一份回家的話，請改挑其他鍋。</p></details>
         </article>
 
         <article class="pot-card">
+          <div class="pot-photo pot-photo--text" aria-hidden="true"><span class="pot-monogram">？</span></div>
           <h3>叛逆不乖鍋 <span class="pot-tag">限內用</span></h3>
           <p class="pot-lede">這一鍋的湯底與內容，店家沒有對外說明，菜單上也查無資料。限內用；想知道它是什麼，直接問店家。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">這一鍋的湯底與內容，店家沒有對外說明，菜單也查無資料。想知道就直接問店家；限內用，外帶點不到。</p></details>
         </article>
 
       </div>
       <p class="pot-price-link">核對價位：到<a class="ink-link" href="menu.html#featured">菜單頁特色鍋物</a>看逐項價格（本頁不列價）。</p>
+      <p class="pot-back"><a class="ink-link" href="#pot-nav">↑ 回分類</a></p>
     </section>
 
     <section class="menu-block" id="veg">
@@ -230,23 +228,23 @@
           <figure class="pot-photo"><picture><source srcset="assets/pot-vegetarian-vegetable-800.webp 800w, assets/pot-vegetarian-vegetable-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 520px"><img src="assets/pot-vegetarian-vegetable-800.jpg" alt="素食蔬菜鍋的食材照：青江菜、花椰菜、香菇、紅蘿蔔、豆皮、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture></figure>
           <h3>素食蔬菜鍋 <span class="menu-badge menu-badge--sm">素食</span></h3>
           <p class="pot-lede">素食蔬菜鍋是全素，不分選肉、也不加肉。吃素的人點這鍋最省事，價格跟葷食鍋同一個價。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">素食三款不分選肉、也不加肉，價格就是菜單上的表定數字，與葷食鍋同一個價。</p></details>
         </article>
 
         <article class="pot-card">
+          <div class="pot-photo pot-photo--text" aria-hidden="true"><span class="pot-monogram">茄</span></div>
           <h3>田園番茄鍋 <span class="menu-badge menu-badge--sm">素食</span></h3>
           <p class="pot-lede">跟特色區的田園番茄同名，但這一款是全素：不分選肉、不加肉。吃素、又想喝番茄湯底的人，進店記得說「素食的」。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">它是素食三款之一，進店點的時候說「田園番茄，素食的」，最不會發生換錯鍋的小意外。</p></details>
         </article>
 
         <article class="pot-card">
+          <div class="pot-photo pot-photo--text" aria-hidden="true"><span class="pot-monogram">藥</span></div>
           <h3>養身藥膳鍋 <span class="menu-badge menu-badge--sm">素食</span></h3>
           <p class="pot-lede">素食區的養身藥膳同樣是藥膳湯底，這一款全素、不分選肉。吃素、又想喝藥膳湯底的人，直接報菜名即可。</p>
-          <details class="pot-detail"><summary>點鍋提醒</summary><p class="pot-reminder">素食三款之一，不分選肉、不加肉，價格與葷食鍋同價，進店直接報菜名即可。</p></details>
         </article>
 
       </div>
       <p class="pot-price-link">核對價位：到<a class="ink-link" href="menu.html#veg">菜單頁素食鍋物</a>看逐項價格（本頁不列價）。</p>
+      <p class="pot-back"><a class="ink-link" href="#pot-nav">↑ 回分類</a></p>
     </section>
 
     <div class="page-cta">
@@ -260,8 +258,8 @@
 </main>
 
 <footer><div class="container footer-inner">
-<a href="index.html" class="footer-logo"><img src="assets/mascot-transparent.png" width="43" height="43" alt="" loading="lazy">鍋序</a>
-<nav class="footer-nav" aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="menu.html">菜單</a><a href="index.html#hours">營業時間</a><a href="pot.html">鍋品介紹</a><a href="guide.html">吃鍋指南</a></nav>
+<a href="index.html" class="footer-logo"><img src="assets/mascot-hero-74.png" srcset="assets/mascot-hero-74.png 74w, assets/mascot-hero-148.png 148w" sizes="43px" width="43" height="45" alt="" loading="lazy">鍋序</a>
+<nav class="footer-nav" aria-label="頁尾導覽"><a href="index.html">首頁</a><a href="menu.html">菜單</a><a href="index.html#hours">營業時間</a><a href="pot.html">鍋品介紹</a><a href="guide.html">吃鍋指南</a><a href="visit.html">怎麼來</a></nav>
 <span>好好吃一鍋，好好過一天。</span>
 <span class="footer-social"><a class="ig-qr" href="https://www.instagram.com/hot_pot_03_20/" target="_blank" rel="noopener" aria-label="掃描或點擊前往鍋序火鍋 Instagram（@hot_pot_03_20，另開新視窗）"><img src="assets/ig-qr.png" alt="鍋序火鍋 Instagram QR code（@hot_pot_03_20）" width="400" height="400" loading="lazy" decoding="async"></a><a class="ig-qr line-qr" href="https://lin.ee/pNhpsoc" target="_blank" rel="noopener" aria-label="掃描或點擊加入鍋序 LINE 好友（另開新視窗）"><img src="assets/line-qr.png" alt="鍋序 LINE 官方 QR code" width="360" height="360" loading="lazy" decoding="async"></a></span>
 </div><div class="container"><p class="footer-note">平日晚間 17:00–21:30，週六 11:00–21:30・<a class="ink-link" href="index.html#hours">營業時間</a>・<a class="ink-link" href="visit.html">怎麼來</a></p></div></footer>

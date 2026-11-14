@@ -68,7 +68,7 @@ web
 | 外帶 | 電話或現場皆可，無價差 | ✅ |
 | 訂位 | 不做，現場候位 | ✅ |
 | 用餐時間 | 90 分鐘 | ✅ |
-| 共鍋費 | 每人 100 元，可折抵單點加購；菜單板標示身高超過 120 公分適用 | ✅（2026-04 菜單板照片） |
+| 共鍋費 | 每人 100 元，可折抵單點加購；身高 120 公分以上適用 | ✅（2026-04 菜單板照片） |
 | 鯛魚鍋／海鮮鍋換肉 | 換肉欄打 X，不可換牛／羊／雞（2026-04 板） | ⬜ 待店家確認（板子可能為舊版） |
 | 座標 | 23.5572127, 120.472024 | ✅ |
 | 社群 | Instagram @hot_pot_03_20（https://www.instagram.com/hot_pot_03_20/）：IG 官方 QR 圖按鈕 assets/ig-qr.png；LINE：lin.ee/pNhpsoc 頻道官方 QR 圖按鈕 assets/line-qr.png（皆自官方 QR 衍生、用戶裁決；來源圖不入版控） | ✅（2026-11-13 用戶裁決＋兩次改版） |
@@ -109,16 +109,19 @@ web
 | 圖片 | 一律給 `width`／`height`，首屏吉祥物 `fetchpriority="high"`，其餘 `loading="lazy"`；所有圖檔集中在 `assets/` |
 | 網址 | 正式站 `https://2026xenia.github.io/guoxu-hotpot/`；若換自訂網域，需同步 `canonical`／`og:url`／`og:image`／`sitemap.xml`／JSON-LD 的 `url` 與 `hasMenu` |
 - IG 與 LINE 官方 QR 圖按鈕（assets/ig-qr.png、assets/line-qr.png，皆官方素材、用戶裁決；scdn.line-apps.com 綠按鈕已退役）為全站唯二外部品牌素材例外（2026-11-13 用戶裁決＋改版）；其他顏色仍只取 styles.css :root。JSON-LD sameAs=[IG, LINE]。
+- **QR 按鈕維持現狀**（2026-11-14 用戶裁決）：不加可見文字標籤、不改手機文字按鈕；`visit.html` 資訊卡與 footer 兩組 QR 都保留。
 
 ## 8. 未決清單（等店家）
 - [x] 門牌地址（→ `visit.html`、`index.html` 資訊卡、JSON-LD `address`）
 - [x] 電話（2026-11-12：首頁資訊卡改純文字、不做 tel: 連結；JSON-LD `telephone` 保留；頁首 CTA 維持「導航」，不加電話按鈕）
 - [ ] 評分／評論數
 - [ ] 招牌是哪一鍋
-- [x] 共鍋費原文（2026-11-12：每人 100 元、可折抵單點加購、身高超過 120 公分適用；來源：2026-04 菜單板照片）
+- [x] 共鍋費原文（2026-11-12：每人 100 元、可折抵單點加購、身高 120 公分以上適用；來源：2026-04 菜單板照片。2026-11-14：全站移除「菜單板標示」內部查證語）
 - [ ] 鯛魚鍋／海鮮鍋可否換牛／羊／雞肉（2026-04 板打 X，與現行 +10 寫法牴觸；待店家確認）
 - [x] Instagram／LINE 官方帳號網址（2026-11-13：IG @hot_pot_03_20 → https://www.instagram.com/hot_pot_03_20/ 去 ?dlrf= 追蹤參數；LINE 加好友 https://lin.ee/pNhpsoc；已上站：footer 5 頁＋visit.html 資訊卡＋JSON-LD sameAs）
 - [ ] IG bio 營業時間寫「一～五、日｜17:00－22:30」，與站上以 Google 商家檔案為權威源的 21:30 不一致；2026-11-13 記錄，待店家確認（網站維持 21:30 不動）
+- [ ] 共鍋費的計費對象（同桌每人／加人每人／全桌都點鍋時是否收取）待店家確認。
+- [ ] 單點「軟絲」與拼盤「魷魚圈」是否同一品項，待店家確認。
 
 ## 9. 上線檢查清單
 - [x] `robots.txt`、`sitemap.xml`
