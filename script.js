@@ -39,28 +39,6 @@
   });
 })();
 
-/* Scroll-spy：依視窗內區塊切換 aria-current；map 為空時直接返回。 */
-(function () {
-  var links = document.querySelectorAll('.header nav a');
-  var map = {};
-  links.forEach(function (a) {
-    var href = a.getAttribute('href') || '';
-    var hash = href.split('#')[1];
-    if (hash) map[hash] = a;
-  });
-  if (!Object.keys(map).length) return;
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      var link = map[en.target.id];
-      if (!link) return;
-      links.forEach(function (a) { if (!a.closest('.menu-shortcut')) a.removeAttribute('aria-current'); });
-      link.setAttribute('aria-current', 'location');
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  document.querySelectorAll('section[id]').forEach(function (s) { if (map[s.id]) obs.observe(s); });
-})();
-
 /* 分類捷徑 scroll-spy（menu/guide/pot 頁）：只給目前區塊的捷徑加上壓按態，內容不隱藏、關 JS 也照樣能點 */
 (function () {
   var links = document.querySelectorAll('.menu-shortcut a');
@@ -105,9 +83,7 @@
       var h = parseInt(map.hour, 10) % 24;
       mins = h * 60 + parseInt(map.minute, 10);
     } catch (e) {
-      var now = new Date();
-      day = now.getDay();
-      mins = now.getHours() * 60 + now.getMinutes();
+      return;
     }
     if (typeof day !== 'number' || isNaN(day)) return;
 
@@ -151,9 +127,17 @@
 
     document.querySelectorAll('.hours-table tr.is-today').forEach(function (r) { r.classList.remove('is-today'); });
     document.querySelectorAll('.today-dot').forEach(function (d) { d.remove(); });
+    document.querySelectorAll('.today-chip').forEach(function (c) { c.remove(); });
     var row = document.querySelector('.hours-table tr[data-day="' + day + '"]');
     if (row) {
       row.classList.add('is-today');
+      /* 「今天」是文字，放進 DOM 才讀得到（原本只活在 CSS content）；與開鍋狀態無關 */
+      var th = row.querySelector('th');
+      if (th && !th.querySelector('.today-chip')) {
+        var chip = document.createElement('span');
+        chip.className = 'today-chip'; chip.textContent = '今天';
+        th.appendChild(chip);
+      }
       var td = row.querySelector('td');
       if (td && isOpen && !td.querySelector('.today-dot')) {
         var dot = document.createElement('span');
