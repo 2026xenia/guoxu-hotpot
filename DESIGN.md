@@ -69,8 +69,7 @@ spacing:
   gap-pot-grid: "22px"          # .pot-grid（@920px 12px／@680px 20px；.pot-cards 同 22px）
   gap-hours: "44px"             # .hours-wrap（@920px 28px；.guide-lead 同 44px）
   gap-hero-links: "25px"        # .hero-links（首屏按鈕列）
-  scroll-margin-page: "110px"   # section[id]（scroll-margin-top）
-  scroll-margin-main: "96px"    # main[id]（scroll-margin-top）
+  scroll-padding-page: "calc(var(--header-h) + 14px)"  # html（scroll-padding-top）；section[id]／main[id]／#pot-nav 的 scroll-margin-top 已歸零，避免雙重偏移
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
@@ -218,7 +217,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 ## Layout
 
-容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 1100px 先收窄頁首導覽間距（26px→18px），920px 收為單欄，680px 再壓字級與間距；頁首高度桌機 94px，920px 以下 `min-height` 94px，680px 以下 75px（logo 只留圖示、CTA 隱藏，見 Navigation）。錨點捲動留白 `scroll-margin-top: calc(var(--header-h) + 14px)`（`section[id]`）／`+ 6px`（`main[id]`），`--header-h` 94px、680px 以下 75px，避免 sticky header 遮住標題。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
+容器寬 `min(1140px, calc(100% - 44px))` 居中。桌面多為雙欄（首屏 1fr/.9fr、菜單 1fr/.86fr、關於 .8fr/1.1fr）與三欄鍋物格（repeat(3,1fr)，gap 22px）。區塊上下留白大（.section 102px，手機收為 70px），區塊標題以 2px 墨棕底線＋右側說明文字作分隔。斷點 1100px 先收窄頁首導覽間距（26px→18px），920px 收為單欄，680px 再壓字級與間距；頁首高度桌機 94px，920px 以下 `min-height` 94px，680px 以下 75px（logo 只留圖示、CTA 隱藏，見 Navigation）。錨點捲動留白只靠 `html` 的 `scroll-padding-top: calc(var(--header-h) + 14px)`（`section[id]`／`main[id]`／`#pot-nav` 的 `scroll-margin-top` 已歸零，避免雙重偏移），`--header-h` 94px、680px 以下 75px，避免 sticky header 遮住標題。觸控目標最小 44px，價目與營業時間在關 JS 時仍完整可讀。
 
 ## Elevation & Depth
 
