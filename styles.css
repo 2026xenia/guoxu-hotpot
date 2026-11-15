@@ -94,7 +94,6 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 .info-rows>div{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--dash)}
 .info-rows dt{flex:0 0 56px;font-size:14px;font-weight:900;color:var(--red)}
 .info-rows dd{margin:0;font-size:16px;line-height:1.7}
-.pending{display:inline-block;padding:2px 9px;border:2px dashed var(--red);color:var(--red);font-size:14px;font-weight:900}
 @media(max-width:680px){
   .section.visit-top{padding:32px 0 0}
 }
@@ -121,11 +120,8 @@ main>.container:last-child>.page-cta:last-child{margin-bottom:56px}
 
 
 
-section[id]{scroll-margin-top:110px}
-main[id]{scroll-margin-top:96px}
 .header nav a[aria-current="page"]{color:var(--red);box-shadow:inset 0 -2px 0 var(--red)}
 .hours-table tr.is-today td .today-dot{width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;margin-left:8px;vertical-align:middle}
-.contact-chips .pending-chip{border-style:dashed;color:var(--note)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 /* 主按鈕是紅底，紅框看不見：改成內縮的奶油色框 */
 .main-btn:focus-visible{outline-color:var(--on-red);outline-offset:-5px}
@@ -331,7 +327,6 @@ a.board-row:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 .pot-card{background:var(--paper);border:2px solid var(--ink);padding:20px 22px 22px}
 .pot-card h3{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 10px;font-size:20px;line-height:1.4;font-weight:900;color:var(--deep)}
 .pot-card h3 .menu-badge--sm{margin-left:0}
-.pot-card h3 .pot-tag{margin-left:0}
 .pot-card p{margin:0;font-size:16px;line-height:1.9}
 .pot-card .pot-lede{margin:0}
 .pot-price-link{margin:18px 0 0;font-size:16px;line-height:1.8;font-weight:700}
@@ -457,10 +452,8 @@ body{font-weight:400}
 .ig-qr--lg.line-qr img{width:136px;height:136px}
 @media(max-width:680px){.footer-social{order:0;width:100%;justify-content:flex-start}}
 
-/* 2026-11-13 追加四：header 高度 token → 錨點 scroll-margin、h1 斷行、404 撐滿視窗、晶片為連結、footer 連結不斷詞 */
+/* 2026-11-13 追加四：header 高度 token → h1 斷行、404 撐滿視窗、晶片為連結、footer 連結不斷詞 */
 html{--header-h:94px}
-section[id]{scroll-margin-top:calc(var(--header-h) + 14px)}
-main[id]{scroll-margin-top:calc(var(--header-h) + 6px)}
 .nowrap{white-space:nowrap}
 .page-head h1{text-wrap:balance}
 @media(max-width:680px){.page-head h1{font-size:clamp(27px,7vw,30px)}}
@@ -555,7 +548,6 @@ a.open-now--head:focus-visible{transform:none}
 .pot-rules li{line-height:1.9}
 .pot-back{margin:10px 0 0}
 .pot-back a{display:inline-flex;align-items:center;min-height:44px}
-#pot-nav{scroll-margin-top:calc(var(--header-h) + 14px)}
 
 /* ============================================================
    2026-11-14 追加八：無照片鍋物卡的文字面板（P3-A）
@@ -677,3 +669,14 @@ body{font-size-adjust:from-font}
 
 @media(prefers-reduced-motion:reduce){.gx-ring,.gx-ring2,.gx-shadow,.gx-pin-in,.gx-glow{animation:none}.gx-ring,.gx-ring2{opacity:.5;transform:scale(1)}}
 
+/* 2026-11-15 追加：鍋品頁「限內用」標籤補樣式（沿用 .price-table .pot-tag 的樣式語言；pot.html h3 內） */
+.pot-card h3 .pot-tag{display:inline-block;margin-left:0;padding:2px 7px;border:2px solid var(--ink);color:var(--red);font-size:14px;font-weight:900;vertical-align:2px;white-space:nowrap}
+
+/* 2026-11-15 追加：手機時間表 thead sticky（≤680px，--header-h 為 75px；thead th 已有 background:var(--sand)） */
+@media(max-width:680px){.hours-table thead th{position:sticky;top:var(--header-h);z-index:3;box-shadow:0 2px 0 var(--ink)}}
+
+/* 2026-11-15 追加：單點區桌機兩欄 grid＋欄間虛線分隔；右欄拼盤 2×2 對齊左欄 table 高度（≤920px 單欄；table 語意與 td.price 不動） */
+@media(min-width:921px){.sides-layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:32px;align-items:start}.sides-layout>.platter-grid{grid-template-columns:repeat(2,1fr);border-left:1px dashed var(--dash);padding-left:32px}}
+
+/* 2026-11-15 追加：手機資訊卡社群 QR 中軸對齊（IG 144／LINE 136 不等寬，wrap 後各行置中；桌機與 footer 不動；QR 尺寸不動） */
+@media(max-width:680px){.info-rows .footer-social{justify-content:center}}
