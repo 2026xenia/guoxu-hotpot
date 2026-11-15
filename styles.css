@@ -680,3 +680,13 @@ body{font-size-adjust:from-font}
 
 /* 2026-11-15 追加：手機資訊卡社群 QR 中軸對齊（IG 144／LINE 136 不等寬，wrap 後各行置中；桌機與 footer 不動；QR 尺寸不動） */
 @media(max-width:680px){.info-rows .footer-social{justify-content:center}}
+
+/* 2026-11-15 追加：critique 首批修復（index.html）：板牌字級與對齊、晶片 44px、text-wrap */
+.board-row span:first-child{font-size:18px;font-weight:700}
+.board-row span:last-child{font-size:22px;font-weight:900;margin-left:auto;text-align:right}
+.pot-item h3 a{text-decoration:underline;text-underline-offset:3px}
+.pot-item h3 a:hover,.pot-item h3 a:focus-visible{color:var(--red)}
+.board-title b{font-size:24px}
+.board-title span{background:var(--yellow);color:var(--deep);padding:2px 8px;font-size:20px}
+.open-now--head{min-height:44px;align-items:center}
+.hero h1,.menu-section h2,.contact h2{text-wrap:balance}

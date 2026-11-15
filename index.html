@@ -87,7 +87,7 @@
 <a href="visit.html">怎麼來</a>
 </nav>
 <a class="header-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=23.5572127,120.472024" target="_blank" rel="noopener">導航 <span aria-hidden="true">↗</span><span class="sr-only">（另開新視窗）</span></a>
-<button class="hamburger" id="toggle" aria-label="展開選單" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
+<button class="hamburger" id="toggle" type="button" aria-label="展開選單" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span></button>
 </div></header>
 
 <main id="main" tabindex="-1">
@@ -102,13 +102,13 @@
 <section class="hero">
   <div class="container hero-content">
     <div class="hero-left">
-      <h1>民雄・中正大學旁的<br>個人小火鍋</h1>
+      <h1>民雄・中正大學旁的個人小火鍋</h1>
       <p>濃郁的、清香的，還是熟悉的沙茶味。挑一鍋喜歡的。</p>
       <ul class="hero-facts">
         <li class="hero-price">170 元起・多數 190</li>
         <li>素食三款</li>
         <li>不用訂位</li>
-        <li>店旁公共停車場，步行 1 分鐘</li>
+        <li>店旁公共停車場，步行約 1 分鐘</li>
       </ul>
       <div class="hero-links">
         <a class="main-btn" href="menu.html">看菜單 <span aria-hidden="true">→</span></a>
@@ -134,15 +134,15 @@
     <div class="pot-grid">
       <article class="pot-item">
         <div class="pot-picture pot-picture--photo"><picture><source srcset="assets/pot-golden-pumpkin-800.webp 800w, assets/pot-golden-pumpkin-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 360px"><img src="assets/pot-golden-pumpkin-800.jpg" srcset="assets/pot-golden-pumpkin-800.jpg 800w, assets/pot-golden-pumpkin-400.jpg 400w" alt="黃金南瓜鍋的食材照：南瓜、豬肉片、青江菜、玉米、豆皮" width="800" height="585" loading="lazy" decoding="async"></picture><span class="circle-label">190 元</span></div>
-        <div class="pot-text"><h3>黃金南瓜</h3><p>湯底是南瓜，走甜味方向。</p></div>
+        <div class="pot-text"><h3><a href="pot.html#pot-golden-pumpkin">黃金南瓜</a></h3><p>湯底是南瓜，走甜味方向。</p></div>
       </article>
       <article class="pot-item">
         <div class="pot-picture pot-picture--photo"><picture><source srcset="assets/pot-herbal-health-800.webp 800w, assets/pot-herbal-health-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 360px"><img src="assets/pot-herbal-health-800.jpg" srcset="assets/pot-herbal-health-800.jpg 800w, assets/pot-herbal-health-400.jpg 400w" alt="養身藥膳鍋的食材照：豬肉片、青江菜、玉米、豆皮、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture><span class="circle-label">190 元</span></div>
-        <div class="pot-text"><h3>養身藥膳</h3><p>藥膳湯底，素食也點得到同名鍋物。</p></div>
+        <div class="pot-text"><h3><a href="pot.html#pot-herbal-health">養身藥膳</a></h3><p>藥膳湯底，素食也點得到同名鍋物。</p></div>
       </article>
       <article class="pot-item">
         <div class="pot-picture pot-picture--photo"><picture><source srcset="assets/pot-satay-800.webp 800w, assets/pot-satay-400.webp 400w" type="image/webp" sizes="(max-width:680px) calc(100vw - 44px), 360px"><img src="assets/pot-satay-800.jpg" srcset="assets/pot-satay-800.jpg 800w, assets/pot-satay-400.jpg 400w" alt="沙茶鍋的食材照：豬肉片、青江菜、玉米、豆皮、黑木耳、金針菇" width="800" height="585" loading="lazy" decoding="async"></picture><span class="circle-label">180 元</span></div>
-        <div class="pot-text"><h3>沙茶鍋</h3><p>台式沙茶湯底，鹹香方向。</p></div>
+        <div class="pot-text"><h3><a href="pot.html#pot-satay">沙茶鍋</a></h3><p>台式沙茶湯底，鹹香方向。</p></div>
       </article>
     </div>
     <p class="photo-note">※ 照片為店內入鍋前的生鮮食材配置。完整 18 種鍋物與價目請見 <a class="ink-link" href="menu.html">菜單頁</a>，實際風味以店家現煮為準。</p>
@@ -153,7 +153,7 @@
   <div class="container menu-layout">
     <div class="menu-heading">
       <span class="small-label">菜單</span>
-      <h2>先決定吃哪一鍋，<br>其他的慢慢選。</h2>
+      <h2>先決定吃哪一鍋，其他的慢慢選。</h2>
       <p>經典、特色、素食，18 種鍋物全部標價。<br>還能自己選肉、加肉，價格全寫在表上。</p>
       <a class="outline-btn" href="menu.html">看完整菜單 <span aria-hidden="true">→</span></a>
     </div>
@@ -163,6 +163,7 @@
       <a class="board-row" href="menu.html#featured"><span>特色鍋物</span><span>190–250</span></a>
       <a class="board-row" href="menu.html#veg"><span>素食鍋物</span><span>190（三款）</span></a>
       <a class="board-row" href="menu.html#sides"><span>單點</span><span>30 起</span></a>
+      <a class="board-row" href="menu.html#sides"><span>共鍋費（每人）</span><span>100 元・可折抵單點</span></a>
       <div class="board-foot">價格全公開，不用進門才問。</div>
     </div>
   </div>
@@ -192,7 +193,7 @@
         <p><strong>用餐時間 90 分鐘</strong>，禁帶外食與飲料。</p>
         <p><strong>不用訂位</strong>，現場候位為主。</p>
         <p><strong>可外帶</strong>，電話或現場皆可，無價差。</p>
-        <p class="photo-note">共鍋費 100 元／人，可折抵單點加購；身高 120 公分以上適用。</p>
+        <p><strong>共鍋費 100 元／人，可折抵單點加購；身高 120 公分以上適用。</strong></p>
       </div>
     </div>
   </div>
@@ -205,13 +206,13 @@
         <source srcset="assets/mascot-transparent.webp" type="image/webp">
         <img src="assets/mascot-transparent.png" width="377" height="391" alt="鍋序吉祥物" loading="lazy" decoding="async">
       </picture>
-      <div class="handwriting">笑著吃鍋 ♡</div>
+      <div class="handwriting">笑著吃鍋。</div>
     </div>
     <div class="about-copy">
       <span class="small-label">關於鍋序</span>
       <h2>一個人也能好好吃一鍋。</h2>
       <p>鍋序是民雄中正大學旁的個人小火鍋。一個人 170 元起，多數 190，18 種鍋物、3 款素食同價 190——不用揪團。</p>
-      <p>平日晚間 17:00–21:30，週六 11:00–21:30。店旁有公共停車場，機車汽車都停得下，下車走 1 分鐘。</p>
+      <p>平日晚間 17:00–21:30，週六 11:00–21:30。店旁有公共停車場，機車汽車都停得下，下車走約 1 分鐘。</p>
     </div>
   </div>
 </section>
@@ -220,7 +221,7 @@
   <div class="container contact-layout">
     <div>
       <span class="small-label">找我們</span>
-      <h2>下次吃鍋，<br>我們見！</h2>
+      <h2>下次吃鍋，我們見！</h2>
       <p>店在民雄，中正大學旁。導航直接帶你到店門口，店旁就是停車場。</p>
     </div>
     <div class="contact-right">

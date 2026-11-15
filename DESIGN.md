@@ -210,7 +210,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 - **Label-sm**（menu-badge--sm，11px/900）：小於 label 下限 13px 的刻意小寫徽章，僅用於菜單徽章。
 - **Price 主視覺**（td.price，23px/900、tabular-nums）：菜單價格唯一特例。
-- **Board-title 收尾字**（39px/900）：『門口價目牌』看板裝飾級，不入 display 階。
+- **Board-title 收尾字**（`b` 24px／`span` 20px，900）：『門口價目牌』看板裝飾級，不入 display 階；`span` 為芥末黃底（--yellow）深紅字（--deep）價位帶（2026-11-15）。
 
 ### Named Rules
 **The Weight-Only Rule.** 不引入第二字體；層次只靠 400/700/900 與大小、行高、字距區分。
@@ -269,7 +269,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 頁首的唯一動態營業狀態來源；script.js 以 Asia/Taipei 每 60 秒判斷並寫入（文字不變就不覆寫，避免 aria-live 打斷讀屏）。
 
-- **佈局**: inline-flex、gap 7px、margin 0；paper 底＋2px 墨棕框＋2px 硬陰影（`2px 2px 0 var(--ink)`）；font-size 13px、字重 900、line-height 1.4；padding 5px 12px；`font-variant-numeric: tabular-nums`；`white-space: normal`。
+- **佈局**: inline-flex、gap 7px、margin 0；paper 底＋2px 墨棕框＋2px 硬陰影（`2px 2px 0 var(--ink)`）；font-size 13px、字重 900、line-height 1.4；padding 5px 12px；`font-variant-numeric: tabular-nums`；`white-space: normal`；`min-height: 44px`（觸控目標下限，2026-11-15 補，取代原本 28px 實高的例外）。
 - **圓點** `.dot`: 8px、正圓；營業中 var(--green)（帶脈動環，reduced-motion 下關閉）、未營業 var(--red)、閒置 var(--dot-idle)。
 - **≤920px**: 徽章併入頁首第一行（order 2、padding 5px 10px）；`.open-now-text` 退為 sr-only 全句，`::after` 改顯示 `data-mobile` 短字（開鍋中・21:30／N 分後開鍋／今天 17:00／明天 17:00／週六 11:00）；JS 關閉時 `data-mobile` 缺席，以 CSS2.1 相容雙宣告 fallback 為「營業時間」（2026-11-13：預設 `.open-now--head::after{content:"營業時間"}`、`.open-now--head[data-mobile]::after{content:attr(data-mobile)}`；雙參數 `attr(name,fallback)` 為 CSS Values Level 4 語法，Firefox 會整行丟棄）。
 - **`aria-live="polite"`**: 掛在徽章本體；script.js 只在文字實際改變時寫入。
