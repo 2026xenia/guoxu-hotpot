@@ -2,7 +2,7 @@
 
 <!-- impeccable:product-schema 1 -->
 
-> 最後更新：2026-11-13
+> 最後更新：2026-11-15
 > 本檔是「內容與資料」的唯一真實來源（Single Source of Truth）。改文案、改價、補資料，先改這裡或照這裡的規則改。
 
 ## Platform
@@ -26,14 +26,14 @@ web
 - 每頁只有一個 `<h1>`；首頁 h1 內含地名（`民雄・中正大學旁的個人小火鍋`），不為了大字而犧牲關鍵字。
 
 ## 3. 價格：唯一真實來源
-**價格只寫在 `menu.html` 的 `<td class="price">` 文字裡。首頁只放摘要，不逐項列價。**
+**完整價目只寫在 `menu.html` 的 `<td class="price">` 文字裡。首頁只在 3 張主打鍋卡用 `circle-label` 放單價（190／190／180），作為摘要，不列完整價目。**
 菜單頁是一張純 HTML 價目表，沒有 `data-*` 價格屬性、也沒有前端試算腳本。
 
 | 位置 | 範例 | 角色 |
 |---|---|---|
 | `<td class="price">` 文字 | `170` | **唯一真實來源** |
 
-**改價 SOP**：改 `<td class="price">` 的數字 → 檢查首頁 hero「170 元起」與價目牌摘要 → 檢查 `meta description`（menu 頁與首頁）→ 檢查 JSON-LD 的 `priceRange`。
+**改價 SOP**：改 `<td class="price">` 的數字 → 首頁 hero「170 元起」與價目牌 `board-row` 區間 → 首頁 3 個 `circle-label` → `menu.html` 內文與 figcaption 的文字價格（價位帶、換肉加肉、拼盤）→ `title`／`meta description`／`og:*`（index、menu）→ JSON-LD `priceRange`（index／menu／pot／guide 四頁同值）→ `pot.html`／`guide.html` 內文價位帶 → `sitemap.xml` 的 `lastmod`。
 
 ### 3.1 換肉與加肉通則
 豬肉為底價；牛肉 +10、羊肉 +10、雞肉不加價；加肉 +30。素食三款不分選肉，價格即表定價。
@@ -48,10 +48,13 @@ web
 | 六 | **11:00–21:30** |
 | 日 | 17:00–21:30 |
 
-**關鍵事實：星期六是唯一有中午時段的一天。** 三處必須一致：
-1. `index.html` 逐日表（`table.hours-table`）
-2. `index.html` JSON-LD `openingHoursSpecification`（週六單獨一條）
-3. `visit.html` 摘要句＋首頁連結
+**關鍵事實：星期六是唯一有中午時段的一天。** 六處必須一致（少一處就會矛盾）：
+1. 5 頁 header `.open-now-text` 靜態字串
+2. 6 頁的 footer `.footer-note`（index／menu／pot／guide／visit ＋ 404 的簡化頁尾）
+3. `index.html` 逐日表（`table.hours-table`）
+4. `index.html` JSON-LD `openingHoursSpecification`（週六單獨一條）
+5. `script.js` 的 `HOURS` 物件
+6. `visit.html` 摘要句、`guide.html` FAQ
 
 `index.html` 的狀態列以 `Asia/Taipei` 判斷開鍋中／倒數，取不到時區時保留 HTML 靜態說明（不顯示空白）。
 
@@ -105,9 +108,9 @@ web
 | 價格與 JS | 菜單頁完全沒有價格 JS：價目表是純 HTML，關閉 JS 也能完整閱讀 |
 | JSON-LD | 只放 `priceRange`，**不逐項列 MenuItem**（避免出現第二份價格清單） |
 | 營業時間 | JSON-LD 逐日分開寫，不可用一句 `17:00-21:30` 打天下 |
-| 共用 JS | 漢堡選單、營業狀態（`HOURS`）、scroll-spy 都在 `script.js`（單一真相，改時間改這一個檔）；`menu.html` 分類捷徑與 `visit.html` 地圖閘門為各頁 inline |
+| 共用 JS | 漢堡選單、營業狀態（`HOURS`）、scroll-spy（含 menu/guide/pot 分類捷徑）都在 `script.js`（單一真相，改時間改這一個檔）；只剩 `visit.html` 的地圖載入閘門是頁內 inline |
 | 字型 | Noto Sans TC，僅 400／700／900 三種字重 |
-| 外部依賴 | 只有 Google Fonts 與 Google Maps iframe（皆有 `loading="lazy"`，地圖除外）；2026-11-13 LINE 綠按鈕退役後，站內無任何第三方熱連結圖 |
+| 外部依賴 | 只有 Google Fonts 與 Google Maps iframe（皆有 `loading="lazy"`；地圖 iframe 由點按「看地圖」才注入，本身也帶 `loading="lazy"`）；2026-11-13 LINE 綠按鈕退役後，站內無任何第三方熱連結圖 |
 | 圖片 | 一律給 `width`／`height`，首屏吉祥物 `fetchpriority="high"`，其餘 `loading="lazy"`；所有圖檔集中在 `assets/` |
 | 網址 | 正式站 `https://2026xenia.github.io/guoxu-hotpot/`；若換自訂網域，需同步 `canonical`／`og:url`／`og:image`／`sitemap.xml`／JSON-LD 的 `url` 與 `hasMenu` |
 - IG 與 LINE 官方 QR 圖按鈕（assets/ig-qr.png、assets/line-qr.png，皆官方素材、用戶裁決；scdn.line-apps.com 綠按鈕已退役）為全站唯二外部品牌素材例外（2026-11-13 用戶裁決＋改版）；其他顏色仍只取 styles.css :root。JSON-LD sameAs=[IG, LINE]。
@@ -127,12 +130,12 @@ web
 
 ## 9. 上線檢查清單
 - [x] `robots.txt`、`sitemap.xml`
-- [x] 三頁 `canonical`、`og:*`、`twitter:card`
+- [x] 5 頁 `canonical`、`og:*`、`twitter:card`（404 除外）
 - [x] favicon（32／180）與 `og:image`（1200×630）
 - [x] 首頁 `Restaurant` JSON-LD（含逐日營業時間、geo、hasMenu）
 - [x] 免 `noindex`（本站即為正式站）
 - [x] `404.html`
 - [x] skip link、44px 觸控區、`aria-expanded`／`aria-controls`
 - [x] 關閉 JS 時菜單與營業時間仍可讀（菜單頁已無任何價格腳本）
-- [x] 地址、電話已補齊並同步 JSON-LD（index／visit）與資訊卡
+- [x] 地址、電話已補齊並同步 JSON-LD（5 頁 `telephone`；`priceRange` 為 index／menu／pot／guide 4 頁）與資訊卡
 - [x] `og:image` 換成實拍版本（2026-11-12：listing 食材照裁 1200×630）

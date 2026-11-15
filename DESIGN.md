@@ -113,9 +113,9 @@ components:
   status-open-now:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    fontSize: "14px"
+    fontSize: "13px"
     fontWeight: 900
-    padding: "9px 16px"
+    padding: "5px 12px"
 ---
 
 # Design System: 鍋序網站
@@ -246,7 +246,7 @@ YAML（本檔 `colors:`）與 styles.css `:root` 的對應；值一一全等，�
 
 ## Components
 
-元件觸感統一為「粗實可按」：粗邊、硬陰影、按下去會凹陷。本站原則零圓角；YAML rounded 僅供 button-header-cta 等實際 4px 元件。
+元件觸感統一為「粗實可按」：粗邊、硬陰影、按下去會凹陷。圓角只有 3／4／6px 三級，以 4px 為主；8px 以上只出現在 `.map-studio` 位置圖例外區（8／10／18px），不得外流。
 
 ### Buttons
 - **Shape:** 小圓角 (4px)，2px 描邊
