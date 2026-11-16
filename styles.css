@@ -690,3 +690,6 @@ body{font-size-adjust:from-font}
 .board-title span{background:var(--yellow);color:var(--deep);padding:2px 8px;font-size:20px}
 .open-now--head{min-height:44px;align-items:center}
 .hero h1,.menu-section h2,.contact h2{text-wrap:balance}
+
+/* 2026-11-16 追加：forced-colors 下 board-row 連結的非色彩線索（背景/hover 底色會被系統丟棄） */
+@media(forced-colors: active){.board-row{text-decoration:underline}}
