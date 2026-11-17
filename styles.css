@@ -693,3 +693,94 @@ body{font-size-adjust:from-font}
 
 /* 2026-11-16 追加：forced-colors 下 board-row 連結的非色彩線索（背景/hover 底色會被系統丟棄） */
 @media(forced-colors: active){.board-row{text-decoration:underline}}
+/* 2026-11-17 追加：導覽分組降權樣式（前三頁主軸、後兩頁次要，仍可見可點） */
+/* 使用 :where() 降低特異性，避免蓋掉 aria-current="page" 的紅字底線規則 */
+:where(.header nav a.nav-sub), :where(.footer-nav a.nav-sub){color:var(--note);font-size:14px}
+/* 第一個 sub 項目（即「怎麼來」後方的「鍋品介紹」）加左側虛線分隔線，:where() 確保 forced-colors 可見 */
+:where(.header nav a[href="visit.html"] + .nav-sub, .footer-nav a[href="visit.html"] + .nav-sub){border-left:1px dashed currentColor;padding-left:8px;margin-left:6px}
+@media(max-width:920px){
+  .js :where(.header nav a[href="visit.html"] + .nav-sub){border-top:1px dashed currentColor;border-left:0;padding-left:0;padding-top:8px;margin-left:0}
+}
+
+/* 2026-11-17 追加二：導覽分組分隔線改為實心界碑（2px／16px，量字不量觸控盒）
+   原 1px dashed 在 antialiasing 下碎成螞蟻點、且離字僅 4px（:where() 讓 padding-left 從未生效）。
+   改用 ::before 的 margin 讓 8px 留白真正出現；2px ＝全站唯一線重，與紅底線同重。 */
+
+/* 1) 收掉舊的 1px 虛線（桌面 nav 與 footer nav）；舊規則保留在上方，這裡覆蓋 */
+:where(.header nav a[href="visit.html"] + .nav-sub,
+       .footer-nav a[href="visit.html"] + .nav-sub){
+  border-left:0;
+  padding-left:0;
+  margin-left:0;
+}
+
+/* 2) 界碑：2px 實心短槓、16px 高（只量字，不量 44px 觸控盒）、垂直置中 */
+:where(.header nav a[href="visit.html"] + .nav-sub,
+       .footer-nav a[href="visit.html"] + .nav-sub)::before{
+  content:"";
+  display:inline-block;
+  inline-size:0;              /* 寬度全交給 border，forced-colors 才不會消失 */
+  block-size:16px;
+  vertical-align:middle;
+  border-inline-start:2px solid var(--note);
+  margin-inline-end:8px;
+}
+
+/* 3) ≤920px 漢堡抽屜（直向清單）：豎碑改橫規，靠邊界分組；隱藏 ::before */
+@media(max-width:920px){
+  .js :where(.header nav a[href="visit.html"] + .nav-sub){
+    border-block-start:2px solid var(--note);
+    border-left:0;
+    padding-top:0;            /* 清掉舊 1px 規則的 padding-top:8px */
+    margin-block-start:12px;
+    margin-left:0;
+  }
+  .js :where(.header nav a[href="visit.html"] + .nav-sub,
+             .footer-nav a[href="visit.html"] + .nav-sub)::before{display:none}
+}
+
+/* 4) forced-colors：明寫 CanvasText，不依賴 UA 對 border 的強制行為 */
+@media(forced-colors:active){
+  :where(.header nav a[href="visit.html"] + .nav-sub,
+         .footer-nav a[href="visit.html"] + .nav-sub)::before{
+    border-inline-start-color:CanvasText;
+  }
+  .js :where(.header nav a[href="visit.html"] + .nav-sub){
+    border-block-start-color:CanvasText;
+  }
+}
+
+/* 2026-11-17 追加三：導覽分組改為純排版階層（移除記號，層級做進字裡）
+   依三個設計調研共識：真實案例不在水平 nav 兩項間加記號；字級/字重是內容自帶結構。
+   CJK 字重 400/700/900 的 advance width 相同 → 分級幾乎零寬度成本。
+   舊的 1px 虛線(700-702)與 2px 界碑(705-751)保留墓碑，以下規則覆蓋。 */
+
+/* 1) 收掉兩版舊記號（同特異性、位置在後 → 勝出） */
+:where(.header nav a[href="visit.html"] + .nav-sub,
+       .footer-nav a[href="visit.html"] + .nav-sub){border-left:0;padding-left:0;margin-left:0}
+:where(.header nav a[href="visit.html"] + .nav-sub,
+       .footer-nav a[href="visit.html"] + .nav-sub)::before{content:none}
+@media(max-width:920px){
+  .js :where(.header nav a[href="visit.html"] + .nav-sub){border-block-start:0;margin-block-start:0;padding-top:0}
+}
+
+/* 2) 主軸升 900（不包 :where()，否則會輸給 .header nav a 的 (0,1,2)） */
+.header nav a:not(.nav-sub),.footer-nav a:not(.nav-sub){font-weight:900}
+
+/* 3) 次要降階：13px/400。不寫 color，避免同特異性蓋掉 line 123 的 aria-current 紅字 */
+.header nav a.nav-sub,.footer-nav a.nav-sub{font-size:13px;font-weight:400}
+
+/* 4) 当前頁保險：pot/guide 自身頁的紅字不被 400 稀釋（放在第 3 條之後，同特異性後者勝） */
+.header nav a[aria-current="page"],.footer-nav a[aria-current="page"]{font-weight:900}
+
+/* 5) 組間留白：26px(組內) + 20px = 46px(組間)，比原本大但靠下面 gap 補償 */
+:where(.header nav a[href="visit.html"] + .nav-sub,
+       .footer-nav a[href="visit.html"] + .nav-sub){margin-inline-start:20px}
+
+/* 6) 921–1100 死亡帶補償：nav gap 18→13px，搭配拿掉舊記號＋CJK 字重零成本，淨騰出空間 */
+@media(max-width:1100px){.header nav{gap:13px}}
+
+/* 7) ≤920 抽屜（column）：直向分組留白；forced-colors 不需補丁（字級/字重天然存活） */
+@media(max-width:920px){
+  .js :where(.header nav a[href="visit.html"] + .nav-sub){margin-block-start:14px;margin-inline-start:0}
+}
